@@ -1,0 +1,21 @@
+@import './var.stylus'
+border = 1px solid #5a5a5a
+body.night
+  [data-ng-app=custom-service] .dialog-container
+    .toolbar 
+      outline 30px solid rgba(0,0,0, .5)
+      outline-offset -30px
+    .center
+      .left
+        .page
+          background #555
+          color #eee
+          li
+            background #555
+            color #eee    
+
+      .right
+        background #555
+        color #eee
+       
+  

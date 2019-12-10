@@ -1,0 +1,168 @@
+// 隐天界面仿ios版
+// 兼容less格式
+html,body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  min-width: auto;
+  min-height: auto;
+}
+html body .msg-modal-box {
+  position: absolute;
+}
+.hide-buttons {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  .hide-button {
+    width: 60px;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    &.danger {
+      background: red;
+      color: #fff;
+    }
+  }
+}
+[data-ng-app="custom-service"] .ng-scope {
+  .dialog-container.iphone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0 !important;
+    bottom: 60px !important;
+    width: auto;
+    height: auto;
+    padding-left: 0;
+    .toolbar {
+      text-align: center;
+      background: #1a9ff3;
+    }
+    .toolbar .left {
+      float: none;
+      display: inline-block;
+      width: auto;
+      border-radius: 15px;
+      line-height: 30px;
+      border: 1px solid #fff;
+      margin: 5px;
+      height: 30px;
+      padding: 0;
+      .switch-button {
+        height: 99%;
+        display: inline-block;
+        padding: 0 15px;
+        color: #fff;
+        &:first-child {
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+        }
+        &:last-child {
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
+        &.on {
+          background: #038adf;
+        }
+      }
+    }
+    .center{
+      position: absolute;
+      top: 40px;
+      bottom: 0;
+      left: 0;
+      right: 0 ;
+      width: auto;
+      height: auto;
+    }
+    .center .left {
+      .page {
+        background: #efefef;
+      }
+      width: 100%;
+      .first-page .chat-list li.item{
+        background: #fff !important;
+        transform: translateX(0);
+        transition: transform ease-in-out 0.3s;
+        &.showhide {
+          transform: translateX(-60px);
+        }
+        &:hover {
+          background: #ccc !important;
+        }
+      }
+    }
+    .center .right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0 ;
+      bottom: 0;
+      width: auto;
+      height: auto;
+      transition: transform linear .2s;
+      transform: translateX(100%);
+      &.show-right{
+        transform: translateX(0);
+      }
+    }
+    .center .right .input-area .message-textarea-box {
+      left: 50px;
+      right: 100px;
+      width: auto;
+    }
+    .center .right .input-area .emotion-box {
+      right: 60px;
+      left: auto;
+    }
+    .center .right .message-box {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 60px;
+      bottom: 45px;
+      height: auto;
+    }
+    // 表情
+    #facebox{
+      left: 5px !important;
+        td{
+          padding: 5px 1px ;
+        }
+    }
+    .center .right .new-action-page{
+      .edit-name-now,
+      .new-group-now,
+      .group-manage-now {
+        padding: 50px 15px 15px 15px;
+        &.new-group-chat-now {
+          padding-top: 0;
+        }
+      }
+    }
+    .toolbar.horizonal{
+      .left .icon-box{
+        margin-top: 8px;
+        margin-bottom: 0;
+      }
+      // hide icon
+      .my-minisize {
+        margin-top: 8px;
+        float: right;
+        display: inline-block;
+        height: 32px;
+        width: 40px;
+        text-align: center;
+        color: #fff;
+        line-height: 40px;
+        &:hover {
+          background-color: #fff;
+          color: #6991b2;
+        }
+      }
+    }
+  }
+}

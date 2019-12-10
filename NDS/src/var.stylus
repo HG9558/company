@@ -1,0 +1,14 @@
+@import '../../src/var.stylus'
+$ASSETS = '../../src/assets'
+$VASSETS = '../assets'
+$CASSETS = '../assets'
+
+LW = 2.2rem
+BH = 1.6rem
+// border-radius
+radius(x = .05rem)
+  border-radius 0
+
+shadow(x = 2px 2px 2px rgba(0,0,0,.2))
+  box-shadow none
+

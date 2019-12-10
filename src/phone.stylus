@@ -1,0 +1,4 @@
+// import this file to fit phone-model
+@import './var.stylus'
+@media screen and (max-width: 732px)
+  font-size 80px

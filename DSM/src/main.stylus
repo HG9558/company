@@ -1,0 +1,128 @@
+@import './var.stylus'
+@import '../../src/main.stylus'
+@import '../../src/night.stylus'
+
+
+// el-menu
+.el-menu
+  radius(0)
+  margin .1rem 0
+  background-color rgba(0,0,0,0)
+  // color #9da4cb
+  .el-submenu__title
+    height .4rem
+    line-height .4rem
+    color #9da4cb
+    &:hover
+      background-color rgba(255, 255, 255, .08)
+  .el-menu-item
+    color #9da4cb
+    height .4rem
+    line-height .4rem
+    &:before
+      content ''
+      display inline-block
+      width 5px
+      height 5px
+      radius(50%)
+      background-color #9da4cb
+      vertical-align middle
+      margin 0 .08rem
+    &:hover
+    &.is-active
+      color BLUE
+      background-color rgba(0, 0, 0, 0)
+      &:before
+        background-color BLUE
+
+  .el-menu-item-group
+      background-color rgba(0, 0, 0, .3)
+
+  .el-submenu
+    &.is-opened
+      .el-submenu__title
+        color #fff
+        background-color rgba(255, 255, 255, .08)
+        font-weight bold
+
+.el-submenu .el-menu
+  margin .05rem 0 0 0
+  background-color rgba(0,0,0,0)
+
+.el-menu-item-group__title
+  display none
+  // &:before
+  //   content ''
+  //   display inline-block
+  //   width 2px
+  //   height 20px
+  //   background-color #9da4cb
+  //   vertical-align middle
+  //   margin 0 .08rem
+
+// icons
+.ds-gm-icon-logo
+  background url(assets/logo.png) center .3rem no-repeat
+.ds-icon-me-menu
+  display inline-block
+  width .26rem
+  height .26rem
+  vertical-align middle
+  margin-right PW
+  shadow(0 0 2px rgba(0,0,0,.2) )
+  background url(assets/icon_01.png) center no-repeat
+.ds-icon-group-menu
+  display inline-block
+  width .26rem
+  height .26rem
+  vertical-align middle
+  margin-right PW
+  shadow(0 0 2px rgba(0,0,0,.2) )
+  background url(assets/icon_02.png) center no-repeat
+.ds-icon-record-menu
+  display inline-block
+  width .26rem
+  height .26rem
+  vertical-align middle
+  margin-right PW
+  shadow(0 0 2px rgba(0,0,0,.2) )
+  background url(assets/icon_03.png) center no-repeat
+
+
+// dialog-page
+ .app.night .dialog-page
+  bg-gradient(180deg, #181d31, #2d2d45, #444059)
+.app.night .page
+  .dialog-page
+    transform none !important
+    transition none !important
+    &>.move-bar
+    &>.resize-x
+    &>.resize-y
+      display none
+    &>.tool-bar .el-button-group .el-button:not(:last-child)
+        display none
+    &.static
+      shadow(none)
+      radius(0)
+      .el-loading-mask
+        top 0
+      &>.tool-bar
+        display none
+      .scroll-content
+        padding-top PWX
+        top 0
+
+      &.me-page
+        .me-sideview
+          top 0
+          radius(0)
+
+      &.trend-chart-page
+        .scroll-content
+          top 1.44rem
+        .game-info
+          background-color rgba(0,0,0,0)
+
+
+

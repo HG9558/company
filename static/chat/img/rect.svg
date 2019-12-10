@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="9px" height="10px" version="1.1"
+xmlns="http://www.w3.org/2000/svg">
+	<polygon points="0,0 8,0 8,10"
+	style="fill:white;
+	"/>
+
+	 <path id="lineAB" d="M0 0 l8 10" stroke="#d3e5ee"
+  stroke-width="1" fill="none" />
+   <path id="lineBC" d="M8 10 l0 -10" stroke="#d3e5ee"
+  stroke-width="1" fill="none" />
+</svg>

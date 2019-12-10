@@ -1,0 +1,346 @@
+// import this file to show night-model
+@import './var.stylus'
+border = 1px solid #5a5a5a
+body.night
+  outline 10rem solid rgba(0,0,0, .3)
+  outline-offset -10rem
+  .el-popover.footer-popover
+    background-color #16161d
+    
+#app.night
+  // icon
+  
+  // common
+  .el-loading-mask
+    background-color rgba(85, 85, 85, .9)
+  .el-textarea__inner
+    border-color #777
+    background-color #666
+    color #aaa
+  .el-input.is-disabled .el-input__inner
+    background-color #666
+  .me-sideview
+    outline 1.3rem solid rgba(0,0,0, .2)
+    outline-offset -1.3rem
+  .el-textarea.is-disabled .el-textarea__inner
+    background-color #666
+    border border
+    color #ccc  
+  .dialog-page
+    .text-black
+    .amount
+      color #ccc
+    .text-666
+      color #aaa
+    a:not(.danger)not(.green)not(.gold)not(.blue)
+      color #aaa
+    .modal .mask
+      background-color rgba(102,102,102,.6)
+    .modal .box
+      background-color #333
+      radius()
+      overflow hidden
+      .tool-bar
+        background linear-gradient(180deg, #333, #222)
+        
+      .header-bar .buttons .el-icon-close:hover
+        color #fff
+      .content
+      .footer-bar
+        position relative
+      &:before
+        position absolute
+        content ''
+        top 0
+        bottom 0
+        left 0
+        right 0
+        radius()
+        display inline-block
+        background-color rgba(0,0,0, 0.2)
+        
+    
+    
+  // 1. change background of dialog-page
+  .dialog-page
+    background-color #333
+    
+    // ========================== new version fixed
+    &.game-page .ds-icon-cooking 
+      background-color #333
+      
+    .game-recent-order
+      background-color #333
+    &.game-page .game-content
+      background-color #333
+      .menu .title.selected
+      .menu .row
+        background-color #444
+        .ds-button.selected
+          color #fff
+      .menu dd.title:hover
+        background #444
+    
+        
+    &.full
+      &:after
+        background-color #333
+    &.active .tool-bar
+      background-color #444
+    .tool-bar
+      position relative
+      background-color rgba(0,0,0,0)
+      .el-button-group .el-button:not(.close):hover
+        background-color #3b3b3b
+      &:before
+        content ''
+        position absolute
+        top 0
+        right 0
+        bottom 0
+        left 0
+        background linear-gradient(180deg, #333, #222)
+        z-index -1
+      
+    .game-info
+      background-color #333
+    .inner-bar
+      bg-gradient(180deg, #555, #444)
+    .game-selection
+      .signal
+        background-color #444
+      .ds-icon-PK10 .the-number
+        background-color #333
+        // border border
+        shadow(0 0 0 .02rem #5a5a5a)
+    .dot
+      background-color #5d87dd
+    .side.left .dot
+    .side.front .dot
+      background-color #e25d5d
+    .dice .side
+      bg-gradient(180deg, #555, #444)
+    .dice.selected .side
+      background DANGER
+      .dot
+        background #fff 
+    .activity-center .section:hover
+      background-color #444
+    .gift-center
+      .ds-icon-activity-ticket.small
+        &:before
+          background-color #dbf1ff
+      .ticket
+        border border
+        background-color #dbf1ff
+        .ds-button
+        .ds-button.disabled
+          background-size 10px 10px
+          background-repeat repeat-y
+          background-position 0 0
+          background-image linear-gradient(-45deg, transparent 75%, #dbf1ff 75%), linear-gradient(-135deg, transparent 75%, #dbf1ff 75%)
+      
+      
+    
+  // 2. change color of dialog-page
+  .dialog-page
+    color #aaa
+    .tool-bar .title
+      color #ccc
+    .game-info .title
+      color #aaa
+    .menu
+      color #aaa
+    .game-selection .numbers
+      color #ccc
+    .game-selection .action-buttons .ds-button
+      color #aaa
+      &:hover
+      &.selected
+        color #fff
+    .game-selection .title span
+      background-color #a1a1a1
+     .game-selection .el-row:hover .title span
+       // background-color BLUE
+      
+    .inner-bar
+      color #aaa
+      &.amout-bar
+        color #ccc
+        .ds-button
+          // background-color #444
+          // &.danger
+          //   color DANGER
+          //   border 1px solid DANGER
+          // &.primary
+          //   color BLUE
+          //   border 1px solid BLUE
+            
+    .follow-list .form
+      color #aaa
+    // me
+    .me-detail-info .base-info
+      color #ccc
+      .free
+      .luck-chance
+        color #aaa
+    .safe-detail-info 
+      .text-ellipsis
+        color #ccc
+      .el-row.static .title
+        color #ccc
+       & > .el-row:hover
+        background-color #3d3d3d
+      .el-row.expand
+        background-color #3d3d3d
+    // .el-pagination button.disabled
+    .el-pagination button.disabled
+      color #666
+     
+  
+  // 3. change button of dialog-page
+  .dialog-page
+    .ds-button
+      &.outline
+      &.secondary
+        color #aaa
+        background #444
+        border border
+        &:hover
+          border-color BLUE
+      &.text-button
+        color #aaa
+        &:hover
+          color BLUE
+        &.light:hover
+          color #ccc
+      &.disabled
+        // background #666
+        // opacity .8
+      &.blue
+        color BLUE
+        &:hover
+          color BLUE-HOVER
+      &.ds-icon-polyline
+        background url($ASSETS/polyline-night.png) .08rem center no-repeat #444
+        
+        
+  
+  // 4. change input of dialog-page
+  .dialog-page
+    
+    input
+      color #aaa
+      background-color #444
+      border border
+      &:hover
+        border-color BLUE
+        
+  
+  // 5. change ds-group of dialog-page
+  .dialog-page
+    .ds-button-group
+      background-color #444
+      border border 
+      // height .32rem
+      .ds-button
+        background-color #444
+        &.selected
+          color #fff
+          background-color BLUE
+  
+  // 6. change el-slider of dialog-page
+  .dialog-page
+    .el-slider .el-slider__button
+      background-color #444
+    .el-slider .el-slider__bar
+      background-color #6e6e6e
+    .el-slider .el-slider__runway
+      background-color #959595
+  
+  // 7. change ds-checkbox of dialog-page
+  .dialog-page
+    .el-checkbox
+    .ds-checkbox-label
+      color #aaa
+      &:not(.disabled):hover .ds-checkbox
+        border-color BLUE
+    .ds-checkbox
+    .el-checkbox__inner
+      background-color #444
+      border border
+      &:hover
+        border-color BLUE
+  
+  // 8. change el-table of dialog-page
+  .dialog-page
+    .el-table
+      color #aaa
+      tr.selected-row td
+        background-color #45393a
+    .el-table--enable-row-hover tr:hover>td
+      background-color #343d43
+    
+      
+    
+  // 9. change ds-radio of dialog-page
+  .dialog-page
+    .ds-radio-label
+      color #aaa
+      &:not(.disabled):hover .ds-radio
+        border-color BLUE
+    .ds-radio
+      background-color #444
+      border border
+      &:hover
+        border-color BLUE
+  // 10. change el-table
+  .dialog-page
+    .el-table th .cell
+      color #ccc
+  
+  // 11. change bank card
+  .dialog-page
+    .ds-icon-bank-card:not(.static):not(.selected):not(.more):before
+      content ''
+      width 100%
+      height 100%
+      display inline-block
+      background-color rgba(0,0,0, 0.2)
+    .ds-icon-bank-card.more
+      background-color #d8e1e6
+      &:hover
+        background-color #dee7ec
+      &:active
+        background-color #c6d3db  
+    
+  // 12. change dialog
+  .home
+    .el-dialog .el-dialog__header
+      background linear-gradient(180deg, #333, #222)
+    .el-dialog .el-dialog__header .el-dialog__title
+      color #ccc
+    .dialog-collect .content .left
+      background-color #444
+      color #aaa
+      .item:hover
+        background-color #585858
+        color #fff
+      .item.active
+        background-color BLUE
+    .dialog-collect .content .right
+      background-color #333
+      color #aaa
+      dd.disabled
+        color #777
+      
+      
+    
+
+      
+      
+     
+  
+      
+      
+  

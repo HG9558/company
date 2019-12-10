@@ -1,0 +1,8 @@
+build/*.js
+config/*.js
+src/components/Message.vue
+src/util/*.js
+src/polyline.js
+src/components/Chat.vue
+src/chat/*.js
+

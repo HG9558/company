@@ -1,0 +1,283 @@
+.f_l
+  float left
+.f_r
+  float right
+.t_r
+  text-align right
+.t_c
+  text-align center
+.t_l
+  text-align left
+.o_none
+  opacity 0
+  
+.inlb
+  display inline-block
+.relative
+  position relative
+.absolute
+  position absolute
+.static
+  position static
+.fixed
+  position fixed
+
+.c_s
+  color rgb(25, 190, 107)
+.c_e
+  color rgb(237, 63, 20)
+.c_p
+  color rgb(45, 140, 240)
+.c_w
+  color rgb(255, 153, 0)
+.c_d
+  color rgb(187, 190, 196)
+.c_f
+  color #fff  
+
+.bgc-w
+  background-color #fff
+.c_b
+  color #666
+
+.mlr15
+  margin 0 .15rem
+.mr10
+  margin-right .1rem
+.mb05
+  margin-bottom .05rem
+.mb10
+  margin-bottom .1rem
+.mtb20
+  margin .20rem 0
+.mtb10
+  margin .1rem 0
+  
+.mtb15
+  margin .15rem 0
+.mtb5
+  margin .05rem 0
+.ptb10
+  padding .1rem 0
+.pb10
+  padding-bottom .1rem
+.pb05
+  padding-bottom .05rem
+.pt05
+  padding-top .05rem
+
+.ptb15
+  padding .15rem 0
+
+.ptb20
+  padding .2rem 0
+
+.plr15
+  padding 0 .15rem
+
+.plr20
+  padding 0 .2rem
+
+.pt15
+  padding-top .15rem
+.pt20
+  padding-top .2rem
+.pb15
+  padding-bottom .15rem
+.pb20
+  padding-bottom .2rem
+
+.pl05
+  padding-left .05rem
+.pl15
+  padding-left .15rem
+.pl20
+  padding-left .2rem
+
+.pr15
+  padding-right .15rem
+.pr20
+  padding-right .2rem
+.pr30
+  padding-right .3rem
+
+.mt05
+  margin-top .05rem
+.mt10
+  margin-top 0.1rem
+.mt15
+  margin-top .15rem
+.mt20
+  margin-top .2rem
+.mb15
+  margin-bottom .15rem
+.mb20
+  margin-bottom .2rem
+
+.ml10
+  margin-left .1rem
+.ml15
+  margin-left .15rem
+.ml20
+  margin-left .2rem
+
+.mr15
+  margin-right .15rem
+.mr20
+  margin-right .2rem
+
+
+.h4
+ height .4rem
+.h3
+  height .3rem
+// height line-height
+.hlh24
+  height .24rem
+  line-height .24rem
+.hlh2
+  height .2rem
+  line-height .2rem
+.hlh3
+  height .3rem
+  line-height .3rem
+.hlh4
+  height .4rem
+  line-height .4rem
+.hlh45
+  height .45rem
+  line-height .45rem
+.hlh5
+  height .5rem
+  line-height .5rem
+.hlh6
+  height .6rem
+  line-height .6rem
+.hlh36
+  height .36rem
+  line-height .36rem
+.hlh68
+  height .68rem
+  line-height .68rem
+.hlh100
+  height 1rem
+  line-height 1rem
+.h100p
+  height 100%
+// font-size
+.ft36
+  font-size .36rem
+.ft30
+  font-size .3rem
+.ft24
+  font-size .24rem
+.ft22
+  font-size .22rem
+.ft25
+  font-size .25rem
+.ft18
+  font-size .18rem
+.ft16
+  font-size .16rem
+.ft15
+  font-size .15rem
+.ft14
+  font-size .14rem
+.ft12
+  font-size .12rem
+.ftb
+  font-weight bold
+.ftsi
+  font-style italic
+  
+.text-ellipsis
+  display inline-block
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+  vertical-align middle
+.wp8
+  width 80%
+.wp5
+  width 50%
+
+.txt-c
+  text-align center
+.txt-r
+  text-align right
+.txt-l
+  text-align left
+
+.bg-w
+  background-color #ffffff
+
+.flex
+  display flex
+.flex-ai-c
+  align-items center
+.flex-jt-c
+  justify-content center
+
+
+for x in 0..1000
+  if x % 5 is 0
+    // padding margin
+    .mg_{x}
+      margin x * 0.01rem
+    .ml_{x}
+      margin-left x * 0.01rem 
+    .mr_{x}
+      margin-right x * 0.01rem 
+    .mt_{x}
+      margin-top x * 0.01rem 
+    .mb_{x}
+      margin-bottom x * 0.01rem 
+    .pd_{x}
+      padding x * 0.01rem
+    .pl_{x}
+      padding-left x * 0.01rem 
+    .pr_{x}
+      padding-right x * 0.01rem 
+    .pt_{x}
+      padding-top x * 0.01rem 
+    .pb_{x}
+      padding-bottom x * 0.01rem
+    
+    // width height
+    .w_{x}
+      width x * 0.01rem
+    .h_{x}
+      height x * 0.01rem
+    
+    .mw_{x}
+      max-width x * 0.01rem
+    .mh_{x}
+      max-height x * 0.01rem
+    
+    .mnw_{x}
+      min-width x * 0.01rem
+    .mnh_{x}
+      min-height x * 0.01rem
+    
+    
+    // height line-height
+    .hlh_{x}
+      height x * 0.01rem
+      line-height x * 0.01rem
+    // percents
+    .wp_{x}
+      width x + '%'
+      
+    
+      
+    
+
+.mg_0a
+  margin 0 auto
+.v_t
+  vertical-align top
+.stripe_gray_white_40
+  background linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 50%, #f8f8f8 50%, #f8f8f8 100%)
+  background-repeat repeat
+  background-size .8rem .8rem
+    

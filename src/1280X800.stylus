@@ -1,0 +1,76 @@
+@import './var.stylus'
+@media screen and (max-height: 900px)
+  html
+    font-size 90px
+    [data-ng-app=custom-service] .custom-service-box
+        // width 50px
+        // height 50px
+        cursor pointer
+    [data-ng-app=custom-service] .icon.custom-service.load
+        cursor pointer
+    [data-ng-app=custom-service] .icon.custom-service
+        background-size 80%
+    // game .popover-orderlist
+    .popover-orderlist
+        width 7rem 
+    
+    #app
+        // icons
+        .ds-icon-code
+        .ds-icon-logo-middle
+        .ds-icon-logo
+        .ds-icon-full-screen
+            background-size 100% !important
+        .ds-icon-day-model
+            background-size 95%
+            &.no
+                background-size 95%
+        .logo.ds-icon-pot
+            background-size 72% !important
+        // slider
+        .el-slider__button-wrapper
+            // top -11px
+            
+        .step-tabs:not(.text) .tab:not(:first-child):before
+            // border-top 0.155rem solid currentColor
+            display none
+        .step-tabs:not(.text) .tab:after
+            border-top 0.155rem solid transparent
+        // .step-tabs:not(.text) .tab:not(:first-child):before
+        // .step-tabs:not(.text) .tab:not(:first-child):after
+        // .login-register[data-v-e6422cde]
+        .login-register
+            background-size 65%
+            
+        // router-test
+        .routers
+            width 9.5rem
+        // footer icon
+        footer
+            .logo.ds-icon-logo-middle
+                display none
+            .el-col-10
+                width 50%
+                &.el-col-offset-4
+                    margin-left 0
+        
+        // page
+        .scroll-content.has-footer:not(.collapse-footer)
+            bottom .7rem
+        
+#app    
+  @media screen and (max-width: 1600px)
+    // *
+    //   background-size 80%
+    // .login-test
+    //   .routers 
+    //       width 9.5rem                 
+    //     .col-content
+    //       height 2rem
+    
+    // .ds-icon-logo
+    //   width 2.5rem
+    //   height 1rem
+    
+
+     

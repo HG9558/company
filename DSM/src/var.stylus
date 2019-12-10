@@ -1,0 +1,7 @@
+@import '../../src/var.stylus'
+$ASSETS = '../../src/assets'
+$VASSETS = '../assets'
+$CASSETS = '../assets'
+
+LW = 2.2rem
+BH = 1.6rem

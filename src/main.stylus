@@ -1,0 +1,1962 @@
+@import './var.stylus'
+@import './ie.stylus'
+.el-table
+  tr.twinkle
+    animation Twinkle 1.5s linear 1
+
+.el-table
+  tr.lst-row-greybg td
+    background-color #ddd !important
+#app.night
+  .el-table
+  tr.lst-row-greybg td
+    background-color #444 !important
+  .el-table__empty-text
+    color #ccc
+  .page-tool-bar .tabs .tab
+    background #555
+    &.selected
+      background #333 
+    
+// .el-table__header-wrapper
+// .el-table__body-wrapper
+// .el-table__footer-wrapper
+//   background-color #fff
+// input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
+//   background-color rgba(0,0,0,0) !important
+.el-table__footer-wrapper tbody td, .el-table__header-wrapper tbody td
+  background-color #dedede
+#app.night
+  .el-table__footer-wrapper tbody td, .el-table__header-wrapper tbody td
+    background-color #555
+    color #ccc
+.el-date-editor--datetimerange.el-input
+  width 320px
+#app.night
+  .form-filters
+  .form-contents
+    background-color #555
+    margin PW PWX
+    
+#app:not(.night)
+  .form-filters
+  .form-contents
+    background-color #fff
+    margin .1rem PWX
+    margin-bottom 0
+
+.el-tooltip__popper
+  word-break break-all
+  max-width 50%
+/*
+ *common css define
+ */
+a
+  text-decoration none
+  color #666
+  &.default
+    color OBLUE
+h1, h2, h3, h4, h5, p, dl, dd, dt
+  margin 0
+input
+  outline none
+pre
+  white-space pre-wrap
+  word-break break-all
+.pl1
+  padding-left .1rem
+.pl2
+  padding-left .2rem
+.pl3
+  padding-left .3rem
+.pr1
+  padding-right .1rem
+.pr2
+  padding-right .2rem
+.content-width
+  position relative
+  width CTW
+  margin 0 auto
+.pointer
+  cursor pointer
+::-webkit-input-placeholder
+:-ms-placeholder
+::-moz-placeholder
+:-ms-input-placeholder
+::-webkit-input-placeholder
+    color #999 
+
+.el-textarea.is-disabled .el-textarea__inner
+  background-color #eee
+  color #333
+.modal .box-wrapper .box
+  max-height 6rem
+  overflow-y auto
+  overflow-x hidden
+
+.el-textarea.is-disabled .el-textarea__inner
+  background-color #eee
+  color #333
+  
+// el-table__empty-text
+.el-table__empty-block
+  // position relative
+  // margin-top .2rem
+  // height 1rem
+  // background url($ASSETS/404/empty-table.png) center top no-repeat
+  .el-table__empty-text
+    // vertical-align bottom
+    // transform: translate(-50%, 250%)
+    
+  
+.el-table
+  // &.bg-white
+  .bg-white
+    background-color #fff
+    color #333
+  .bg-light-blue
+    background-color #f2faff
+  .bg-light-danger
+    background-color #fff2f3
+    
+  tr.bg-white
+    td
+      background-color #fff
+  tr.border-top
+    td
+      border-top 2px solid #bbb
+  .cell
+    .ball
+      display inline-block
+      width .2rem
+      height .2rem
+      background-color BLUE
+      color #fff
+      line-height .2rem
+      radius(50%)
+      &.danger
+        background-color DANGER
+
+/*
+ *user select
+ */
+&::selection
+  // color WHITE
+  // background-color BLUE
+/*
+ *scroll-bar
+ */
+*:not(:hover)
+  &::scrollbar-thumb
+    background-color transparent
+    
+::-webkit-scrollbar
+  width .1rem
+  height .1rem
+  radius()
+  background-color transparent
+  
+  &:hover
+    background-color rgba(0,0,0,.2)
+
+::-webkit-scrollbar-track::hover
+  box-shadow inset 0 0 6px transparent
+ 
+::-webkit-scrollbar-thumb
+  radius()
+  background-color rgba(0,0,0,.3)
+  &:hover
+    background-color rgba(0,0,0,.5)
+
+.el-scrollbar__thumb
+  background-color #999
+
+// el-loading 
+.el-loading-mask
+  radius()
+.dialog-page .el-loading-mask
+  top TH
+  border-top-left-radius 0
+  border-top-right-radius 0
+/*
+ *el-breadcrumb
+ */
+ .el-breadcrumb__item__inner, .el-breadcrumb__item__inner a
+   color BLUE
+
+.el-breadcrumb__item__inner a:hover 
+.el-breadcrumb__item__inner:hover
+  color BLUE-HOVER
+
+.el-breadcrumb__item:last-child .el-breadcrumb__item__inner, .el-breadcrumb__item:last-child .el-breadcrumb__item__inner a, .el-breadcrumb__item:last-child .el-breadcrumb__item__inner a:hover, .el-breadcrumb__item:last-child .el-breadcrumb__item__inner:hover
+  color #666
+.el-breadcrumb__separator
+  color #999
+  
+/*
+ *el-message
+ */
+ .el-message
+   position absolute
+
+// el-step
+.el-step__line-inner
+  border-width 2px !important
+.el-step__line.is-horizontal
+  height 5px !important
+  
+// success
+.el-step__description
+  color GREY !important
+
+.el-step__head.is-text.is-success
+  // color GREEN
+  border-color GREEN
+  background-color GREEN
+.el-step__title.is-success
+  color GREEN
+
+
+// error
+.el-step__head.error
+  .el-step__line-inner
+    border-color #bfcbd9
+
+  .el-step__icon .el-icon-circle-close
+    font-size 31px
+    color DANGER
+// error text
+.el-step__title.error 
+  color DANGER
+  font-weight bold
+  
+
+// process
+.el-step__head.is-process.is-text
+  background-color GREEN
+  border-color GREEN
+  .el-step__line-inner
+    border-color #bfcbd9
+  
+  
+/*
+ *rewrite el-dialog
+ */
+ DHH = .36rem
+.el-dialog
+  radius()
+  background none
+  overflow hidden
+  .el-dialog__header
+    padding 0 0 0 .2rem
+    line-height DHH
+    font-size .12rem
+    background-color #d8d8d8
+    // radius()
+    // border-bottom-left-radius 0
+    // border-bottom-right-radius 0
+    .el-dialog__title
+      font-size .12rem
+      color #333
+      font-weight bold
+      // font-shadow()
+    .el-dialog__headerbtn
+      .el-icon
+        text-align center
+        width DHH
+        height DHH
+        line-height DHH
+        color GREY
+        &:last-child
+          // border-top-left-radius 0
+          // border-bottom-left-radius 0
+          // border-bottom-right-radius 0
+        &:hover
+          background-color #f34
+          color #fff
+        &:active
+          color #fff
+          background-color #d40c1d
+          
+        // &:hover
+        //   // color WHITE
+        //   background #ccc
+        //   // background-color DANGER-HOVER
+        // &:active
+        //   background #bbb
+        //   // background-color DANGER-ACTIVE 
+        
+  .el-dialog__body
+    padding 0
+
+/*
+ *rewrite el-popover
+ */
+ .el-popover.table-popover
+   background-color #fff
+
+.el-popover .popper__arrow
+    display none
+.el-popover
+  min-width auto
+  font-size .14rem
+  padding PW .3rem
+  background rgba(0, 0, 0, .6)
+  radius()
+  border 0
+  &.false
+    display none
+  &.popover-blue
+    padding 0
+    min-width auto
+    text-align center
+    font-size .12rem
+    color #b0cfe3
+    background-color rgba(22, 113, 188, .95)
+    shadow()
+    font-shadow()
+    
+   
+    
+.el-icon-star-on
+  &:before
+    color GOLD
+
+/*
+ *rewrite el-select
+ */
+.el-select
+.el-date-editor
+  vertical-align middle
+
+.el-select:hover .el-input__inner
+  border-color BLUE
+// .el-select
+//   display inline-block
+//   line-height .3rem
+//   width 1.2rem
+//   color #666
+//   border 1px solid #ccc
+//   radius()
+//   shadow(0 0 2px rgba(0,0,0,.2))
+//   &:hover
+//     border-color BLUE
+//   &:active
+//     border-color transparent
+//     box-shadow 0 0 5px BLUE
+//   .el-input__inner
+//     height auto
+//     line-height .3rem
+//     padding-top 0
+//     padding-bottom 0
+//     border none
+//   .el-input .el-input__icon
+//     color #666
+//   &.width1-5rem
+//     width 1.5rem
+    
+.el-select-dropdown
+  font-size .12rem
+  padding 0
+  min-width auto
+  text-align left
+  font-size .12rem
+  color #ccc
+  background-color #302b2a
+  // background-color rgba(22, 113, 188, .95)
+  border none
+  vertical-align middle
+  shadow()
+  radius()
+  .el-select-dropdown__item
+    height .3rem
+    line-height .3rem
+    padding 0 PW
+    color inherit
+    &.selected
+    &.hover
+      color WHITE
+      background-color BLUE
+      
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected
+  background-color BLUE
+  color #fff
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected.hover
+  background-color BLUE-ACTIVE
+  
+.el-select-dropdown__item.is-disabled:hover
+  background-color #777
+  
+/*
+ *rewrite el-slider
+ */
+  .el-slider__button-wrapper .el-tooltip
+    vertical-align super 
+  .el-slider
+    display inline-block
+    width 1.5rem
+    vertical-align middle
+    .el-slider__bar
+      background-color #444
+    .el-slider__runway
+      background-color #ddd
+    .el-slider__button
+      background-color #fff
+      border 1px solid #444
+/*
+ *rewrite el-table
+ */
+  table-bg(x = #fff)
+    background-color x
+    tr 
+      background-color x
+  table-header-bg(x = transparent)
+    th 
+      background-color x
+      // bg-gradient(180deg, #ddd, #eee)
+      // background-image: linear-gradient(0deg, #e7e7e7 0%, #cccccc 100%);
+      background: #eee
+      
+      .cell
+        background-color x
+        // bg-gradient(180deg, #ddd, #eee)
+        // background-image: linear-gradient(0deg, #e7e7e7 0%, #cccccc 100%);
+        background: #eee
+        
+  table-header-color(x = #333)
+    th
+      .cell
+        color x
+  table-border(x = none)
+    border x
+    // .el-table--border td, .el-table--border th
+    // .el-table--border th, .el-table__fixed-right-patch
+    //   border x
+      
+    th
+    th.is-leaf
+    td
+      border x
+  
+  has-border(x = 1px solid #d4d4d4)
+    // border x
+    .el-table__header td
+      border-bottom x
+      border-right 1px  solid #e6e6e6
+    .el-table__header th
+      border-bottom x
+      
+    .el-table__body td
+      border-right 1px  solid #e6e6e6
+
+    .el-table__header
+      border-bottom 1px solid #bbb
+      
+
+  table-header-font-weight(x = normal)
+    th 
+      font-weight x 
+       
+  table-row-hover(x = #d8e6ef)
+    .el-table--enable-row-hover .el-table__body tr:hover>td
+      background-color x
+
+  // table-row-selected(x = #f1e0e1)
+  table-row-selected(x = #ffe9d6)
+    tr.selected-row td
+      background-color x
+  table-row-height(x = .36rem)
+    td
+      height .36rem
+      .cell
+        // line-height 1
+   table-header-height(x = .36rem)
+    th
+      height .36rem
+      .cell
+        // line-height 1
+
+  .el-table__fixed-header-wrapper thead div, .el-table__header-wrapper thead div
+    color inherit
+    background-color inherit
+    
+  #app.night .el-table--striped .el-table__body tr td
+    background #444
+    
+  #app.night .el-table--striped .el-table__body tr:nth-child(2n) td
+    background #555
+  #app.night .el-table__header-wrapper th
+  #app.night .el-table__header-wrapper th .cell
+    background #555
+  
+    
+  .el-table::before
+  .el-table::after
+  .el-table__fixed::before
+  .el-table__fixed::after
+    display none
+    
+  .el-table--enable-row-hover .el-table__body tr:hover>td
+  .el-table--enable-row-hover .el-table__body tr.el-table__row--striped:hover>td
+    // background-color #d8e6ef
+    background-color #fffde5
+
+  #app.night .el-table
+    background #666
+  
+
+  .el-table
+    table tr
+      // background none
+    margin .05rem 0
+    margin-bottom 0
+    font-size .12rem
+    color #666
+    // 头部文字按钮
+    th.actions .cell
+      color #999 
+      cursor pointer
+      
+    table-bg()
+    table-header-bg()
+    table-header-color()
+    &.has-border
+      has-border()
+    &:not(.has-border)
+      table-border()
+    
+        
+    table-header-font-weight()
+    table-row-selected()
+    table-row-height()
+    table-header-height()
+    
+    .el-table__body tr.el-table__row--striped td
+      background-color #f8f8f8
+
+    &.header-bold
+      th
+        .cell
+          font-weight bold
+    
+    &.margin
+      td
+      height auto
+        .cell
+          margin .05rem 0
+    
+    &.nopadding
+      .cell
+        padding 0 .02rem
+      th > div.cell
+        padding 0.05rem .02rem
+        line-height .2rem
+        background none
+  
+  .el-table.trend-table
+    td
+      height auto
+      .cell
+        line-height .2rem
+    th
+      height auto
+      .cell
+        line-height .2rem
+    
+    th 
+      background-color transparent
+      background none
+      .cell
+        background none
+        background-color transparent
+        
+  TABLEH = 6rem
+  .el-table
+    // width "calc(100% - %s)" % s
+    .el-table__body-wrapper
+      // padding-right .3rem
+      // max-height TABLEH
+
+  
+
+
+  
+[class*=el-input].center input
+  text-align center
+[class*=el-input].blue input
+  color BLUE
+  
+
+.el-textarea
+  &.font-12
+    textarea
+      font-size .12rem
+/*
+ *rewrite el-pagination
+ */
+
+#app.night .el-pagination
+  color #ccc
+  background #555
+  
+.el-pagination
+  // margin-top
+  padding .07rem 0
+  margin-bottom 0
+  text-align center
+  color #666
+  // background-color #ddd
+  bg-gradient(180deg, #eee, #ddd)
+  margin-bottom PW
+  .el-pager li:hover
+    color BLUE
+  .el-pager li.active
+    border-color BLUE
+    background-color BLUE
+    color #fff
+  button
+  button.btn-next
+  button.btn-prev
+  .el-pager li
+    radius()
+    background-color transparent
+    
+.el-pager li 
+  background-color transparent
+.el-pagination button.disabled
+  background-color transparent  
+.el-pagination span
+  height 22px
+  line-height 24px
+
+/*
+ *font class define
+ */
+.font-white
+  color WHITE
+  font-shadow()
+.font-light
+  color LIGHT
+  font-shadow()
+.font-grey
+  color GREY
+  font-shadow()
+.font-blue
+  color BLUE
+  font-shadow()
+.font-danger
+  color RED
+  font-shadow()
+.font-gold
+  color GOLD
+  font-shadow()
+  
+.text-white
+  color WHITE
+.text-light
+  color LIGHT
+.text-grey
+  color GREY
+.text-blue
+  color BLUE
+.text-oblue
+  color OBLUE
+.text-danger
+  color RED
+.text-gold
+  color GOLD
+.text-green
+  color GREEN
+.text-black
+  color #333
+.text-bbb
+  color #bbb
+.text-666
+  color #666
+.text-999
+  color #999
+.text-orange
+  color ORANGE
+.text-bold
+  font-weight bold
+.text-center
+  text-align center
+    
+
+/*
+ *icons class define
+ */
+  
+  .ds-icon-skins
+    background url($ASSETS/righter/01.png) center no-repeat
+
+  .ds-icon-classic
+    background url($ASSETS/righter/02_jing.png) center no-repeat
+    // opacity .8
+    &.off
+      background url($ASSETS/righter/02_shang.png) center no-repeat
+
+  .ds-icon-day
+    background url($ASSETS/righter/03_ri.png) center no-repeat
+    // opacity .8
+    &.off
+      background url($ASSETS/righter/03_ye.png) center no-repeat
+      
+
+  .ds-icon-volume
+    background url($ASSETS/v.png) center no-repeat
+    // opacity .8
+    &.off
+      background url($ASSETS/vn1.png) center no-repeat
+      opacity .30
+
+  .ds-icon-rmb-sign
+      background url($ASSETS/icon_rmb.png) left center no-repeat
+      // input
+      //   color GOLD !important
+      //   border none !important
+      //   background none !important
+  
+  // VR game
+  .ds-icon-game-vr
+    background url($ASSETS/VR/vr_90.png) center no-repeat
+  .ds-icon-game-vr2
+    background url($ASSETS/VR/vr_wf.png) center no-repeat
+  .ds-icon-game-vr3
+    background url($ASSETS/VR/vr_sf.png) center no-repeat
+  .ds-icon-game-vr4
+    background url($ASSETS/VR/vr_sc.png) center no-repeat
+  .ds-icon-game-vr5
+    background url($ASSETS/VR/vr_yt.png) center no-repeat
+  .ds-icon-game-vr6
+    background url($ASSETS/VR/vr_bjl.png) center no-repeat
+  .ds-icon-game-vr7
+    background url($ASSETS/VR/vr_lhc.png) center no-repeat
+  
+  // game icons
+  .ds-icon-game-lhg00
+      background url($ASSETS/game/new/lhg00.png) center no-repeat
+
+
+  .ds-icon-game-lhg01
+      background url($ASSETS/game/new/lhg01.png) center no-repeat
+  
+  .ds-icon-game-lhg02
+      background url($ASSETS/game/new/lhg02.png) center no-repeat
+
+  .ds-icon-game-chq
+      background url($ASSETS/game/new/xxc_cq.png) center no-repeat
+  
+  .ds-icon-game-xj
+      background url($ASSETS/game/new/xxc_xj.png) center no-repeat
+  
+  .ds-icon-game-tj
+      background url($ASSETS/game/new/xxc_tj.png) center no-repeat
+      
+  .ds-icon-game-hl
+      background url($ASSETS/game/04_big.png) center no-repeat
+  
+  .ds-icon-game-xf
+      background url($ASSETS/game/05_big.png) center no-repeat
+
+  .ds-icon-game-shh
+      background url($ASSETS/game/06_big.png) center no-repeat
+
+  .ds-icon-game-dl
+      background url($ASSETS/game/07_big.png) center no-repeat
+  
+  .ds-icon-game-gd
+      background url($ASSETS/game/new/115_gd.png) center no-repeat
+  .ds-icon-game-jx115
+      background url($ASSETS/game/new/115_jx.png) center no-repeat
+  
+  .ds-icon-game-hb115
+      background url($ASSETS/game/new/115_hb.png) center no-repeat
+  
+  .ds-icon-game-kt115
+      background url($ASSETS/game/new/115_kt.png) center no-repeat
+  
+  .ds-icon-game-ahK3
+      background url($ASSETS/game/new/k3_ah.png) center no-repeat
+  
+  .ds-icon-game-jsK3
+      background url($ASSETS/game/new/k3_js.png) center no-repeat
+  
+  .ds-icon-game-jlK3
+      background url($ASSETS/game/new/k3_jl.png) center no-repeat
+  
+  .ds-icon-game-bjK3
+      background url($ASSETS/game/new/k3_bj.png) center no-repeat
+  
+  .ds-icon-game-ktK3
+      background url($ASSETS/game/new/k3_kt.png) center no-repeat
+        
+  
+  .ds-icon-game-dj
+      background url($ASSETS/game/09_big.png) center no-repeat
+      
+  .ds-icon-game-bj
+      background url($ASSETS/game/10_big.png) center no-repeat
+      
+  .ds-icon-game-bjpk10
+      background url($ASSETS/game/new/qt_pk10.png) center no-repeat
+
+  .ds-icon-game-fc
+      background url($ASSETS/game/new/qt_3d.png) center no-repeat
+      
+  .ds-icon-game-kt3D
+      background url($ASSETS/game/new/qt_3d_kt.png) center no-repeat
+  
+  .ds-icon-game-pl5
+      background url($ASSETS/game/new/qt_p5.png) center no-repeat
+  
+  .ds-icon-game-pl35
+      background url($ASSETS/game/new/qt_35.png) center no-repeat
+  
+
+  .ds-icon-game-11ydj
+      background url($ASSETS/game/new/11yun.png) center no-repeat
+
+  .ds-icon-game-ks
+      background url($ASSETS/game/15_big.png) center no-repeat
+  
+  .ds-icon-game-hljssc
+      background url($ASSETS/game/16_big.png) center no-repeat
+  
+  .ds-icon-game-jxssc
+      background url($ASSETS/game/17_big.png) center no-repeat
+        
+  .ds-icon-game-bjssc
+      background url($ASSETS/game/new/xxc_bj.png) center no-repeat
+      
+  .ds-icon-game-hlffc
+      background url($ASSETS/game/new/ffc_hl.png) center no-repeat
+
+  
+      
+  .ds-icon-game-twssc
+      background url($ASSETS/game/new/xxc_tw.png) center no-repeat
+      
+  .ds-icon-game-cb30
+      background url($ASSETS/game/new/ffc_30.png) center no-repeat
+      
+  .ds-icon-game-cb60
+      background url($ASSETS/game/new/ffc_60.png) center no-repeat
+  
+  .ds-icon-game-cb120
+      background url($ASSETS/game/new/ffc_120.png) center no-repeat
+
+
+  .ds-icon-game-hg15
+      background url($ASSETS/game/new/ffc_hg.png) center no-repeat
+        
+  .ds-icon-game-dj15
+      background url($ASSETS/game/new/ffc_dj.png) center no-repeat
+  
+  .ds-icon-game-ffctx
+      background url($ASSETS/game/new/ffc_tx.png) center no-repeat
+        
+  .ds-icon-game-tw5
+      background url($ASSETS/game/21_big.png) center no-repeat
+      
+  .ds-icon-game-lhc
+      background url($ASSETS/game/new/qt_lhc.png) center no-repeat
+  .ds-icon-game-ffcqq
+      background url($ASSETS/game/new/ffc_qq.png) center no-repeat
+
+        
+  [class*="dis-icon-game-"]
+  &[class*="middle"]
+    background-size .7rem .7rem
+  .submenu [class*="ds-icon-game-"]
+    &.sign:after
+      content ''
+      position absolute
+      top 0
+      left 0
+      width .4rem
+      height .4rem
+    &.hot:after
+      background url($ASSETS/game/new/icon_hot.png) center no-repeat
+    &.new:after
+      left .07rem
+      background url($ASSETS/game/new/icon_new.png) center no-repeat
+
+       
+      
+      
+  .ds-icon-notice
+      background url($ASSETS/notice.png) PW 0.6*PW no-repeat
+  .ds-icon-notice-large
+      background url($ASSETS/notice-large.png) center top no-repeat
+      
+  .ds-icon-question-large
+      background url($ASSETS/question-large.png) center top no-repeat 
+  .ds-icon-text-question
+      background url($ASSETS/text-question.png) right center no-repeat 
+      padding-right .2rem
+
+  .ds-icon-user
+    background url($ASSETS/user.png) PW center no-repeat
+  .ds-icon-pwd
+    background url($ASSETS/pwd.png) PW center no-repeat
+  .ds-icon-edit
+    background url($ASSETS/edit.png) PW center no-repeat
+  
+  #app.cb.v2 .login-form,
+  #app.cb.v2 .try-form
+    .ds-icon-user
+      background url($ASSETS/v2/1.png) PW center no-repeat #fff !important
+    .ds-icon-pwd
+      background url($ASSETS/v2/2.png) PW center no-repeat #fff !important
+    .ds-icon-edit
+      background url($ASSETS/v2/3.png) PW center no-repeat #fff !important
+
+  .ds-icon-code
+    background url($ASSETS/code.png) center no-repeat
+  .ds-icon-success
+    background url($ASSETS/success.png) left top no-repeat
+  .ds-icon-success-large
+    background url($ASSETS/success-large.png) center top no-repeat
+  .ds-icon-logo-middle
+    background url($ASSETS/cb_logo.png) center top no-repeat 
+    // background url($ASSETS/logo-middle.png) center top no-repeat 
+  .ds-icon-pot
+    background url($ASSETS/pot.png) center top no-repeat
+  
+
+  .ds-icon-home
+    background url($ASSETS/home.png) center center no-repeat
+  .ds-icon-home-middle
+    background url($ASSETS/home-middle.png) center center no-repeat
+
+  .ds-icon-game
+    background url($ASSETS/game.png) center center no-repeat
+  .ds-icon-game-middle
+    background url($ASSETS/game-middle.png) center center no-repeat
+  .ds-icon-game-small
+    background url($ASSETS/game-small.png) .3rem center no-repeat
+
+  .ds-icon-me
+    background url($ASSETS/me.png) center center no-repeat
+  .ds-icon-me-middle
+    background url($ASSETS/me-middle.png) center center no-repeat
+  .ds-icon-me-small
+    background url($ASSETS/me-small.png) .3rem center no-repeat
+
+  .ds-icon-group
+    background url($ASSETS/group.png) center center no-repeat
+  .ds-icon-group-middle
+    background url($ASSETS/group-middle.png) center center no-repeat
+  .ds-icon-group-small
+    background url($ASSETS/group-small.png) .3rem center no-repeat
+
+  .ds-icon-record
+    background url($ASSETS/record.png) center center no-repeat
+  .ds-icon-record-middle
+    background url($ASSETS/record-middle.png) center center no-repeat
+  .ds-icon-record-small
+    background url($ASSETS/record-small.png) .3rem center no-repeat
+  
+
+  .ds-icon-gift
+    background url($ASSETS/gift.png) center center no-repeat
+  .ds-icon-gift-middle
+    background url($ASSETS/gift-middle.png) center center no-repeat
+  .ds-icon-gift-small
+    background url($ASSETS/gift-small.png) .3rem center no-repeat
+    
+  .ds-icon-help
+    background url($ASSETS/help.png) center center no-repeat
+  .ds-icon-help-middle
+    background url($ASSETS/help-middle.png) center center no-repeat
+  .ds-icon-help-small
+    background url($ASSETS/help-small.png) .3rem center no-repeat
+    
+  .ds-icon-download
+    background url($ASSETS/download.png) center center no-repeat
+  .ds-icon-download-middle
+    background url($ASSETS/download-middle.png) center center no-repeat
+  .ds-icon-download-small
+    background url($ASSETS/download-small.png) center center no-repeat
+
+  .ds-icon-chat
+    background url($ASSETS/chat.png) center center no-repeat
+  .ds-icon-chat-middle
+    background url($ASSETS/chat-middle.png) center center no-repeat
+    &.disabled
+      background url($ASSETS/chat-middle-disabled.png) center center no-repeat
+    
+  .ds-icon-item-middle
+    background url($ASSETS/item-middle.png) left center no-repeat
+  .ds-icon-item
+    background url($ASSETS/item.png) left center no-repeat
+
+  .ds-icon-m
+    background url($ASSETS/m.png) left center no-repeat
+    position relative
+    &.vip:after
+      font-size .08rem
+      position absolute
+      left .18rem
+      top -.07rem
+      content  'vip'attr(level)
+      // content attr('level')
+      display inline-block
+      width .36rem
+      height .16rem
+      font-size 10px
+      // line-height .15rem
+      line-height 1.2
+      color #fff
+      text-align center
+      bg-gradient(180deg, #d0b968, #baa148)
+      // radius(1px)
+      // background url($ASSETS/vip.png) center no-repeat
+
+  .ds-icon-money
+    background url($ASSETS/$.png) left center no-repeat
+    
+  .ds-icon-bg-money
+    background url($ASSETS/v2/bg_logo.png) left center no-repeat
+
+  .ds-icon-free
+    background url($ASSETS/$-red.png) left center no-repeat
+  
+  .ds-icon-add-item
+    background url($ASSETS/add-item.png) center no-repeat
+  
+  .ds-icon-clock
+    background url($ASSETS/clock.png) left center no-repeat
+    
+  .ds-icon-polyline
+    background url($ASSETS/polyline.png) .08rem center no-repeat
+  
+  // 115
+  // .ds-icon-G115-1
+  //   background url($ASSETS/qiu01.png) center no-repeat
+  // .ds-icon-G115-2
+  //   background url($ASSETS/qiu02.png) center no-repeat
+  // .ds-icon-G115-3
+  //   background url($ASSETS/qiu03.png) center no-repeat
+  // .ds-icon-G115-4
+  //   background url($ASSETS/qiu04.png) center no-repeat
+  // .ds-icon-G115-5
+  //   background url($ASSETS/qiu05.png) center no-repeat
+
+  // PK10
+  .ds-icon-PK10
+    background url($ASSETS/car_gray.png) center no-repeat
+    &:hover
+      background url($ASSETS/car_blue.png) center no-repeat
+    &.selected
+      background url($ASSETS/car_blue.png) center no-repeat
+      
+  .ds-icon-PK10.ds-icon-PK10-ft
+    padding-top .1rem
+    background url($ASSETS/bg_feiting_gray.png) center no-repeat
+    background-size 1.04rem !important
+    &:hover
+      background url($ASSETS/bg_feiting_color.png) center no-repeat
+    &.selected
+      background url($ASSETS/bg_feiting_color.png) center no-repeat
+      
+  // .ds-icon-PK10-1
+  //   background url($ASSETS/car_colour01.png) center no-repeat
+  // .ds-icon-PK10-2
+  //   background url($ASSETS/car_colour02.png) center no-repeat
+  // .ds-icon-PK10-3
+  //   background url($ASSETS/car_colour03.png) center no-repeat
+  // .ds-icon-PK10-4
+  //   background url($ASSETS/car_colour02.png) center no-repeat
+  // .ds-icon-PK10-5
+  //   background url($ASSETS/car_colour01.png) center no-repeat
+  
+  // Me
+  .ds-icon-me-avatar
+    background url($ASSETS/me-avatar.png) center no-repeat
+  .ds-icon-luckchance
+    background url($ASSETS/luck-chance.png) left no-repeat
+  
+  // Safe
+  .ds-icon-greeting
+    background url($ASSETS/greeting.png) left center no-repeat
+    &.on
+      background url($ASSETS/greeting-active.png) left center no-repeat
+  .ds-icon-phone
+    background url($ASSETS/phone.png) left center no-repeat
+    &.on
+      background url($ASSETS/phone-active.png) left center no-repeat
+  .ds-icon-email
+    background url($ASSETS/email.png) left center no-repeat
+    &.on
+      background url($ASSETS/email-active.png) left center no-repeat
+  .ds-icon-safe
+    background url($ASSETS/safe.png) left center no-repeat
+    &.on
+      background url($ASSETS/safe-active.png) left center no-repeat
+  
+  .ds-icon-lock
+    background url($ASSETS/lock.png) left center no-repeat
+  .ds-icon-birthday
+    background url($ASSETS/birthday.png) left center no-repeat
+  .ds-icon-nickname
+    background url($ASSETS/nickname.png) left center no-repeat
+  .ds-icon-safecheck
+    background url($ASSETS/safe-check.png) left center no-repeat
+  
+  .ds-icon-cbsafe
+    background url($ASSETS/gray_08.png) left center no-repeat
+  
+  .ds-icon-set
+    padding-right PWX
+    color GREEN
+    background url($ASSETS/set.png) right center no-repeat
+  .ds-icon-unset
+    padding-right PWX
+    color DANGER
+    background url($ASSETS/unset.png) right center no-repeat
+  
+  // bankCard
+  .ds-icon-bank-card
+    width 167px
+    height 40px
+    margin .05rem 
+    display inline-block
+    radius()
+    vertical-align middle
+    
+    &:not(.static)
+      shadow(.02rem .02rem .02rem rgba(0, 0, 0, .1))
+      border 1px solid #ccc
+      
+    
+    &:not(.static):hover
+      border 1px solid BLUE
+
+    &:not(.static).selected
+      border 1px solid BLUE
+      &:before
+        content ''
+        // position absolute
+        // left 0
+        // top 0 
+        // right 0
+        // bottom 0
+        width 100%
+        height 100%
+        display inline-block
+        background-color rgba(26, 159, 243, .2)
+    &.qqwallet
+      background url($ASSETS/bankcard/qqwallet.png) #fff .1rem center no-repeat
+    
+    &.bdwallet
+      background url($ASSETS/bankcard/bdwallet.png) #fff .1rem center no-repeat
+      
+    &.dy
+      background url($ASSETS/bankcard/dy.png) #fff .1rem center no-repeat
+    &.bjnshyh
+      background url($ASSETS/bankcard/bjnshyh.png) #fff .1rem center no-repeat
+    &.shhnshyh
+      background url($ASSETS/bankcard/shhnshyh.png) #fff .1rem center no-repeat
+    
+
+    &.alipay
+      background url($ASSETS/bankcard/alipay.png) #fff .1rem center no-repeat
+    
+    &.wepay
+      background url($ASSETS/bankcard/wepay.png) #fff .1rem center no-repeat
+
+    &.zggsh
+      background url($ASSETS/bankcard/zggsh.png) right center no-repeat
+    
+    &.zhshyh
+      background url($ASSETS/bankcard/zhshyh.png) right center no-repeat
+    
+    &.zgnyyh
+      background url($ASSETS/bankcard/zgnyyh.png) right center no-repeat
+    
+    &.zgjshyh
+      background url($ASSETS/bankcard/zgjshyh.png) right center no-repeat
+    
+    &.jtyh
+      background url($ASSETS/bankcard/jtyh.png) right center no-repeat
+    
+    &.xyyh
+      background url($ASSETS/bankcard/xyyh.png) right center no-repeat
+    
+    &.zgmshyh
+      background url($ASSETS/bankcard/zgmshyh.png) right center no-repeat
+    
+    &.zgyh
+      background url($ASSETS/bankcard/zgyh.png) right center no-repeat
+    
+    &.payh
+      background url($ASSETS/bankcard/payh.png) right center no-repeat
+    
+    &.zhxyh
+      background url($ASSETS/bankcard/zhxyh.png) right center no-repeat
+    
+    &.gfyh
+      background url($ASSETS/bankcard/gfyh.png) right center no-repeat
+    
+    &.pfyh
+      background url($ASSETS/bankcard/pfyh.png) right center no-repeat
+    
+    &.zgyzhchxyh
+      background url($ASSETS/bankcard/zgyzhchxyh.png) right center no-repeat
+    
+    &.shzhfzhyh
+      background url($ASSETS/bankcard/shzhfzhyh.png) right center no-repeat
+    
+    &.bjyh
+      background url($ASSETS/bankcard/bjyh.png) right center no-repeat
+    
+    &.zggdyh
+      background url($ASSETS/bankcard/zggdyh.png) right center no-repeat
+    
+    &.shhyh
+      background url($ASSETS/bankcard/shhyh.png) right center no-repeat
+    
+    &.hxyh
+      background url($ASSETS/bankcard/hxyh.png) right center no-repeat
+    &.bhyh
+      background url($ASSETS/bankcard/bhyh.png) #fff .1rem center no-repeat
+    
+    &.njyh
+      background url($ASSETS/bankcard/njyh.jpg) #fff .1rem center no-repeat
+    
+    &.nbyh
+      background url($ASSETS/bankcard/nbyh.jpg) #fff .1rem center no-repeat
+    
+    &.fast
+      background url($ASSETS/bankcard/bank_kj.jpg) #fff .1rem center no-repeat
+    
+    &.unionpay
+      background url($ASSETS/bankcard/bank_yl.jpg) #fff .1rem center no-repeat
+      
+    &.jd
+      background url($ASSETS/bankcard/bank_jd.jpg) #fff .1rem center no-repeat
+
+    &.bank
+      background url($ASSETS/bankcard/bank.jpg) #fff .1rem center no-repeat
+
+    &.bigbank
+      background url($ASSETS/bankcard/dewy.jpg) #fff .1rem center no-repeat
+      
+    &.weixinquota
+      background url($ASSETS/bankcard/weixinquota.jpg) #fff .1rem center no-repeat
+      
+    &.zfbquota
+      background url($ASSETS/bankcard/zfbquota.png) #fff .1rem center no-repeat
+
+    &.online
+      background url($ASSETS/bankcard/icon_zf_zxzf.jpg) #fff .1rem center no-repeat
+    
+    &.zfb_base
+      background url($ASSETS/bankcard/zfb_base.jpg) #fff .1rem center no-repeat
+      
+    &.offline
+      background url($ASSETS/bankcard/offline.png) #fff .1rem center no-repeat
+  // 添加充值方式需要调整
+
+  // me/Bank.vue
+  .ds-icon-right-arrow
+    background url($ASSETS/right-arrow.png) right center no-repeat
+    
+  // QR
+  .ds-icon-QR
+    // background url(http://192.168.169.44:9901/cagamesclient/team/createAccount.do?method=createQr) left top no-repeat
+    background-size 140px 140px !important
+  
+  .ds-icon-cooking
+    background url($ASSETS/404/cooking.png) center no-repeat   
+    height 3rem
+    line-height 4.5rem
+    text-align center
+    &:after
+      content '正在研发中...'
+  // Stock
+  .ds-icon-stock-wait
+    background url($ASSETS/stock-wait.png) right top no-repeat   
+  .ds-icon-stock-modified
+    background url($ASSETS/stock-modified.png) right top no-repeat   
+  .ds-icon-stock-done
+    background url($ASSETS/stock-done.png) right top no-repeat   
+  .ds-icon-stock-paid
+    background url($ASSETS/stock-paid.png) right top no-repeat   
+  .ds-icon-stock-paid-out
+    background url($ASSETS/stock-paid-out.png) right top no-repeat
+  .ds-icon-stock-refused
+    background url($ASSETS/stock-refused.png) right top no-repeat
+  
+  .ds-icon-redpocket
+    background url($ASSETS/redpocket.jpg) center top no-repeat
+    
+    .title
+      font-size 18px
+      font-weight normal
+    .content
+      margin .2rem .3rem
+    .amount
+      font-family Roboto
+      font-size 0.48rem
+      color #fc0
+      vertical-align sub
+  
+  .ds-icon-activity-1
+    background url($ASSETS/activity/activity1.jpg) center top no-repeat
+    &.banner
+      background url($ASSETS/activity/banner1.jpg) center top no-repeat
+      
+  .ds-icon-activity-2
+    background url($ASSETS/activity/activity2.jpg) center top no-repeat
+    &.banner
+      background url($ASSETS/activity/banner2.jpg) center top no-repeat
+      
+  .ds-icon-activity-3
+    background url($ASSETS/activity/activity3.jpg) center top no-repeat
+    &.banner
+      background url($ASSETS/activity/banner3.jpg) center top no-repeat
+      
+  .ds-icon-activity-4
+    background url($ASSETS/activity/activity4.jpg) center top no-repeat
+    &.banner
+      background url($ASSETS/activity/banner4.jpg) center top no-repeat
+      
+  .ds-icon-activity-5
+    background url($ASSETS/activity/activity5.jpg) center top no-repeat
+    &.banner
+      background url($ASSETS/activity/banner5.jpg) center top no-repeat
+  
+  .ds-icon-activity-ticket
+    background url($ASSETS/activity/youhui.png) left center no-repeat
+    &.small
+      position relative
+      height .58rem
+      padding-left .7rem
+      background url($ASSETS/activity/youhui_small.png)left center no-repeat
+      &:before
+        position absolute
+        left 0
+        top 0
+        bottom 0
+        content ''
+        width .6rem
+        background-color #fff
+        z-index -1
+  
+  .ds-icon-activity-coin
+    background url($ASSETS/activity/jinbi.png)  left center no-repeat
+    &.small
+      height .58rem
+      padding-left .7rem
+      background url($ASSETS/activity/jinbi_small.png) left center no-repeat
+      &:before
+        position absolute
+        left 0
+        top 0
+        bottom 0
+        content ''
+        width .6rem
+        background-color #fff
+        z-index -1
+      
+  .ds-icon-full-screen
+    width .24rem
+    height .24rem
+    vertical-align middle
+    display inline-block
+    cursor pointer
+    opacity .7
+    &:hover
+      opacity 1
+    background url($ASSETS/quanping.png) left center no-repeat
+    &.no
+      background url($ASSETS/noquanping.png) left center no-repeat  
+    
+  .ds-icon-unfull-screen
+    background url($ASSETS/noquanping.png) left center no-repeat  
+    
+  .ds-icon-day-model
+    width 1.1rem
+    display inline-block
+    cursor pointer
+    text-align center
+    background url($ASSETS/baitian.png) .08rem.22rem no-repeat
+    &.no
+      background url($ASSETS/yewan.png) .08rem.22rem no-repeat 
+      
+  .ds-icon-night-model
+    background url($ASSETS/yewan.png) .03rem.22rem no-repeat 
+  
+  // download
+  .ds-icon-download-logo
+    background url($ASSETS/download/logo01.png) .3rem .3rem no-repeat 
+  .ds-icon-download-cbsafe
+    background url($ASSETS/download/logo02.png) .3rem .3rem no-repeat 
+  .ds-icon-download-chat
+    background url($ASSETS/download/logo03.png) .3rem .3rem no-repeat
+  
+  .ds-icon-download-ios
+    background url($ASSETS/download/ios.png) .2rem center no-repeat
+    position relative
+    .after
+      radius()
+      content ''
+      position absolute
+      top 0
+      left 0 
+      right 0 
+      bottom 0
+      background url($ASSETS/download/ios.png) .2rem center no-repeat
+      
+    .before
+      radius()
+      content ''
+      position absolute
+      top 0
+      left 0 
+      right 0 
+      bottom 0
+      bg-gradient(180deg, #515151, #6a6a6a)
+      
+      
+  .ds-icon-download-android
+    background url($ASSETS/download/android.png) #a3c435 .2rem center no-repeat
+    .after
+    .before
+      display none
+    
+  .ds-icon-download-windows
+    background url($ASSETS/download/windows.png) .2rem center no-repeat
+    .after
+    .before
+      display none
+
+  .switch-box
+    margin 0 .15rem 0 .05rem
+    .el-switch
+    .el-switch__core
+      height .28rem
+      line-height .28rem
+    .el-switch__label *
+        top .07rem
+    .el-switch__core .el-switch__button
+      width .2rem
+      height .2rem
+      margin-right .1rem
+      left -.02rem
+      
+/*
+ *buttons class define
+ */
+.buttons
+  &>.ds-button:not(:first-child)
+    margin-left .1rem
+
+.ds-button
+  display inline-block
+  padding 0 .22rem
+  // height .3rem
+  line-height .3rem
+  text-align center
+  color WHITE
+  font-size .14rem
+  border 0
+  radius(.02rem)
+  // box-shadow .02rem .02rem .02rem rgba(0, 0, 0, .2)
+  font-shadow()
+  user-select none
+  cursor pointer
+  box-sizing border-box
+  vertical-align middle
+  // border 1px solid rgba(0,0,0,0)
+  &.bold
+    font-weight bold
+  &.large
+    padding 0 .3rem
+  &.full
+    padding-left 0
+    padding-right 0
+    width 100%
+  &.small
+    padding 0 .15rem
+  &.x-small
+    padding 0 .1rem
+  &.xx-small
+    line-height 1
+    padding .035rem
+  &._3rem
+    width 3rem
+  &.tall
+    height .6rem
+    line-height .6rem
+    font-size .24rem
+  &.oval
+    border-top-left-radius 10% 50%
+    border-top-right-radius 10% 50%
+    border-bottom-left-radius 10% 50%
+    border-bottom-right-radius 10% 50%
+  &._36rem
+    line-height .36rem
+  
+  &.card
+    radius(0)
+    color #666
+    background-color #fff
+    &:not(.disabled):hover
+      background-color #e8f6ff
+    // &:not(.disabled):active
+    //   background-color BLUE-ACTIVE 
+  
+  &.primary
+    background-color BLUE
+    &:not(.disabled):hover
+      background-color BLUE-HOVER
+    &:not(.disabled):active
+      background-color BLUE-ACTIVE 
+  &.danger
+    background-color DANGER
+    &:not(.disabled):hover
+      background-color DANGER-HOVER
+    &:not(.disabled):active
+      background-color DANGER-ACTIVE 
+  &.positive
+    bg-gradient(90deg, BLUE, BLUE-ACTIVE) 
+    &:not(.disabled):hover
+      // bg-gradient(90deg, #33b0ff, #24ddce) 
+      bg-gradient(90deg, #ff8b1a, #ff643d) 
+    &:not(.disabled):active
+      background BLUE-ACTIVE
+      
+  &.high-positive
+    bg-gradient(180deg, #ffbf00, #e98800) 
+    &:not(.disabled):hover
+      bg-gradient(180deg, #ffcb2e, #ff9500) 
+    &:not(.disabled):active
+      background #df960a
+  
+  &.gold
+    color #911f1c
+    text-shadow none
+    background-color GOLD
+    &:not(.disabled):hover
+      background-color GOLD-HOVER
+    &:not(.disabled):active
+      background-color GOLD-ACTIVE 
+
+  &.secondary
+    color #606ba3
+    text-shadow none
+    bg-gradient(180deg, #f1f1f1, #e6e6e6)
+    &:not(.disabled):hover
+      bg-gradient(180deg, #fff, #f2f2f2)
+    &:not(.disabled):active
+      background #dedede
+  
+  &.cancel
+    background-color #889095
+    &:not(.disabled):hover
+      background-color #98a0a5
+    &:not(.disabled):active
+      background-color #798287 
+    
+
+  &.outline
+    font-size .12rem
+    color #666
+    background-color #fff
+    border .01rem solid #ccc
+    box-shadow .02rem .02rem .02rem rgba(0, 0, 0, .1)
+    text-shadow none
+    &:not(.disabled):not(.oblue):hover
+      border-color BLUE
+    &:not(.disabled):not(.oblue):active
+      color #333
+      background-color #f3f3f3
+      border-color #aaa
+    &.oblue
+      border-color OBLUE
+      color OBLUE
+      
+      
+  &.success
+    background-color #65c014
+    &:not(.disabled):hover
+      background-color #6bcb16
+    &:not(.disabled):active
+      background-color #65c014
+  
+  &.text-button
+    border 0
+    background-color transparent
+    box-shadow none
+    text-shadow none
+    &:not(.el-icon-close):hover
+      text-decoration underline
+  &.light
+    color LIGHT
+    &:not(.disabled):hover
+      color LIGHT-HOVER
+  &.light.wg
+    color #999
+    &:not(.disabled):hover
+      color #666
+  &.blue
+    color BLUE
+    &:not(.disabled):hover
+      color BLUE-HOVER
+  &.green
+    color GREEN
+    &:not(.disabled):hover
+      opacity .8    
+
+
+  &.input
+    padding 0 .04rem
+    width .4rem
+    text-align center
+    pointer text
+    .el-input__inner
+    .el-input__inner:focus
+    .el-input__inner:hover
+      box-shadow none
+      border none
+      
+    .el-input input.el-input__inner
+    input
+      box-shadow none
+      border none
+      width .3rem
+      padding 0
+      line-height .3rem
+      height .3rem
+      text-align center
+    &:not(.disabled):active
+      border none
+      background-color #fff
+      box-shadow 0 0 .05rem BLUE
+      
+
+  &.disabled
+    cursor not-allowed
+    background-image none
+    box-shadow none
+    text-shadow none
+    &.primary
+      color BLUE
+      background-color transparent
+      border .01rem solid BLUE
+    &.secondary
+      color LIGHT
+      bg-gradient(180deg, #f1f1f1, #e6e6e6)
+    &.danger
+      color DANGER
+      background-color transparent
+      border .01rem solid DANGER
+
+  // &.isworking
+  //   // font-size .18rem
+  //   color GOLD !important
+  //   background linear-gradient(135deg, #666, #666 10%, #333 10%, #333 20%, #666 20%, #666 30%, #333 30%, #333 40%, #666 40%, #666 50%, #333 50%, #333 60%, #666 60%, #666 70%, #333 70%, #333 80%, #666 80%, #666 90%, #333 90%, #333 100%) !important
+  //   // background linear-gradient(135deg, BLUE, BLUE 10%, DANGER 10%, DANGER 20%, BLUE 20%, BLUE 30%, DANGER 30%, DANGER 40%, BLUE 40%, BLUE 50%, DANGER 50%, DANGER 60%, BLUE 60%, BLUE 70%, DANGER 70%, DANGER 80%, BLUE 80%, BLUE 90%, DANGER 90%, DANGER 100%)
+  //   background-repeat repeat
+  //   background-position 0 0
+  //   background-size auto 100%
+  //   animation animatedBackground 500s linear infinite
+
+@keyframes animatedBackground {
+  from {
+    background-position 0 0
+  }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position 10000px 0
+  }
+}    
+
+.ds-button-group
+    // height .3rem
+    line-height .28rem
+    text-align left
+    display inline-block
+    vertical-align middle
+    margin PWX
+    radius()
+    overflow hidden
+    background-color #fff
+    border .01rem solid #ccc
+    // box-shadow .02rem .02rem .02rem rgba(0, 0, 0, .1)
+    box-sizing border-box
+    overflow visible
+    .ds-button:not(.el-icon-close)
+      position relative
+      color #666
+      text-shadow none
+      radius(0)
+      &:hover
+        color BLUE
+        text-decoration none
+      &:last-child
+        border-top-right-radius .02rem
+        border-bottom-right-radius .02rem
+      &:first-child
+        border-top-left-radius .02rem
+        border-bottom-left-radius .02rem
+      &.selected
+        background-color BLUE
+        color #fff
+      
+.ds-radio-label
+  display inline-block
+  padding 0 PW
+  cursor pointer
+  
+  &:hover
+    .ds-radio
+      border-color #999
+      &.white
+        border-color BLUE
+ 
+  &.active
+     .ds-radio
+        border-color BLUE
+        &:after
+          width .07rem
+          height .07rem 
+          background-color BLUE
+  &.disabled
+    opacity .3
+
+.forget-form .ds-radio-label
+  color LIGHT
+  &.active
+    color WHITE
+  
+  
+          
+  
+.ds-radio
+  position relative
+  top -.01rem
+  display inline-block
+  box-sizing border-box
+  width .2rem
+  height .2rem
+  border .01rem solid #ccc
+  radius(50%)
+  // shadow()
+  margin .05rem
+  vertical-align middle
+  &:hover
+    border-color #999
+  &.active
+    border-color BLUE
+    &:after
+      width .07rem
+      height .07rem 
+      background-color BLUE 
+  &:after
+    content ''
+    position absolute
+    left 50%
+    top 50%
+    width 100%
+    height 100%
+    radius(50%)
+    transform translate(-50%, -50%)
+    transition all .15s linear
+  
+  &.white
+    border 1px solid #ccc
+    background-color #fff
+    &:hover
+      border-color BLUE 
+  &.disabled
+    opacity .7
+    
+    
+.ds-checkbox-label
+.el-checkbox
+  display inline-block
+  margin-right .1rem
+  color #666
+  cursor pointer
+  &:not(.disabled):hover
+    .ds-checkbox
+    .el-checkbox__inner
+      border-color BLUE
+      &.transparent
+        border-color rgba(255, 255, 255, .4)
+  &.active
+    .ds-checkbox:after
+        transform rotate(45deg) scaleY(1)
+  
+  &.disabled
+    opacity .7
+
+          
+.el-checkbox__input.is-checked .el-checkbox__inner
+  background-color #fff
+  border-color #ccc
+  
+.ds-checkbox
+.el-checkbox__inner
+  position relative
+  top -.01rem
+  display inline-block
+  box-sizing border-box
+  width .2rem
+  height .2rem
+  radius()
+  // shadow()
+  margin-right .05rem
+  vertical-align middle
+  background-color WHITE
+  border .01rem solid #ccc
+  &.transparent
+    background-color transparent
+    border .01rem solid rgba(255, 255, 255, .2)
+  &:not(.disabled):hover
+    border-color BLUE
+  &.transparent:hover
+    border-color rgba(255, 255, 255, .4)
+  &.active
+    border-color #ccc
+    &:after
+      transform rotate(45deg) scaleY(1)
+      
+  &.transparent.active
+    border-color rgba(255, 255, 255, .4)
+  
+  
+  
+
+     
+
+  &:after
+    content ''
+    position absolute
+    width .05rem
+    height .12rem
+    box-sizing content-box
+    border 3px solid BLUE
+    border-bottom-right-radius .04rem
+    border-left 0
+    border-top 0
+    left .05rem
+    top .01rem
+    transform rotate(45deg) scaleY(0)
+    transition transform .15s cubic-bezier(.71,-.46,.88,.6) .05s
+    transform-origin center
+    
+    
+/*
+ * input class define
+ */
+
+.ds-input
+  // vertical-align middle
+  display inline-block
+  height .3rem
+  width 1.7rem
+  padding 0 .1rem
+  line-height .3rem
+  font-size .14rem
+  color #333
+  background-color #fff
+  border .01rem solid #ccc
+  radius()
+  // box-shadow .02rem .02rem .02rem rgba(0, 0, 0, .2)
+  box-sizing border-box
+  // input
+  //   height .3rem
+  //   line-height .3rem
+  //   padding 0
+  //   border none
+  &.block
+    width 100%
+  &.large
+    width 2.2rem
+  &.small
+    width 1.2rem
+  // &.text-danger
+  //   input
+  //     color DANGER
+  // &.text-right
+  //   input
+  //     text-align right
+  // &.text-center
+  //   input
+  //     text-align center
+  &:hover
+    border-color BLUE
+  &:focus
+    border-color BLUE
+    box-shadow 0 0 .05rem BLUE
+  
+  &:disabled
+    color #999
+    background-color #efefef
+    opacity .7
+    
+/*
+ *rewrite el-input-number
+ */
+.el-input-number
+  // box-shadow 0 0 2px rgba(0,0,0,.2)
+  vertical-align middle
+  overflow visible
+  radius()
+  .el-icon-minus
+  .el-icon-plus 
+    display none
+  
+  &.text-danger
+    .el-input .el-input__inner 
+      color DANGER
+  
+  &.text-right
+    .el-input .el-input__inner 
+      text-align right
+      
+.el-textarea__inner
+  // box-shadow .02rem .02rem .02rem rgba(0, 0, 0, .2)
+  &:hover
+    border-color BLUE
+  &:focus
+    border-color BLUE
+    box-shadow 0 0 .05rem BLUE
+    
+.el-input
+  vertical-align middle
+  .el-input__inner 
+    height .3rem !important
+    line-height .3rem
+    color #333
+    padding 0 .12rem
+    font-size .14rem
+    background-color #fff
+    border .01rem solid #ccc
+    radius()
+    // box-shadow .02rem .02rem .02rem rgba(0, 0, 0, .2)
+    box-sizing border-box
+    &:hover
+      border-color BLUE
+    &:focus
+      border-color BLUE
+      box-shadow 0 0 .05rem BLUE
+  
+  
+
+  
+    
+.text-ellipsis
+  display inline-block
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+  vertical-align middle
+  
+       

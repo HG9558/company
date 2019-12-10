@@ -1,0 +1,7 @@
+@import './var.stylus'
+body
+  [data-ng-app=custom-service] .dialog-container
+    .center .right .message-box ul .message .message-content
+      min-width 100px
+      padding-bottom 15px
+    

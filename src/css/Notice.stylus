@@ -1,0 +1,14 @@
+@import '../var.stylus'
+
+.notice
+  font-size .12rem
+  line-height .22rem
+  margin 0 .2rem
+  padding PWX
+  background-color #fffde8
+  border 1px solid #d5d09b
+  radius()
+  .content
+    display inline-block
+    margin 0
+    vertical-align top

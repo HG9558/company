@@ -1,0 +1,7 @@
+.el-carousel__arrow--left
+  left 50%
+  transform translateX(-6rem)
+
+.el-carousel__arrow--right
+  left 50%
+  transform translateX(5.6rem)

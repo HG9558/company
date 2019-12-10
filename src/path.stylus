@@ -1,0 +1,3 @@
+$ASSETS = 'assets'
+$VASSETS = '../assets'
+$CASSETS = '../assets'

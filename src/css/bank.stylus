@@ -1,0 +1,56 @@
+$ImgAsset = './assets/bankcard/new/'
+$payTypeImg= './assets/bankcard/new/type-'
+
+/*
+unionpay     银联扫码
+weixin       微信
+weixinquota  微信定额
+fast         快捷充值
+zfb          支付宝扫码
+zfb2bank     支付宝转帐
+bank         网银转账
+qqwallet     QQ钱包
+bdwallet     百度钱包
+jd           京东支付
+zfb_base     支付宝原生
+zfbquota     支付宝定额
+offline     专员代充
+
+添加充值方式需要调整
+*/
+
+payTypeImage($type) {
+  background-image url($payTypeImg + $type + '.jpg')
+  background-repeat no-repeat
+  background-position center
+}
+
+.type-offline
+  payTypeImage(offline)
+// 添加充值方式需要调整
+.type-zfbquota
+  payTypeImage(zfbquota)
+
+.type-unionpay
+  payTypeImage(unionpay)
+
+.type-weixin
+  payTypeImage(weixin)
+
+.type-weixinquota
+  payTypeImage(weixinquota)
+
+.type-fast
+  payTypeImage(fast)
+
+.type-zfb
+  payTypeImage(zfb)
+
+.type-zfb2bank
+  payTypeImage(zfb2bank)
+
+.type-bank
+  payTypeImage(bank)
+
+.type-zfb_base
+  payTypeImage(zfb_base)

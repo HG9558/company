@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <title>安全跳转中</title>
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.png" />
+
+  </head> 
+  <body>
+    <form id="TheForm" method="post" action="test.asp">
+      <input type="hidden" name="something" value="something" />
+      <input type="hidden" name="more" value="something" />
+      <input type="hidden" name="other" value="something" />
+    </form>
+    <script>
+      function openWindowWithPost(something, additional, misc) {
+        var f = document.getElementById('TheForm');
+        f.something.value = something;
+        f.more.value = additional;
+        f.other.value = misc;
+        // window.open('_blank', 'TheWindow');
+        f.submit();
+      }
+      openWindowWithPost()
+    </script>
+  </body>
+</html>

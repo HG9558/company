@@ -1,0 +1,86 @@
+html body .msg-modal-box
+  position absolute
+[data-ng-app="custom-service"] .ng-scope
+  .dialog-container.wap
+    &.heart
+      transform none
+    position absolute
+    top 0
+    left 0
+    right 0 !important
+    bottom 60px !important
+    width auto
+    height auto
+    padding-left 0
+    
+    .center
+      position absolute
+      top 40px
+      bottom 0
+      left 0
+      right 0 
+      width auto
+      height auto
+    
+    // 左栏
+    .center .left
+      width 100%
+    
+    .center .right
+      position absolute
+      top 0
+      left 0
+      right 0 
+      bottom 0
+      width auto
+      height auto
+      transition transform linear .2s
+      transform translateX(100%)
+      &.show-right
+        transform translateX(0)
+    
+    .center .right .input-area .message-textarea-box 
+      left: 0;
+      right: 0;
+      width: 100%;
+    .center .right .input-area .emotion-box
+      right: 60px;
+      left: auto;
+    .center .right .message-box
+      position absolute
+      left: 0;
+      right: 0;
+      top: 45px;
+      bottom: 45px;
+      height: auto;
+    // 表情
+    #facebox
+      left 0
+        td
+          padding 5px 1px 
+    .center .right .new-action-page
+      .edit-name-now
+      .new-group-now
+      .group-manage-now
+        padding 50px 15px 15px 15px
+        &.new-group-chat-now
+          padding-top 0
+    .toolbar.horizonal
+      .left .icon-box
+        margin-top 8px
+        margin-bottom 0
+      // hide icon
+      .my-minisize
+        margin-top 8px
+        float right
+        display inline-block
+        height 32px
+        width 40px
+        text-align center
+        color #fff
+        line-height 40px
+        &:hover
+          background-color #fff
+          color #6991b2
+
+      

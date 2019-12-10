@@ -1,0 +1,16 @@
+.el-progress-bar__outer
+  background-image url(assets/level/0.png)
+  background-size 100% 100%
+.el-progress-bar__inner
+  height auto
+  top 5px
+  bottom 5px
+  left 5px
+  background-image url(assets/level/0-1.png)
+  background-color rgba(0,0,0,0) !important
+  background-size 100% 100%
+  transform scaleX(0.95)
+  transform-origin left
+.el-progress-bar__innerText
+  color #333
+  

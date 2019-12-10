@@ -1,0 +1,6 @@
+// import this file to fit ipad-model
+@import './var.stylus'
+@media screen and (max-width: 1024px)
+  html
+    font-size 80px
+  

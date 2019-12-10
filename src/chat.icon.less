@@ -1,0 +1,816 @@
+@width: 23px;
+@height: 23px;
+
+
+@bg-c: #1a9ff3;
+@bg-c-hover: #23a9fe;
+@bg-c-press: #0a8fe4;
+
+@bg-c1: #5f89a4;
+@bg-c1-hover: #7a9eba;
+@bg-c1-press: #4f7a95;
+
+@bg-c2: #93a1a9;
+@bg-c2-hover: #dc1010;
+@bg-c2-press: #bf0000;
+
+
+[data-ng-app="custom-service"]{
+  	color: #333;
+	.icon-box{
+	  	position: relative;
+	  	
+		width: 40px;
+
+		padding: 5px;
+		display: inline-block;
+		float: left;
+	}
+
+
+
+	.effect-blue{
+		background-color: @bg-c;
+
+		&:hover, &:focus{
+			background-color: @bg-c-hover !important;
+		}
+		&:active{
+			background-color: @bg-c-press !important;
+		}
+	}
+
+	.effect-gray{
+		background-color: @bg-c1;
+		&:hover, &:focus{
+			background-color: @bg-c1-hover !important;
+		}
+		&:active{
+			background-color: @bg-c1-press !important;
+		}
+	}
+
+	.effect-red{
+		background-color: @bg-c2;
+
+		&:hover, &:focus{
+			background-color: @bg-c2-hover !important;
+		}
+		&:active{
+			background-color: @bg-c2-press !important;
+		}
+	}
+	.icon{
+		display: inline-block;
+		width: @width;
+		height: @height;
+		vertical-align: middle;
+		margin: 2px 4px;
+		opacity: 1;
+		background-repeat: no-repeat;
+		cursor: default;
+		position: relative;
+		&.close{
+			float: right;
+			background-image: url(../../img/close.png);
+		}
+		&.chat-list{
+			background-image: url(../../img/newimg/message_icon_white.png);
+			width: 21px;
+			height: 21px;
+			&.on{
+				background-image: url(../../img/newimg/message_icon_blue.png);
+			}
+		}
+		&.contact-list{
+			background-image: url(../../img/newimg/people_icon_white.png);
+			width: 21px;
+			height: 21px;
+			&.on{
+				background-image: url(../../img/newimg/people_icon_blue.png);
+			}
+
+		}
+		&.myInformation{
+			background-image: url(../../img/people_icon_white.png);
+			width: 21px;
+			height: 21px;
+			&.on{
+				background-image: url(../../img/people_icon_blue.png);
+			}
+
+		}
+		&.share{
+			background-image: url(../../img/share.png);
+			float: right;
+			width: 21px;
+			height: 21px;
+
+		}
+		&.minisize{
+			background-image: url(../../img/newimg/suoxiao_icon.png);
+			float: right;
+			width: 36px;
+			height: 36px;
+			&:hover{
+				background-color: #dadada;
+			}
+		}
+		&.more-actions{
+			float: right;
+			background-image: url(../../img/newimg/more_icon.png);
+			float: right;
+			width: 36px;
+			height: 36px;
+			&:hover{
+				background-color: #dadada;
+			}
+		}
+		&.back{
+			position: absolute;
+			left: 15px;
+			top: 11px;
+			background-image: url(../../img/newimg/back.png);
+			width: 12px;
+			height: 11px;
+		}
+		&.search{
+			background-image: url(../../img/search.png);
+			float: right;
+			width: 17px;
+			height: 17px;
+		}
+		&.chat{
+			
+
+			width: 36px;
+			height: 36px;
+			
+			&.online{
+				background-image: url(../../img/allHeadPics/BA01.png);
+				width: 36px;
+				height: 36px;
+			}
+
+			&.vip-service{
+				background-image: url(../../img/newimg/middle_service_vip.png);
+
+
+				
+			}
+			&.service{
+			    position: initial;
+				background-image: url(../../img/newimg/middle_service.png);
+				
+			}
+			&.assistant{
+				background-image: url(../../img/newimg/middle_assistant.png);
+			}
+			&.all{
+				background-image: url(../../img/newimg/middle_xiaji.png);
+			}
+
+			&.superiors{
+				background-image: url(../../img/newimg/middle_shangji.png);
+			}
+
+			&.group{
+				background-image: url(../../img/newimg/middle_qunfa.png);
+			}
+
+			&.system{
+				background-image: url(../../img/newimg/middle_tongzhi.png);
+			}
+
+
+
+			//头像
+			//
+			background-image: url(../../img/allHeadPics/BA01.png);
+			
+			
+			&.offline{
+				background-image: url(../../img/allHeadPics/greyBA01.png);
+			}
+			&.A-01{
+				background-image: url(../../img/allHeadPics/BA01.png);
+			}
+			&.A-02 {
+				background-image: url(../../img/allHeadPics/BA02.png);
+			}
+			&.A-03 {background-image: url(../../img/allHeadPics/BA03.png);}
+			&.A-04 {background-image: url(../../img/allHeadPics/BA04.png);}
+			&.A-05 {background-image: url(../../img/allHeadPics/BA05.png);}
+			&.A-06 {background-image: url(../../img/allHeadPics/BA06.png);}
+			&.A-07 {background-image: url(../../img/allHeadPics/BA07.png);}
+
+			
+			&.B-01 {background-image: url(../../img/allHeadPics/BB01.png);}
+			&.B-02 {background-image: url(../../img/allHeadPics/BB02.png);}
+			&.B-03 {background-image: url(../../img/allHeadPics/BB03.png);}
+			&.B-04 {background-image: url(../../img/allHeadPics/BB04.png);}
+			&.B-05 {background-image: url(../../img/allHeadPics/BB05.png);}
+			&.B-06 {background-image: url(../../img/allHeadPics/BB06.png);}
+			&.B-07 {background-image: url(../../img/allHeadPics/BB07.png);}
+
+			
+			&.C-01 {background-image: url(../../img/allHeadPics/BC01.png);}
+			&.C-02 {background-image: url(../../img/allHeadPics/BC02.png);}
+			&.C-03 {background-image: url(../../img/allHeadPics/BC03.png);}
+			&.C-04 {background-image: url(../../img/allHeadPics/BC04.png);}
+			&.C-05 {background-image: url(../../img/allHeadPics/BC05.png);}
+			&.C-06 {background-image: url(../../img/allHeadPics/BC06.png);}
+			&.C-07 {background-image: url(../../img/allHeadPics/BC07.png);}
+
+			
+			&.D-01 {background-image: url(../../img/allHeadPics/BD01.png);}
+			&.D-02 {background-image: url(../../img/allHeadPics/BD02.png);}
+			&.D-03 {background-image: url(../../img/allHeadPics/BD03.png);}
+			&.D-04 {background-image: url(../../img/allHeadPics/BD04.png);}
+			&.D-05 {background-image: url(../../img/allHeadPics/BD05.png);}
+			&.D-06 {background-image: url(../../img/allHeadPics/BD06.png);}
+			&.D-07 {background-image: url(../../img/allHeadPics/BD07.png);}
+
+		}
+		&.chat-small{
+			width: 21px;
+			height: 21px;
+
+			&.online{
+				background-image: url(../../img/allHeadPics/AA01.png);
+				width: 21px;
+				height: 21px;
+			}
+			&.offline{
+				background-image: url(../../img/allHeadPics/greyAA01.png);
+			}
+
+			&.vip-service{
+				background-image: url(../../img/newimg/small_service_vip.png);
+				
+			}
+			&.service{
+			    position: initial;
+				
+				background-image: url(../../img/newimg/small_service.png);
+				&.disabled{
+					background-image: url(../../img/newimg/no_small_service.png);
+				}
+				
+			}
+			&.assistant{
+				background-image: url(../../img/newimg/small_assistant.png);
+			}
+			&.all{
+				background-image: url(../../img/newimg/small_xiaji.png);
+
+			}
+
+			&.superiors{
+				background-image: url(../../img/newimg/small_shangji.png);
+			}
+
+			&.group{
+				background-image: url(../../img/newimg/small_qunfa.png);
+			}
+
+			&.system{
+				background-image: url(../../img/newimg/small_tongzhi.png);
+			}
+
+
+			//头像
+			/* div{&.A_0$ {background-image: url(../../img/allHeadPics/21_A_0$.png);}}*7
+			div{&.A_0$.offline{background-image: url(../../img/allHeadPics/grey_21_A_0$.png);}}*7
+			
+			
+			div{&.B_0$$ {background-image: url(../../img/allHeadPics/21_B_0$.png);}}*7
+			div{&.B_0$$.offline {background-image: url(../../img/allHeadPics/grey_21_B_0$.png);}}*7
+			
+			div{&.C_0$$ {background-image: url(../../img/allHeadPics/21_C_0$.png);}}*7
+			div{&.C_0$$.offline{background-image: url(../../img/allHeadPics/grey_21_C_0$.png);}}*7
+			
+			div{&.D_0$$ {background-image: url(../../img/allHeadPics/21_D_0$.png);}}*7
+			div{&.D_0$$.offline {background-image: url(../../img/allHeadPics/grey_21_D_0$.png);}}*7 */
+			background-image: url(../../img/allHeadPics/AA01.png);
+
+			
+			
+			&.A-01 {background-image: url(../../img/allHeadPics/AA01.png);}
+			&.A-02 {background-image: url(../../img/allHeadPics/AA02.png);}
+			&.A-03 {background-image: url(../../img/allHeadPics/AA03.png);}
+			&.A-04 {background-image: url(../../img/allHeadPics/AA04.png);}
+			&.A-05 {background-image: url(../../img/allHeadPics/AA05.png);}
+			&.A-06 {background-image: url(../../img/allHeadPics/AA06.png);}
+			&.A-07 {background-image: url(../../img/allHeadPics/AA07.png);}
+			&.A-01.offline{background-image: url(../../img/allHeadPics/greyAA01.png);}
+			&.A-02.offline{background-image: url(../../img/allHeadPics/greyAA02.png);}
+			&.A-03.offline{background-image: url(../../img/allHeadPics/greyAA03.png);}
+			&.A-04.offline{background-image: url(../../img/allHeadPics/greyAA04.png);}
+			&.A-05.offline{background-image: url(../../img/allHeadPics/greyAA05.png);}
+			&.A-06.offline{background-image: url(../../img/allHeadPics/greyAA06.png);}
+			&.A-07.offline{background-image: url(../../img/allHeadPics/greyAA07.png);}
+			
+			
+			&.B-01 {background-image: url(../../img/allHeadPics/AB01.png);}
+			&.B-02 {background-image: url(../../img/allHeadPics/AB02.png);}
+			&.B-03 {background-image: url(../../img/allHeadPics/AB03.png);}
+			&.B-04 {background-image: url(../../img/allHeadPics/AB04.png);}
+			&.B-05 {background-image: url(../../img/allHeadPics/AB05.png);}
+			&.B-06 {background-image: url(../../img/allHeadPics/AB06.png);}
+			&.B-07 {background-image: url(../../img/allHeadPics/AB07.png);}
+			&.B-01.offline {background-image: url(../../img/allHeadPics/greyAB01.png);}
+			&.B-02.offline {background-image: url(../../img/allHeadPics/greyAB02.png);}
+			&.B-03.offline {background-image: url(../../img/allHeadPics/greyAB03.png);}
+			&.B-04.offline {background-image: url(../../img/allHeadPics/greyAB04.png);}
+			&.B-05.offline {background-image: url(../../img/allHeadPics/greyAB05.png);}
+			&.B-06.offline {background-image: url(../../img/allHeadPics/greyAB06.png);}
+			&.B-07.offline {background-image: url(../../img/allHeadPics/greyAB07.png);}
+			
+			&.C-01 {background-image: url(../../img/allHeadPics/AC01.png);}
+			&.C-02 {background-image: url(../../img/allHeadPics/AC02.png);}
+			&.C-03 {background-image: url(../../img/allHeadPics/AC03.png);}
+			&.C-04 {background-image: url(../../img/allHeadPics/AC04.png);}
+			&.C-05 {background-image: url(../../img/allHeadPics/AC05.png);}
+			&.C-06 {background-image: url(../../img/allHeadPics/AC06.png);}
+			&.C-07 {background-image: url(../../img/allHeadPics/AC07.png);}
+			&.C-01.offline{background-image: url(../../img/allHeadPics/greyAC01.png);}
+			&.C-02.offline{background-image: url(../../img/allHeadPics/greyAC02.png);}
+			&.C-03.offline{background-image: url(../../img/allHeadPics/greyAC03.png);}
+			&.C-04.offline{background-image: url(../../img/allHeadPics/greyAC04.png);}
+			&.C-05.offline{background-image: url(../../img/allHeadPics/greyAC05.png);}
+			&.C-06.offline{background-image: url(../../img/allHeadPics/greyAC06.png);}
+			&.C-07.offline{background-image: url(../../img/allHeadPics/greyAC07.png);}
+			
+			&.D-01 {background-image: url(../../img/allHeadPics/AD01.png);}
+			&.D-02 {background-image: url(../../img/allHeadPics/AD02.png);}
+			&.D-03 {background-image: url(../../img/allHeadPics/AD03.png);}
+			&.D-04 {background-image: url(../../img/allHeadPics/AD04.png);}
+			&.D-05 {background-image: url(../../img/allHeadPics/AD05.png);}
+			&.D-06 {background-image: url(../../img/allHeadPics/AD06.png);}
+			&.D-07 {background-image: url(../../img/allHeadPics/AD07.png);}
+			&.D-01.offline {background-image: url(../../img/allHeadPics/greyAD01.png);}
+			&.D-02.offline {background-image: url(../../img/allHeadPics/greyAD02.png);}
+			&.D-03.offline {background-image: url(../../img/allHeadPics/greyAD03.png);}
+			&.D-04.offline {background-image: url(../../img/allHeadPics/greyAD04.png);}
+			&.D-05.offline {background-image: url(../../img/allHeadPics/greyAD05.png);}
+			&.D-06.offline {background-image: url(../../img/allHeadPics/greyAD06.png);}
+			&.D-07.offline {background-image: url(../../img/allHeadPics/greyAD07.png);}
+						
+			//头像 
+
+		}
+		&.avatar{
+			width: 40px;
+			height: 40px;
+
+			&.online{
+				background-image: url(../../img/allHeadPics/CA01.png);
+				width: 40px;
+				height: 40px;
+			}
+			&.offline{
+				background-image: url(../../img/allHeadPics/greyCA01.png);
+			}
+
+			&.vip-service{
+				background-image: url(../../img/newimg/big_service_vip.png);
+
+			}
+			&.service{
+			    position: initial;
+				background-image: url(../../img/newimg/big_service.png);
+			}
+			&.assistant{
+				background-image: url(../../img/newimg/big_assistant.png);
+			}
+			
+		
+
+			&.all{
+				background-image: url(../../img/newimg/big_xiaji.png);
+				
+			}
+			&.superiors{
+				background-image: url(../../img/newimg/big_shangji.png);
+			}
+			
+
+			&.group{
+
+				background-image: url(../../img/newimg/big_qunfa.png);
+			}
+
+			&.system{
+				background-image: url(../../img/newimg/big_tongzhi.png);
+			}
+
+			//头像
+
+
+			background-image: url(../../img/allHeadPics/CA01.png);
+			
+
+			
+			&.A-01 {background-image: url(../../img/allHeadPics/CA01.png);}
+			&.A-02 {background-image: url(../../img/allHeadPics/CA02.png);}
+			&.A-03 {background-image: url(../../img/allHeadPics/CA03.png);}
+			&.A-04 {background-image: url(../../img/allHeadPics/CA04.png);}
+			&.A-05 {background-image: url(../../img/allHeadPics/CA05.png);}
+			&.A-06 {background-image: url(../../img/allHeadPics/CA06.png);}
+			&.A-07 {background-image: url(../../img/allHeadPics/CA07.png);}
+			&.A-01.offline{background-image: url(../../img/allHeadPics/greyCA01.png);}
+			&.A-02.offline{background-image: url(../../img/allHeadPics/greyCA02.png);}
+			&.A-03.offline{background-image: url(../../img/allHeadPics/greyCA03.png);}
+			&.A-04.offline{background-image: url(../../img/allHeadPics/greyCA04.png);}
+			&.A-05.offline{background-image: url(../../img/allHeadPics/greyCA05.png);}
+			&.A-06.offline{background-image: url(../../img/allHeadPics/greyCA06.png);}
+			&.A-07.offline{background-image: url(../../img/allHeadPics/greyCA07.png);}
+			
+			
+			&.B-01 {background-image: url(../../img/allHeadPics/CB01.png);}
+			&.B-02 {background-image: url(../../img/allHeadPics/CB02.png);}
+			&.B-03 {background-image: url(../../img/allHeadPics/CB03.png);}
+			&.B-04 {background-image: url(../../img/allHeadPics/CB04.png);}
+			&.B-05 {background-image: url(../../img/allHeadPics/CB05.png);}
+			&.B-06 {background-image: url(../../img/allHeadPics/CB06.png);}
+			&.B-07 {background-image: url(../../img/allHeadPics/CB07.png);}
+			&.B-01.offline {background-image: url(../../img/allHeadPics/greyCB01.png);}
+			&.B-02.offline {background-image: url(../../img/allHeadPics/greyCB02.png);}
+			&.B-03.offline {background-image: url(../../img/allHeadPics/greyCB03.png);}
+			&.B-04.offline {background-image: url(../../img/allHeadPics/greyCB04.png);}
+			&.B-05.offline {background-image: url(../../img/allHeadPics/greyCB05.png);}
+			&.B-06.offline {background-image: url(../../img/allHeadPics/greyCB06.png);}
+			&.B-07.offline {background-image: url(../../img/allHeadPics/greyCB07.png);}
+			
+			&.C-01 {background-image: url(../../img/allHeadPics/CC01.png);}
+			&.C-02 {background-image: url(../../img/allHeadPics/CC02.png);}
+			&.C-03 {background-image: url(../../img/allHeadPics/CC03.png);}
+			&.C-04 {background-image: url(../../img/allHeadPics/CC04.png);}
+			&.C-05 {background-image: url(../../img/allHeadPics/CC05.png);}
+			&.C-06 {background-image: url(../../img/allHeadPics/CC06.png);}
+			&.C-07 {background-image: url(../../img/allHeadPics/CC07.png);}
+			&.C-01.offline{background-image: url(../../img/allHeadPics/greyCC01.png);}
+			&.C-02.offline{background-image: url(../../img/allHeadPics/greyCC02.png);}
+			&.C-03.offline{background-image: url(../../img/allHeadPics/greyCC03.png);}
+			&.C-04.offline{background-image: url(../../img/allHeadPics/greyCC04.png);}
+			&.C-05.offline{background-image: url(../../img/allHeadPics/greyCC05.png);}
+			&.C-06.offline{background-image: url(../../img/allHeadPics/greyCC06.png);}
+			&.C-07.offline{background-image: url(../../img/allHeadPics/greyCC07.png);}
+			
+			&.D-01 {background-image: url(../../img/allHeadPics/CD01.png);}
+			&.D-02 {background-image: url(../../img/allHeadPics/CD02.png);}
+			&.D-03 {background-image: url(../../img/allHeadPics/CD03.png);}
+			&.D-04 {background-image: url(../../img/allHeadPics/CD04.png);}
+			&.D-05 {background-image: url(../../img/allHeadPics/CD05.png);}
+			&.D-06 {background-image: url(../../img/allHeadPics/CD06.png);}
+			&.D-07 {background-image: url(../../img/allHeadPics/CD07.png);}
+			&.D-01.offline {background-image: url(../../img/allHeadPics/greyCD01.png);}
+			&.D-02.offline {background-image: url(../../img/allHeadPics/greyCD02.png);}
+			&.D-03.offline {background-image: url(../../img/allHeadPics/greyCD03.png);}
+			&.D-04.offline {background-image: url(../../img/allHeadPics/greyCD04.png);}
+			&.D-05.offline {background-image: url(../../img/allHeadPics/greyCD05.png);}
+			&.D-06.offline {background-image: url(../../img/allHeadPics/greyCD06.png);}
+			&.D-07.offline {background-image: url(../../img/allHeadPics/greyCD07.png);}
+
+
+		}
+		&.head-pic-choice{
+
+			width: 58px;
+			height: 58px;
+			
+			&.on:before{
+				content: '';
+				display: inline-block;
+				width: 29px;
+				height: 26px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-image: url(../../img/newimg/choose_icon.png);
+			}
+			
+
+			//头像
+
+
+			background-image: url(../../img/allHeadPics/DA01.png);
+
+			
+			&.A-01 {background-image: url(../../img/allHeadPics/DA01.png);}
+			&.A-02 {background-image: url(../../img/allHeadPics/DA02.png);}
+			&.A-03 {background-image: url(../../img/allHeadPics/DA03.png);}
+			&.A-04 {background-image: url(../../img/allHeadPics/DA04.png);}
+			&.A-05 {background-image: url(../../img/allHeadPics/DA05.png);}
+			&.A-06 {background-image: url(../../img/allHeadPics/DA06.png);}
+			&.A-07 {background-image: url(../../img/allHeadPics/DA07.png);}
+			
+			
+			
+			&.B-01 {background-image: url(../../img/allHeadPics/DB01.png);}
+			&.B-02 {background-image: url(../../img/allHeadPics/DB02.png);}
+			&.B-03 {background-image: url(../../img/allHeadPics/DB03.png);}
+			&.B-04 {background-image: url(../../img/allHeadPics/DB04.png);}
+			&.B-05 {background-image: url(../../img/allHeadPics/DB05.png);}
+			&.B-06 {background-image: url(../../img/allHeadPics/DB06.png);}
+			&.B-07 {background-image: url(../../img/allHeadPics/DB07.png);}
+			
+			
+			&.C-01 {background-image: url(../../img/allHeadPics/DC01.png);}
+			&.C-02 {background-image: url(../../img/allHeadPics/DC02.png);}
+			&.C-03 {background-image: url(../../img/allHeadPics/DC03.png);}
+			&.C-04 {background-image: url(../../img/allHeadPics/DC04.png);}
+			&.C-05 {background-image: url(../../img/allHeadPics/DC05.png);}
+			&.C-06 {background-image: url(../../img/allHeadPics/DC06.png);}
+			&.C-07 {background-image: url(../../img/allHeadPics/DC07.png);}
+			
+			
+			&.D-01 {background-image: url(../../img/allHeadPics/DD01.png);}
+			&.D-02 {background-image: url(../../img/allHeadPics/DD02.png);}
+			&.D-03 {background-image: url(../../img/allHeadPics/DD03.png);}
+			&.D-04 {background-image: url(../../img/allHeadPics/DD04.png);}
+			&.D-05 {background-image: url(../../img/allHeadPics/DD05.png);}
+			&.D-06 {background-image: url(../../img/allHeadPics/DD06.png);}
+			&.D-07 {background-image: url(../../img/allHeadPics/DD07.png);}
+
+			&:hover{
+				box-shadow: 0 0 10px #22a9ff;
+			}
+
+			&.checked:before{
+
+				content: '';
+
+				width: 29px;
+				height: 26px;
+				display: inline-block;
+				position: absolute;
+				background-image: url(../../img/newimg/choose_icon.png);
+			}
+			
+
+
+		}
+		&.online{
+			background-image: url(../../img/online.png);
+			width: 13px;
+			height: 13px;
+
+		}
+		&.online-small{
+			background-image: url(../../img/online-small.png);
+			width: 9px;
+			height: 9px;
+			border: 2px solid #fff;	
+		}
+		&.leave{
+			background-image: url(../../img/leave.png);
+			width: 13px;
+			height: 13px;	
+			margin-left: 0;
+			display: none;
+		}
+		&.leave-small{
+			background-image: url(../../img/leave-small.png);
+			width: 9px;
+			height: 9px;	
+			border: 2px solid #fff;	
+			display: none;
+			
+		}
+		&.upload{
+			background-image: url(../../img/upload.png);
+			width: 18px;
+			height: 15px;	
+		}
+		&.emoticon{
+			background-image: url(../../img/newimg/biaoqing_icon.png);
+			height: 20px;
+			width: 20px;
+			margin: 0;
+		}
+		
+		&.delete{
+			background-image: url(../../img/delete.png);
+			height: 16px;
+			width: 16px;
+			border-radius: 50%;
+			
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			display: none;
+		}
+		&.loading{
+			background-image: url(../../img/loading.png);
+			height: 14px;
+			width: 14px;
+			border-radius: 50%;
+			animation: self-circle-rotation 1s linear infinite;
+		}
+		.no-chat{
+			background-image: url(../../img/no-chat.png);
+			width: 36px;
+			height: 39px;
+			
+		}
+		&.custom-service{
+			width: 52px;
+			
+			height: 52px;
+			background-image: url(../../img/custom-service.png);
+			&.disabled{
+				background-image: url(../../img/custom-service-disabled.png) !important;
+
+			}
+			&.load{
+			  opacity: .3;
+			}
+			&:hover{
+				background-image: url(../../img/custom-service-hover.png);
+			}
+			&:active{
+				background-image: url(../../img/custom-service-active.png);
+			}
+
+		}
+		&.add-group{
+			margin: 0;
+			width: 14px;
+			height: 14px;
+			display: inline-block;
+			background-image: url(../../img/add-group.png);
+		}
+		&.add-appendix{
+			margin: 0;
+			width: 24px;
+			height: 24px;
+			display: inline-block;
+			background-image: url(../../img/newimg/add-appendix.png);
+		}
+
+		&.upload-image{
+			width: 24px;
+			height: 18px;
+			display: inline-block;
+			background-image: url(../../img/newimg/images_icon.png);
+		}
+
+		&.upload-file{
+			width: 24px;
+			height: 18px;
+			display: inline-block;
+			background-image: url(../../img/newimg/file_icon.png);
+		}
+
+		&.edit-name{
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			background-image: url(../../img/newimg/bi_icon.png);
+		}
+		&.edit-head-pic{
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			background-image: url(../../img/newimg/ren_icon.png);
+		}
+		&.copy-url{
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			background-image: url(../../img/newimg/zhuan_icon.png);
+		}
+
+		&.checked{
+			width: 22px;
+			height: 15px;
+			display: inline-block;
+			background-image: url(../../img/newimg/gou_icon.png);
+		}
+
+		&.readed{
+			width: 20px;
+			height: 10px;
+			display: inline-block;
+			background-image: url(../../img/newimg/yidu_icon.png)
+		}
+
+		&.sended{
+			width: 20px;
+			height: 10px;
+			display: inline-block;
+			background-image: url(../../img/newimg/yifasong_icon.png)
+		}
+
+		&.sending{
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			background-image: url(../../img/newimg/fasongshibai_icon.png)
+		}
+		&.file{
+			width: 45px;
+			height: 45px;
+			background-image: url(../../img/newimg/file_icon02.png)
+		}
+
+
+		&.warn-action{
+			width: 24px;
+			height: 24px;
+			background-image: url(../../img/newimg/warn-action.png)
+		}
+
+		&.success-action{
+			width: 24px;
+			height: 24px;
+			background-image: url(../../img/newimg/success-action.png)
+		}
+
+	}
+
+	.emoji {
+		width: 24px;height: 24px;display: inline-block;
+		position: relative; top: -1px; vertical-align: middle;
+		&.emoji-1 {background-image: url(../../img/arclist/1.png)}
+		&.emoji-2 {background-image: url(../../img/arclist/2.png)}
+		&.emoji-3 {background-image: url(../../img/arclist/3.png)}
+		&.emoji-4 {background-image: url(../../img/arclist/4.png)}
+		&.emoji-5 {background-image: url(../../img/arclist/5.png)}
+		&.emoji-6 {background-image: url(../../img/arclist/6.png)}
+		&.emoji-7 {background-image: url(../../img/arclist/7.png)}
+		&.emoji-8 {background-image: url(../../img/arclist/8.png)}
+		&.emoji-9 {background-image: url(../../img/arclist/9.png)}
+		&.emoji-10 {background-image: url(../../img/arclist/10.png)}
+		&.emoji-11 {background-image: url(../../img/arclist/11.png)}
+		&.emoji-12 {background-image: url(../../img/arclist/12.png)}
+		&.emoji-13 {background-image: url(../../img/arclist/13.png)}
+		&.emoji-14 {background-image: url(../../img/arclist/14.png)}
+		&.emoji-15 {background-image: url(../../img/arclist/15.png)}
+		&.emoji-16 {background-image: url(../../img/arclist/16.png)}
+		&.emoji-17 {background-image: url(../../img/arclist/17.png)}
+		&.emoji-18 {background-image: url(../../img/arclist/18.png)}
+		&.emoji-19 {background-image: url(../../img/arclist/19.png)}
+		&.emoji-20 {background-image: url(../../img/arclist/20.png)}
+		&.emoji-21 {background-image: url(../../img/arclist/21.png)}
+		&.emoji-22 {background-image: url(../../img/arclist/22.png)}
+		&.emoji-23 {background-image: url(../../img/arclist/23.png)}
+		&.emoji-24 {background-image: url(../../img/arclist/24.png)}
+		&.emoji-25 {background-image: url(../../img/arclist/25.png)}
+		&.emoji-26 {background-image: url(../../img/arclist/26.png)}
+		&.emoji-27 {background-image: url(../../img/arclist/27.png)}
+		&.emoji-28 {background-image: url(../../img/arclist/28.png)}
+		&.emoji-29 {background-image: url(../../img/arclist/29.png)}
+		&.emoji-30 {background-image: url(../../img/arclist/30.png)}
+		&.emoji-31 {background-image: url(../../img/arclist/31.png)}
+		&.emoji-32 {background-image: url(../../img/arclist/32.png)}
+		&.emoji-33 {background-image: url(../../img/arclist/33.png)}
+		&.emoji-34 {background-image: url(../../img/arclist/34.png)}
+		&.emoji-35 {background-image: url(../../img/arclist/35.png)}
+		&.emoji-36 {background-image: url(../../img/arclist/36.png)}
+		&.emoji-37 {background-image: url(../../img/arclist/37.png)}
+		&.emoji-38 {background-image: url(../../img/arclist/38.png)}
+		&.emoji-39 {background-image: url(../../img/arclist/39.png)}
+		&.emoji-40 {background-image: url(../../img/arclist/40.png)}
+		&.emoji-41 {background-image: url(../../img/arclist/41.png)}
+		&.emoji-42 {background-image: url(../../img/arclist/42.png)}
+		&.emoji-43 {background-image: url(../../img/arclist/43.png)}
+		&.emoji-44 {background-image: url(../../img/arclist/44.png)}
+		&.emoji-45 {background-image: url(../../img/arclist/45.png)}
+		&.emoji-46 {background-image: url(../../img/arclist/46.png)}
+		&.emoji-47 {background-image: url(../../img/arclist/47.png)}
+		&.emoji-48 {background-image: url(../../img/arclist/48.png)}
+		&.emoji-49 {background-image: url(../../img/arclist/49.png)}
+		&.emoji-50 {background-image: url(../../img/arclist/50.png)}
+		&.emoji-51 {background-image: url(../../img/arclist/51.png)}
+		&.emoji-52 {background-image: url(../../img/arclist/52.png)}
+		&.emoji-53 {background-image: url(../../img/arclist/53.png)}
+		&.emoji-54 {background-image: url(../../img/arclist/54.png)}
+		&.emoji-55 {background-image: url(../../img/arclist/55.png)}
+		&.emoji-56 {background-image: url(../../img/arclist/56.png)}
+		&.emoji-57 {background-image: url(../../img/arclist/57.png)}
+		&.emoji-58 {background-image: url(../../img/arclist/58.png)}
+		&.emoji-59 {background-image: url(../../img/arclist/59.png)}
+		&.emoji-60 {background-image: url(../../img/arclist/60.png)}
+		&.emoji-61 {background-image: url(../../img/arclist/61.png)}
+		&.emoji-62 {background-image: url(../../img/arclist/62.png)}
+		&.emoji-63 {background-image: url(../../img/arclist/63.png)}
+		&.emoji-64 {background-image: url(../../img/arclist/64.png)}
+		&.emoji-65 {background-image: url(../../img/arclist/65.png)}
+		&.emoji-66 {background-image: url(../../img/arclist/66.png)}
+		&.emoji-67 {background-image: url(../../img/arclist/67.png)}
+		&.emoji-68 {background-image: url(../../img/arclist/68.png)}
+		&.emoji-69 {background-image: url(../../img/arclist/69.png)}
+		&.emoji-70 {background-image: url(../../img/arclist/70.png)}
+		&.emoji-71 {background-image: url(../../img/arclist/71.png)}
+		&.emoji-72 {background-image: url(../../img/arclist/72.png)}
+		&.emoji-73 {background-image: url(../../img/arclist/73.png)}
+		&.emoji-74 {background-image: url(../../img/arclist/74.png)}
+		&.emoji-75 {background-image: url(../../img/arclist/75.png)}
+	}
+
+
+}

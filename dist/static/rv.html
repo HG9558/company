@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <title>信游娱乐</title>
+    <link rel="shortcut icon" type="image/png" href="/static/dsico.png" />
+    <style>
+      body {
+        background: #1a9ff3;
+        font-size: 14px;
+      }
+      .login-register  {
+        margin: 0 auto;
+        /*max-width: 355px;*/
+        text-align: center;
+        padding-top: 250px;
+        background: url(pic/x.png)  center  -150px  no-repeat;
+      }
+      .ds-icon-code {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        display: inline-block;
+        width: 83px;
+        height: 29px;
+        cursor: pointer;
+      }
+      input {
+        /*width: 130px;*/
+        /*height: 30px;*/
+        padding: 10px;
+        border: none;
+        display:  inline-block;
+        outline: none;
+      }
+      .form-item {
+        margin: 10px;
+      }
+      .item {
+        box-sizing: border-box;
+        position: relative;
+        display:  inline-block;
+        width: 350px;
+        height: 50px;
+        padding: 0 25px;
+        line-height: 50px;
+        /*border-radius: 25px;*/
+        color: #bbb;
+        text-align: left;
+        background-color: #fff;
+        margin: 5px;
+      }
+      
+      .ds-button {
+        display: inline-block;
+        padding: 0 22px;
+        line-height: 30px;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        border: 0;
+        border-radius: 5px;
+        /*box-shadow: 2px 2px 2px rgba(0,0,0,.2);*/
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        box-sizing: border-box;
+        vertical-align: middle;
+      }
+      .ds-button.high-positive {
+          background: -webkit-linear-gradient(#ffbf00, #e98800);
+          background: -o-linear-gradient(#ffbf00, #e98800);
+          background: linear-gradient(#ffbf00, #e98800);
+      }
+      .ds-button.high-positive:hover {
+          background: -webkit-linear-gradient(#ffcb2e, #ff9500);
+          background: -o-linear-gradient(#ffcb2e, #ff9500);
+          background: linear-gradient(#ffcb2e, #ff9500) ;
+      } 
+      .ds-button.tall {
+          height: 60px;
+          line-height: 60px;
+          font-size: 24px;
+      }
+      .ds-button._3rem {
+          width: 355px;
+      }
+      .download,
+      .all-rights {
+        text-align: center;
+        color: #eee;
+        padding-top: 50px;
+      }
+      .logo {
+        padding-top: 100px;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJkAAAAiCAYAAABMUXsMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUVFRkJFNzk4MTI3MTFFNTk2QkVBMTVGQkRCMzA3MjkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUVFRkJFN0E4MTI3MTFFNTk2QkVBMTVGQkRCMzA3MjkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5RUVGQkU3NzgxMjcxMUU1OTZCRUExNUZCREIzMDcyOSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5RUVGQkU3ODgxMjcxMUU1OTZCRUExNUZCREIzMDcyOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsJOnCUAAA0PSURBVHja7FwNdFTF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') no-repeat
+      }
+      .ds-icon-windows {
+          background: url(pic/windows.png) center 30% no-repeat;
+      }
+      .ds-icon-apple {
+          background: url(pic/apple.png) center 30% no-repeat;
+      }
+      .ds-icon-android {
+          background: url(pic/android.png) center 30% no-repeat;
+      }
+      .download .icon-list {
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+          padding: 0;
+          line-height: 150px;
+          color: #fff;
+          font-size: 12px;
+          cursor: pointer;
+      }
+
+    </style>
+    
+    
+  </head> 
+  <body>
+
+    <div data-v-42a04444="" class="login scroll-content page has-lefter" pages="" prehref="/" menus="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]" loop="loop" max-pages="1" money="" free=""><dl class="logo" data-v-42a04444=""><dd class="icon-list ds-icon-logo"></dd></dl><div data-v-e6422cde="" class="login-register part" data-v-42a04444=""><div data-v-e6422cde="" class="form-item"><label data-v-e6422cde="" class="item ds-input">帐号:<input data-v-e6422cde="" placeholder="请输入帐号" id="account"></label></div><div data-v-e6422cde="" class="form-item"><label data-v-e6422cde="" class="item ds-input">昵称:<input data-v-e6422cde="" placeholder="请输入昵称" id="nickname"></label></div><div data-v-e6422cde="" class="form-item"><label data-v-e6422cde="" class="item ds-input">验证码:<input data-v-e6422cde="" placeholder="请输入验证码" id="code"><i data-v-e6422cde="" class="ds-icon-code" style="background: url() right center no-repeat;" onclick="getImg()"></i></label></div><div data-v-e6422cde="" class="form-item" style="text-align: center;"><div data-v-e6422cde="" class="ds-button bold tall high-positive _3rem oval" onclick="check()">立即注册</div><br data-v-e6422cde=""><a href="/"  class="ds-button text-button light router-link-active" data-v-e6422cde="" style="margin-top: 0.1rem;">我要登录</a><a data-v-e6422cde="" target="_blank" href="http://www.ds998.net" class="ds-button text-button light" style="margin-top: 0.1rem;">浏览官网</a></div></div><dl class="download" data-v-42a04444=""><a target="_blank" href="http://www.ds998.net/dongsen/downGame.do?method=downWinPackage" class="ds-button text-button light icon-list ds-icon-windows">Windows        </a><a target="_blank" href="http://fir.im/5ent" class="ds-button text-button light icon-list ds-icon-apple">iPhone        </a><a target="_blank" href="https://fir.im/3005" class="ds-button text-button light icon-list ds-icon-android">Android        </a></dl><h5 class="all-rights" data-v-42a04444="">版权所有 COPYRIGHT © 2015 东森娱乐 ALL RIGHTS RESERVED</h5></div>
+    <script src="/static/update/browser.js"></script>
+    <script>
+      if (((function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) return true})(navigator.userAgent||navigator.vendor||window.opera))) {
+        window.location.href = '/login_regist.html' + location.hash.slice(1)
+      } else {
+        // window.location.href = '/#/login/register' + location.hash.slice(1)
+      }
+      var tag = location.hash.split('tag=')[1]
+      var xmlhttp;
+      if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+        }
+      else
+        {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+      xmlhttp.withCredentials = true;
+
+      var api = ''
+      if (window.location.host.indexOf('.net') !== -1) {
+        // api = 'https://api.cb868.net:1888/cagamesclient'
+        api = 'https://api.' + window.location.host.replace('www.', '') + ':1888/dscagamesclient'
+      // 外网测试环境
+      } else if (window.location.host.match(/^\d{1,3}/)) {
+        api = 'https://api.dsn96.net:1888/dscagamesclient'
+      }
+
+      function getImg () {
+        // GET
+        xmlhttp.open("GET", api + '/login/login.do?method=getVerifyImage',true);
+        // xmlhttp.open("GET", 'http://58.71.87.90:9901/dscagamesclient/login/login.do?method=getVerifyImage',true);
+        xmlhttp.send();
+        
+        // POST
+        // xmlhttp.open("POST","ajax_test.asp",true);
+        // xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        // xmlhttp.send("fname=Bill&lname=Gates");
+        
+        xmlhttp.onreadystatechange=function()
+        {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+          {
+            var code = JSON.parse(xmlhttp.responseText)
+            document.getElementsByClassName("ds-icon-code")[0].style.background = 'url("data:image/png;base64,' + code.data + '") right center no-repeat' 
+          }
+        }
+      }
+      getImg()
+
+      var aEl = document.getElementById('account'), nEl = document.getElementById('nickname'), cEl = document.getElementById('code')
+      function check () {
+          if (!account(aEl.value)) {
+            return alert('用户名格式不正确，请输入0-9，a-z，A-Z组成的6-16个字符!')
+          }
+          if (!nickname(nEl.value)) {
+            return alert('昵称由2至8个字符组成，可中文，数字不能超过4个，不能含有QQ字样！')
+          }
+          if (!cEl.value) {
+            return alert('请输入验证码')
+          }
+          register()
+      }
+      function account (a) {
+        return a.match(/^[0-9a-zA-Z]{6,16}$/)
+      }
+      function nickname (a) {
+        return a.length >= 2 && a.length <= 8 && !(a.match(/\d/g) || [])[4] && !a.match(/q{2,}/gi) && a.match(/^[\u4e00-\u9fa5\da-zA-Z]+$/)
+      }
+
+      function register() {
+        // POST
+        xmlhttp.open("POST", api + '/team/createAccount.do?method=autoRegist',true);
+        
+        // xmlhttp.open("POST","http://58.71.87.90:9901/dscagamesclient/team/createAccount.do?method=autoRegist",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send("tag=" + tag + "&userName=" + aEl.value + "&nickName=" + nEl.value + "&verifyCode=" + cEl.value);
+        xmlhttp.onreadystatechange=function()
+        {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+          {
+            var stat = JSON.parse(xmlhttp.responseText)
+            getImg()
+            if (stat.success === 1) {
+              alert('恭喜你注册成功，你的密码为：123456a')
+              aEl.value = ''
+              nEl.value = ''
+              cEl.value = ''
+            } else {
+              alert(stat.msg || '注册失败!')
+            }
+          }
+        }
+      }
+    </script>
+
+  </body>
+</html>

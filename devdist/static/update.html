@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <title>信游娱乐</title>
+    <link rel="shortcut icon" type="image/png" href="/static/ico.v2.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <style>
+      html {
+          height: 100%;
+          overflow: hidden;
+          min-height: 600px;
+          min-width: 800px;
+          font-family: Arial, Helvetica, sans-serif, "Microsoft YaHei";
+      }
+      body {
+        height: 100%;
+        font-size: 14px;
+        color: #fff;
+        margin: 0;
+        background: url(/static/update/bg.jpg) center center no-repeat;
+        background-size: cover;
+      }
+      .logo{
+        margin-top: 85px;
+        text-align: center;
+      }
+      .logo .icon-list {
+        display: inline-block;
+        width: 186px;
+        height: 42px;
+        margin: 0;
+      }
+      .ds-icon-logo {
+        background: url(/static/update/xy_logo.png) center center no-repeat;
+      }
+      h2 {
+        font-size: 18px;
+        font-weight: normal;
+      }
+      .content {
+        margin: 0 auto;
+        text-align: center
+      }
+      .item {
+        position: relative;
+        height: 280px;
+        padding:  20px;
+        margin: 30px;
+        border-radius: 5px;
+        text-align: left;
+        overflow: hidden;
+        /*background-color: #cecece;*/
+        background-color: rgba(255,255,255,0.2);
+        box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);
+        cursor: pointer;
+        display:  inline-block;
+        width: 300px;
+      }
+      .icon {
+        height: 150px;        
+      }
+      .ie {
+        background: url(/static/update/ie.png) center center no-repeat;
+      }
+      .chrome {
+        background: url(/static/update/guge.png) center center no-repeat;
+      }
+      .firefox {
+        background: url(/static/update/huohu.png) center center no-repeat;
+      }
+      h6 {
+        text-align:  center;
+        margin: 10px 0;
+      }
+      .desc {
+        position:  relative;
+        padding-left: 80px;
+        color: #ccc;
+      }
+      .desc span {
+        position:  absolute;
+        left: 0;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .button {
+        height: 36px;
+        line-height: 36px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 15px;
+        width: 100%;
+        background-color: #1a9ff3;
+        border-radius: 5px;
+        text-align: center;
+      }
+      .button:hover {
+        background-color: #2aadff
+      }
+      .button:active {
+        background-color: #038adf;
+      }
+      .all-rights {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 44px;
+        line-height: 44px;
+        margin: 0;
+        margin-top: 44px;
+        text-align: center;
+        color: #9897b2;
+        font-size: 12px;
+      }
+    </style>
+    <script src="/static/update/browser.js"></script>
+    <script>
+      if (window.userPlatInfo) {
+        if ( (window.userPlatInfo.browser === 'ie' && window.userPlatInfo.v < 10) ||   (window.userPlatInfo.browser === 'chrome' && window.userPlatInfo.v < 43) ||  (window.userPlatInfo.browser === 'firefox' && window.userPlatInfo.v < 35)) {
+        } else {
+          window.location = '/'
+        }
+      } else {
+        window.location = '/'
+      }
+    </script>
+  </head> 
+  <body>
+    <dl class="logo"><dd class="icon-list ds-icon-logo"></dd></dl>
+    <div class="content">
+      <h2>浏览器更新</h2>
+      <p>由于您的浏览器版本过低，为了获得最好的用户体验，请您前往更新</p>
+      <div class="items">
+
+        <div class="item">
+          <h6>IE</h6>
+          <div class="ie icon"></div>
+          <div class="desc" >
+            <span>支持版本：</span>
+            <p>ie 11 + </p>
+
+          </div>
+          <a target="_blank" href="http://windows.microsoft.com/ie"><div class="button">前往下载</div></a>
+        </div>
+
+        <div class="item">
+          <h6>谷歌</h6>
+          <div class="chrome icon"></div>
+          <div class="desc" >
+            <span>支持版本：</span>
+            <p>46 +</p>
+
+          </div>
+          <a target="_blank" href="http://www.google.com/chrome"><div class="button">前往下载</div></a>
+        </div>
+
+        <div class="item">
+          <h6>火狐</h6>
+          <div class="firefox icon"></div>
+          <div class="desc" >
+            <span>支持版本：</span>
+            <p>41 +</p>
+
+          </div>
+          <a target="_blank" href="http://www.mozilla.org/firefox/new/"><div class="button">前往下载</div></a>
+        </div>
+
+      </div>
+    </div>
+    <h5 class="all-rights" data-v-42a04444="">版权所有 COPYRIGHT © 2015 信游娱乐 ALL RIGHTS RESERVED</h5>
+  </body>
+</html>

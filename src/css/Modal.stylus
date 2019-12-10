@@ -1,0 +1,103 @@
+@import '../var.stylus'
+
+  bg = #d8d8d8
+  bg-hover = #ececec
+  bg-active = #e2e2e2
+  
+
+  .modal.inner-modal
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    text-align center
+    z-index 9999
+    .tool-bar
+      height TH
+      line-height TH
+      background-color bg
+      font-size .12rem
+      border-top-right-radius .05rem
+      border-top-left-radius .05rem
+      overflow hidden
+      background-position .2rem center
+
+    .title
+      color #333
+      font-weight bold
+      padding-left .2rem
+
+    .el-button-group
+      float right
+      height 100%
+      .el-button
+        font-size .12rem
+        color GREY
+        border none
+        height 100%
+        width TH
+        padding 0
+        background-color transparent
+        &:hover
+          background-color bg-hover
+        &:active
+          background-color bg-active
+        &:first-child
+          font-size .16rem
+        &.close
+          &:hover
+            background-color #f34
+            color #fff
+          &:active
+            color #fff
+            background-color #d40c1d
+    .mask
+      position absolute
+      left 0
+      top 0
+      width 100%
+      height 100%
+      opacity .5
+      background #000
+      z-index 9998
+    .box-wrapper
+      position absolute
+      top 0
+      bottom 0
+      left 0
+      right 0
+      text-align center
+      z-index 9999
+      &:after
+        content ''
+        height 100%
+        width 0
+        vertical-align middle
+        display inline-block
+    .box
+      position relative
+      text-align left
+      display inline-block
+      vertical-align middle
+      background-color #ededed
+      font-size .12rem
+      width 9rem
+      radius()
+    .content
+      margin 0 .2rem
+      .el-row
+        margin PW 0
+        word-wrap break-word
+      .textarea-label
+        position relative
+        margin .3rem .3rem .3rem 0
+        .label
+          position absolute
+          left 0
+          top .05rem
+        .el-textarea
+          display inline-bock
+          vertical-align top
+          padding-left .6rem
+          .textarea
+            font-size .12rem

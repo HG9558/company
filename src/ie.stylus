@@ -1,0 +1,4 @@
+// remove input delete button
+::-ms-clear
+::-ms-reveal
+  display none

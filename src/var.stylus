@@ -1,0 +1,129 @@
+
+// @import '../DSM/src/var.stylus'
+/*
+ * heights widths define
+ */
+// header heights
+HH = .36rem
+// footer heights
+FH = .68rem
+// toolbar heights
+TH = .4rem
+// luckynumber heights
+LH = .6rem
+// gameinfo heights
+GH = 1rem
+// gameMenu heights
+GMH = .3rem
+// gamecenter heights
+GCH = .4rem
+// gameorderbar heights
+GOH = .5rem
+// game amoutbar heights
+GAH = .5rem
+// game follow bar heights
+GFH = .5rem
+// common padding w
+PW = .15rem
+//
+PWX = .2rem
+// all rights heights
+ARH = .44rem
+// download heights
+DLH = 1rem
+// logo heights
+LGH = .68rem
+LGW = 1.8rem
+// code pic
+CW = .83rem
+CH = .29rem
+// big margin bottom
+BMH = .5rem
+// mid margin bottom
+MMH = .5rem
+// righter width
+RW = .7rem
+
+// content-width
+CTW = 12rem
+
+
+
+/*
+ *colors define
+ */
+WHITE = #fff
+
+LIGHT = #cac6db
+LIGHT-HOVER = #e3e0ee
+
+GREY = #9897b2
+
+// old blue
+OBLUE = #1a9ff3
+OBLUE-HOVER = #2aadff
+// BLUE-HOVER = #42b6ff
+OBLUE-ACTIVE = #038adf
+
+// new blue
+BLUE = #f17d0b
+BLUE-HOVER = #ff5429
+BLUE-ACTIVE = #ff5429
+
+
+RED = #ff3350
+PINK = #ff566e
+
+DANGER = #ff3344
+// DANGER-HOVER = #ff4050
+DANGER-HOVER = #ff4f5e
+DANGER-ACTIVE = #e51324
+
+
+
+GOLD = #fc0
+GOLD-HOVER = #ffd428
+GOLD-ACTIVE = #e7b900
+YELLOW = #ff0
+
+GREEN = #59ae0c
+ORANGE = #f2790e
+
+CODEGREEN = #2eb224
+
+
+
+/*
+ *mixin define
+ */
+// font color gradient
+font-gradient(p = 90deg, c1 = #ff3350, c2 = #1a9ff3)
+  font-family Roboto, Arial
+  background linear-gradient(p, c1, c2)
+  -webkit-background-clip text
+  -webkit-text-fill-color transparent
+  
+bg-gradient(p = 90deg, c1 = #ff3350, c2 = #1a9ff3)
+  background linear-gradient(p, c1, c2)
+  
+
+// border-radius
+radius(x = .02rem)
+  border-radius x
+// font-shadow
+font-shadow(x = 1px 1px 1px rgba(0, 0, 0, .3))
+  text-shadow x
+shadow(x = 2px 2px 2px rgba(0,0,0,.2))
+  box-shadow x
+outshadow(x = 0 0 2px rgba(0,0,0,.2))
+  box-shadow x
+  
+  
+// center
+center()
+  position absolute
+  left 50%
+  top 50%
+  transform translateX(-50%) translateY(-50%)
+
+

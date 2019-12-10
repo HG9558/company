@@ -1,0 +1,20 @@
+@import './var.stylus'
+@media screen and (max-height: 800px)
+  html
+    font-size 80px
+#app    
+  @media screen and (max-width: 1600px)
+    // *
+    //   background-size 80%
+    // .login-test
+    //   .routers 
+    //       width 9.5rem                 
+    //     .col-content
+    //       height 2rem
+    
+    // .ds-icon-logo
+    //   width 2.5rem
+    //   height 1rem
+    
+
+     

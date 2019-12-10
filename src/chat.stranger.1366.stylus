@@ -1,0 +1,27 @@
+// 聊天窗口太大了，会遮挡住注册
+@media screen and (max-width: 1600px)
+
+    [data-ng-app="custom-service"]
+        #facebox
+            left: 3px !important
+            td
+                padding 5px 1.5px
+        .ng-scope .dialog-container.stranger
+            right 5%
+            
+@media screen and (max-width: 800px)
+
+    [data-ng-app="custom-service"]
+        .ng-scope .dialog-container.stranger
+            bottom 5px          
+            right 5px          
+                
+            
+            
+        
+       
+        
+        
+        
+    
+  
