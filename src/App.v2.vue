@@ -2,7 +2,6 @@
 
   #app(:class=" [state.user.css, 'app', appcls, state.user.login ? 'applogin' : 'appunlogin'] ")
 
-
     // pages
     // keep-alive
     transition(name="fade" appear=true)
