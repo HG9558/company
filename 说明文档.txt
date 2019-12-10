@@ -1,0 +1,10 @@
+测试账号
+
+ittest01
+123qwe
+
+
+webStorage进行数据存储
+
+key:tapi
+value:/xy49
