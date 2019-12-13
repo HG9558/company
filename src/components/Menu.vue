@@ -35,9 +35,9 @@
                         span.text-gold {{ item.pretitle }}
                         | {{ item.title }}
                 div.recomment-game-wp
-                  div(v-for="(item,index) in recommendList")
-                    img(src="../assets/v2/qq.png")
-                    //- img(:src="item.src")
+                  div.game-img-list(v-for="(item,index) in recommendList" @click="open(item,item.index)")
+                    img(:src="item.src")
+                    //- img(src="/static/pic/home/recomend_game/qq.png")
 
 
 
@@ -60,10 +60,10 @@ export default {
   data() {
     return {
       recommendList: [
-        { src: "../asset/v2/qq.png", id: "1-1-7", index: 6 },
-        { src: "../asset/v2/qq.png", id: "1-1-12", index: 6 },
-        { src: "../asset/v2/qq.png", id: "1-1-4", index: 6 },
-        { src: "../asset/v2/qq.png", id: "1-1-9", index: 6 }
+        { src: "/static/pic/home/recomend_game/qq.png", id: "1-1-7", index: 6 },
+        { src: "/static/pic/home/recomend_game/chongqing.png", id: "1-1-12", index: 6 },
+        { src: "/static/pic/home/recomend_game/happy.png", id: "1-1-4", index: 6 },
+        { src: "/static/pic/home/recomend_game/blog.png", id: "1-1-9", index: 6 }
       ],
       shows: {}
     };
@@ -463,20 +463,20 @@ body.cb.v2
         color #666 !important
 
 
-
-
-
 </style>
-
-
 /* 推荐彩票样式 */
 <style lang="stylus">
     .lottery-wp
       display flex
-      align-items center
+    //   align-items center
       .dl-wrapper
         border-right 1px solid #d7d7d7
         padding-right .28rem
       .recomment-game-wp
         border-left 1px solid #ffffff
+        .game-img-list
+        //    margin .29rem 0
+           padding:0 .32rem
+           margin-bottom .38rem
+
 </style>
