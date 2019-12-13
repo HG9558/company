@@ -3,13 +3,11 @@
     section.menu.content-width
       el-popover(:ref="menu.url" v-for=" (menu, index) in menus" placement="top-start"  trigger="hover" v-bind:popper-class="'footer-popover menu ' + menu.url + ' ' + (menu.groups && menu.groups[0] || menu.info ? true : false) " v-model="shows[index]" v-show="!menu.hide")
 
-
             .icon-button.after-title(slot="reference" v-show="!menu.href && !menu.removed && !menu.hideSub && !menu.temp" v-on:mouseover="mouseover(menu)" @click="openChat(menu.url)" v-bind:mytitle=" menu.title " v-bind:class="{hot: menu.hot}") {{ menu.title }}
               .el-icon--right.el-icon-arrow-down(style="font-size: 10px; color: rgba(255,255,255,.5)")
 
 
             router-link.icon-button.after-title(:to="menu.href"   slot="reference" v-if="menu.href && !menu.removed" @click.native.stop="" v-bind:mytitle=" menu.title || menu.mytitle") {{ menu.title }}
-
 
             slot
               .info(v-if=" menu.big && !menu.info[0]" v-bind:class=" [ menu.info.class ] ")
@@ -17,27 +15,37 @@
                 h4 {{ menu.info.descrb }}
                 .ds-button.primary(v-if=" !menu.outerhref " @click="open(menu.info)" title="第一次点击可能会被拦截，再点一次即可") 点击进入
                 .ds-button.primary(v-if="menu.outerhref" @click=" window.open(menu.outerhref) " title="第一次点击可能会被拦截，再点一次即可") 点击进入
-
               .infos(v-if=" menu.big && menu.info[0]")
                 .info(v-bind:class=" [ m.class ] " v-for=" m in menu.info ")
                   h3(v-if="m.title") {{ m.title }}
                   h4(v-if="m.descrb") {{ m.descrb }}
                   .ds-button.primary(@click="open(m)" title="第一次点击可能会被拦截，再点一次即可" v-if=" m.fn ") 点击进入
 
+              div.lottery-wp(v-if = "!menu.big")
+                div.dl-wrapper
+                  dl.submenu(v-if=" !menu.hideIcon && group.footer !== false && group.items.filter(function(x){return !x.removed})[0]" v-for="group in menu.groups" v-bind:class="[menu.url, group.url, {notitile: !group.title, 'with-icon': group.withIcon}]" v-bind:style="{ width: group.width }")
+                    dt
+                      span.title(v-if="group.title && group.items.filter(function(x){return !x.removed})[0]")  {{ group.title }}
 
-              dl.submenu(v-if=" !menu.hideIcon && group.footer !== false && group.items.filter(function(x){return !x.removed})[0]" v-for="group in menu.groups" v-bind:class="[menu.url, group.url, {notitile: !group.title, 'with-icon': group.withIcon}]" v-bind:style="{ width: group.width }")
-                dt
-                  span.title(v-if="group.title && group.items.filter(function(x){return !x.removed})[0]")  {{ group.title }}
+                    dd(v-for="item in group.items"  @click="open(item, index)" v-if="item.title && !item.removed && !item.hide")
 
-                dd(v-for="item in group.items"  @click="open(item, index)" v-if="item.title && !item.removed && !item.hide")
+                      .ds-button.card(style="position: relative; " v-bind:class="[item.class]") {{ item.atitle || item.title }}
 
-                  .ds-button.card(style="position: relative; " v-bind:class="[item.class]") {{ item.atitle || item.title }}
+                      // .game-title(style="position: absolute;  width: 100%; font-size: .14rem; color: #9897b2" v-if=" menu.url === 'game' ")
+                        span.text-gold {{ item.pretitle }}
+                        | {{ item.title }}
+                div.recomment-game-wp
+                  div(v-for="(item,index) in recommendList")
+                    img(src="../assets/v2/qq.png")
+                    //- img(:src="item.src")
 
-                  // .game-title(style="position: absolute;  width: 100%; font-size: .14rem; color: #9897b2" v-if=" menu.url === 'game' ")
-                    span.text-gold {{ item.pretitle }}
-                    | {{ item.title }}
+
+
+
+
 
       .icon-button.after-title(slot="reference"  v-for=" (menu, index) in menus" v-show="!menu.href && !menu.removed && menu.hideSub"  @click="open(menu.groups[0].items[0])" v-bind:mytitle=" menu.title " v-bind:class="{hot: menu.hot}") {{ menu.title }}
+
 
 </template>
 
@@ -45,69 +53,79 @@
 // import store from '../store'
 // import api from '../http/api'
 export default {
-  props: ['menus'],
-  data () {
+  props: ["menus"],
+  created() {
+    console.log(this.menus);
+  },
+  data() {
     return {
-      // Me: store.state.user,
+      recommendList: [
+        { src: "../asset/v2/qq.png", id: "1-1-7", index: 6 },
+        { src: "../asset/v2/qq.png", id: "1-1-12", index: 6 },
+        { src: "../asset/v2/qq.png", id: "1-1-4", index: 6 },
+        { src: "../asset/v2/qq.png", id: "1-1-9", index: 6 }
+      ],
       shows: {}
-    }
+    };
   },
-  watch: {
-  },
-  mounted () {
-    this.initShows()
+  watch: {},
+  mounted() {
+    this.initShows();
   },
   methods: {
-    initShows () {
+    initShows() {
       this.shows = this.menus.reduce((p, m, i) => {
-        p[i] = false
-        return p
-      }, {})
+        p[i] = false;
+        return p;
+      }, {});
     },
-    mouseover (menu) {
-      if (menu.url === 'game') {
-        menu.hideIconOnHover = menu.hideIcon
+    mouseover(menu) {
+      if (menu.url === "game") {
+        menu.hideIconOnHover = menu.hideIcon;
         this.__setCall({
-          fn: '__guideStep'
-        })
+          fn: "__guideStep"
+        });
       }
     },
-    openChat (url) {
-      if (url === 'chat') {
-        window.accessAngular.open()
+    openChat(url) {
+      if (url === "chat") {
+        window.accessAngular.open();
       }
     },
-    __openThirdPart (item) {
-      this.open(item)
+    __openThirdPart(item) {
+      this.open(item);
     },
-    open (item, index) {
+    open(item, index) {
       this.__setCall({
-        fn: '__closeGuide'
-      })
+        fn: "__closeGuide"
+      });
       // this.$nextTick(() => {
       //   this.shows[index] = false
       //   this.openPage(item.id)
       // })
+      console.log(item.id);
+      console.log(index);
+
       if (item.id) {
         if (item.ff) {
-          return this.$router.push(item.ff)
+          return this.$router.push(item.ff);
         }
         if (item.fn) {
-          return this.__setCall({fn: '__openWindowWithPost', args: item.fn})
+          return this.__setCall({ fn: "__openWindowWithPost", args: item.fn });
           // return this.openWindowWithPost(this.formData[item.fn] || {})
         } else {
           setTimeout(() => {
-            this.shows[index] = false
-            this.openPage(item.id)
-          }, 0)
+            this.shows[index] = false;
+            this.openPage(item.id);
+          }, 0);
         }
       }
     },
-    openPage (url) {
-      this.$emit('open-page', url)
+    openPage(url) {
+      this.$emit("open-page", url);
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">
@@ -119,6 +137,8 @@ body.cb.v2
     padding PW
     transform: translateY(-0.12rem);
     radius(0)
+    &.game
+
     &.menu
       max-width auto
       @media screen and (max-width: 1500px)
@@ -133,6 +153,7 @@ body.cb.v2
       border-bottom-color BLUE
       &:after
         border-bottom-color BLUE
+
 
 
     .submenu.me
@@ -445,4 +466,17 @@ body.cb.v2
 
 
 
+</style>
+
+
+/* 推荐彩票样式 */
+<style lang="stylus">
+    .lottery-wp
+      display flex
+      align-items center
+      .dl-wrapper
+        border-right 1px solid #d7d7d7
+        padding-right .28rem
+      .recomment-game-wp
+        border-left 1px solid #ffffff
 </style>

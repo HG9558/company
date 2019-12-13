@@ -69,14 +69,7 @@ var config = {
             pathRewrite: {
               '^/pt_egame': '/pt_egame'
             }
-        },
-        '/aifred': {
-          target: 'http://192.168.169.152:8285/',
-          changeOrigin: true,
-          pathRewrite: {
-            '^/aifred': '/cagamesclient/'
-          }
-      },
+        }
     },
     productionSourceMap: true,
     devtool: 'cheap-module-eval-source-map',

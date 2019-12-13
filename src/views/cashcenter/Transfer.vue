@@ -49,28 +49,6 @@
       .wallet-ls
 
         .s(style="padding: PWX 0")
-          //-
-          .classifys
-            .classifyTit.c(
-              v-if="RecentlyPlats.length"
-            ) 常用账户
-            div(
-              v-if="RecentlyPlats.length"
-              style="padding-left:1.5rem"
-            )
-              .c(v-for="r in RecentlyPlats")
-                p.acc-shot-name(v-bind:class="r.classname")
-                  span.txt-c {{ r.n }}
-                br
-                p(v-if="!r.alias") {{ r.n }}账户
-                p(v-if="r.alias") {{ r.alias }}
-                p.fz20.text-black.flex.flex-ai-c.flex-jt-c {{numberWithCommas(ME[r.key])}}
-                  i.ft12.yuan 元
-                  span.icon-refresh(v-on:click="refreshBalance(r)")
-                .mt10.quick-btns
-                  button.ds-button.btn-transfer(v-if="r.authority.includes(2)" @click="quickTransfer(r, 'o')") 转出
-                  button.ml10.ds-button.btn-transfer(v-if="r.authority.includes(1)" @click="quickTransfer(r, 'i')") 转入
-          //-
           .classifys(v-for="v in Tdata.classifyMap")
             .classifyTit.c(
               v-if="Tdata.list.filter(x=>{return x.classifys.includes(v.classifyID)}).length"
@@ -107,7 +85,6 @@ export default {
       Tdata: Tdata, // 列表数据
       ToutKey: 'amoney', //当前转出账户  amoney 默认 主账户
       TinKey: Tdata.list.find(x => { return x.authority.includes(1) && x.key !== 'amoney' }).key, //当前转入账户 默认 第一个 非 主账户的可以转入的账户
-      RecentlyPlats: [], // 常用账户列表
       m: '', // 交易金额
       ME: store.state.user,
       numberWithCommas: numberWithCommas,
@@ -185,12 +162,12 @@ export default {
     getRecentlyPlat () {
       this.$http.get(api.getRecentlyPlat).then(({data: {success, msg, platList}}) => {
         if (success === 1) {
-          let arr = [];
-          platList.forEach(v => {
-            let r = this.Tdata.list.find(x => { return x.id === v })
-            r && arr.push(r);
+          this.Tdata.list.forEach(v => {
+            if (platList.includes(v.id)) {
+              // { n: '常用账户', classifyID: 99 },
+              v.classifys.push(99); //追加分类
+            }
           });
-          this.RecentlyPlats = arr;
         }
       })
     },
@@ -235,7 +212,6 @@ export default {
         } else {
           // this.$message.error({target: this.$el, message: data.msg || (['', '', 'BG', '体育'][Math.max(this.f, this.t + 2)] + '余额转换失败！')})
         }
-        this.getRecentlyPlat(); // 常用账户
       }).catch(rep => {
         // this.$message.error({target: this.$el, message: (['', '', 'BG', '体育'][Math.max(this.f, this.t + 2)] + '余额转换失败！')})
       }).finally(() => {
@@ -258,7 +234,6 @@ export default {
         } else {
           this.$message.error({target: this.$el, message: data.msg || '金额转换失败！'})
         }
-        this.getRecentlyPlat(); // 常用账户
       }).catch(rep => {
         this.$message.error({target: this.$el, message: '金额转换失败！'})
       })

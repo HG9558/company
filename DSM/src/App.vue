@@ -4,7 +4,7 @@
     // header
     // transition(name="slide-up" appear=true)
       dsHeader(:tabs="tabs" v-bind:starTabs="starTabs" v-on:open-tab="openTab" v-on:close-tab="closeTab" v-if="state.hasHeader && tabs.length > 0")
-
+    
     // pages
     // keep-alive
     transition(name="fade" appear=true)
@@ -13,7 +13,7 @@
     // footer
     // transition(name="slide-down" appear=true)
       dsFooter(:menus="menus" v-bind:name="state.user.name" v-bind:money="state.user.amoney" v-bind:free="state.user.free" v-on:open-page="openTab" v-if="state.hasFooter" v-on:logout="logout")
-
+      
     // Chat
 
     // lefter
@@ -25,19 +25,19 @@
 
 <script>
 // import util from './util'
-import dsHeader from "components/Header";
-import dsFooter from "components/Footer";
-import dsLefter from "mycomponents/Lefter";
-import Print from "components/Print";
+import dsHeader from 'components/Header'
+import dsFooter from 'components/Footer'
+import dsLefter from 'mycomponents/Lefter'
+import Print from 'components/Print'
 // import Chat from 'components/Chat'
-import base from "components/base";
-import store from "src/store";
-import cookie from "js-cookie";
-import api from "src/http/api";
+import base from 'components/base'
+import store from 'src/store'
+import cookie from 'js-cookie'
+import api from 'src/http/api'
 export default {
-  name: "App",
+  name: 'App',
   mixins: [base],
-  data() {
+  data () {
     return {
       showPrint: false,
       // 循环打开模式
@@ -66,18 +66,18 @@ export default {
         //   ]
         // },
         {
-          class: "ds-icon-record",
+          class: 'ds-icon-record',
           hide: true,
-          url: "form",
+          url: 'form',
           groups: [
             {
               items: [
                 {
-                  id: "4-2-2",
-                  title: "追号记录详情",
-                  url: "FollowDetail",
+                  id: '4-2-2',
+                  title: '追号记录详情',
+                  url: 'FollowDetail',
                   position: {
-                    width: "10rem"
+                    width: '10rem'
                   }
                 }
               ]
@@ -85,30 +85,30 @@ export default {
           ]
         },
         {
-          class: "ds-icon-group",
+          class: 'ds-icon-group',
           hide: true,
-          url: "group",
+          url: 'group',
           groups: [
             {
               items: [
                 {
-                  id: "3-3-2",
-                  menuid: "29",
-                  title: "分红详情",
-                  url: "StockDetail",
+                  id: '3-3-2',
+                  menuid: '29',
+                  title: '分红详情',
+                  url: 'StockDetail',
                   position: {
-                    width: "5.4rem",
-                    height: "6.8rem"
+                    width: '5.4rem',
+                    height: '6.8rem'
                   }
                 },
                 {
-                  id: "3-3-4",
-                  title: "契约详情",
-                  url: "ContractDetail",
+                  id: '3-3-4',
+                  title: '契约详情',
+                  url: 'ContractDetail',
                   nosize: true,
                   position: {
-                    width: "5.4rem",
-                    height: "6.8rem"
+                    width: '5.4rem',
+                    height: '6.8rem'
                   }
                 }
               ]
@@ -116,16 +116,16 @@ export default {
           ]
         },
         {
-          class: "ds-icon-record",
+          class: 'ds-icon-record',
           hide: true,
-          url: "form",
+          url: 'form',
           groups: [
             {
               items: [
                 {
-                  id: "4-5-4",
-                  title: "个人盈亏明细",
-                  url: "ProfitLossDetail"
+                  id: '4-5-4',
+                  title: '个人盈亏明细',
+                  url: 'ProfitLossDetail'
                 }
               ]
             }
@@ -133,10 +133,10 @@ export default {
         },
         {
           id: 0,
-          class: "ds-icon-home",
-          href: "/home",
+          class: 'ds-icon-home',
+          href: '/home',
           // titl: '首页',
-          menuid: "1"
+          menuid: '1'
         },
         // {
         //   id: 1,
@@ -236,50 +236,50 @@ export default {
         // },
         {
           id: 2,
-          menuid: "3",
-          class: "ds-icon-me",
-          title: "个人中心",
-          url: "me",
+          menuid: '3',
+          class: 'ds-icon-me',
+          title: '个人中心',
+          url: 'me',
           groups: [
             {
-              id: "2-1",
-              title: "个人中心",
+              id: '2-1',
+              title: '个人中心',
               items: [
                 {
-                  id: "2-1-1",
-                  menuid: "20",
-                  title: "个人信息",
-                  url: "Me"
+                  id: '2-1-1',
+                  menuid: '20',
+                  title: '个人信息',
+                  url: 'Me'
                 },
                 {
-                  id: "2-2-1",
-                  menuid: "21",
-                  title: "安全中心",
-                  url: "SafeCenter"
+                  id: '2-2-1',
+                  menuid: '21',
+                  title: '安全中心',
+                  url: 'SafeCenter'
                 },
                 {
-                  id: "2-3-1",
-                  menuid: "29",
-                  title: "奖金详情",
-                  url: "Bonus"
+                  id: '2-3-1',
+                  menuid: '29',
+                  title: '奖金详情',
+                  url: 'Bonus'
                 },
                 {
-                  id: "2-4-1",
-                  menuid: "30",
-                  title: "充值申请",
-                  url: "TopUp"
+                  id: '2-4-1',
+                  menuid: '30',
+                  title: '充值申请',
+                  url: 'TopUp'
                 },
                 {
-                  id: "2-5-1",
-                  menuid: "32",
-                  title: "提现申请",
-                  url: "WithDraw"
+                  id: '2-5-1',
+                  menuid: '32',
+                  title: '提现申请',
+                  url: 'WithDraw'
                 },
                 {
-                  id: "2-6-1",
-                  menuid: "34",
-                  title: "我的银行卡",
-                  url: "Bank"
+                  id: '2-6-1',
+                  menuid: '34',
+                  title: '我的银行卡',
+                  url: 'Bank'
                 }
               ]
             }
@@ -287,22 +287,22 @@ export default {
         },
         {
           id: 3,
-          class: "ds-icon-group",
-          title: "团队管理",
-          menuid: "4",
-          url: "group",
+          class: 'ds-icon-group',
+          title: '团队管理',
+          menuid: '4',
+          url: 'group',
           groups: [
             {
-              id: "3-1",
-              title: "用户中心",
+              id: '3-1',
+              title: '用户中心',
               items: [
                 {
-                  id: "3-1-1",
-                  menuid: "38",
-                  title: "用户列表",
-                  url: "UserList",
+                  id: '3-1-1',
+                  menuid: '38',
+                  title: '用户列表',
+                  url: 'UserList',
                   position: {
-                    width: "11rem"
+                    width: '11rem'
                   }
                 }
                 // {
@@ -314,14 +314,14 @@ export default {
               ]
             },
             {
-              id: "3-2",
-              title: "开户中心",
+              id: '3-2',
+              title: '开户中心',
               items: [
                 {
-                  id: "3-2-1",
-                  menuid: "42",
-                  title: "增加用户",
-                  url: "AddUser"
+                  id: '3-2-1',
+                  menuid: '42',
+                  title: '增加用户',
+                  url: 'AddUser'
                 }
                 // {
                 //   id: '3-2-2',
@@ -332,14 +332,14 @@ export default {
               ]
             },
             {
-              id: "3-3",
-              title: "契约分红",
+              id: '3-3',
+              title: '契约分红',
               items: [
                 {
-                  id: "3-3-1",
-                  menuid: "45",
-                  title: "分红列表",
-                  url: "Stock"
+                  id: '3-3-1',
+                  menuid: '45',
+                  title: '分红列表',
+                  url: 'Stock'
                 },
                 // {
                 //   id: '3-3-2',
@@ -352,10 +352,10 @@ export default {
                 //   // }
                 // },
                 {
-                  id: "3-3-3",
-                  menuid: "44",
-                  title: "契约列表",
-                  url: "Contract"
+                  id: '3-3-3',
+                  menuid: '44',
+                  title: '契约列表',
+                  url: 'Contract'
                 }
                 // {
                 //   id: '3-3-4',
@@ -370,22 +370,22 @@ export default {
               ]
             },
             {
-              id: "3-4",
-              title: "团队统计",
+              id: '3-4',
+              title: '团队统计',
               items: [
                 {
-                  id: "3-4-1",
-                  menuid: "47",
-                  title: "团队数据统计",
-                  url: "DataAnalysis"
+                  id: '3-4-1',
+                  menuid: '47',
+                  title: '团队数据统计',
+                  url: 'DataAnalysis'
                 },
                 {
-                  id: "3-4-2",
-                  menuid: "48",
-                  title: "团队图表分析",
-                  url: "ChartAnalysis",
+                  id: '3-4-2',
+                  menuid: '48',
+                  title: '团队图表分析',
+                  url: 'ChartAnalysis',
                   position: {
-                    "min-width": "9.5rem"
+                    'min-width': '9.5rem'
                   }
                 }
               ]
@@ -394,37 +394,37 @@ export default {
         },
         {
           id: 4,
-          class: "ds-icon-record",
-          title: "报表统计",
-          menuid: "5",
-          url: "form",
+          class: 'ds-icon-record',
+          title: '报表统计',
+          menuid: '5',
+          url: 'form',
           groups: [
             {
-              id: "4-1",
-              title: "投注记录",
+              id: '4-1',
+              title: '投注记录',
               items: [
                 {
-                  id: "4-1-1",
-                  menuid: "50",
-                  title: "投注记录列表",
-                  url: "Order",
+                  id: '4-1-1',
+                  menuid: '50',
+                  title: '投注记录列表',
+                  url: 'Order',
                   position: {
-                    width: "13rem"
+                    width: '13rem'
                   }
                 }
               ]
             },
             {
-              id: "4-2",
-              title: "追号记录",
+              id: '4-2',
+              title: '追号记录',
               items: [
                 {
-                  id: "4-2-1",
-                  menuid: "53",
-                  title: "追号记录列表",
-                  url: "Follow",
+                  id: '4-2-1',
+                  menuid: '53',
+                  title: '追号记录列表',
+                  url: 'Follow',
                   position: {
-                    width: "12rem"
+                    width: '12rem'
                   }
                 }
                 // {
@@ -451,26 +451,26 @@ export default {
             //   ]
             // },
             {
-              id: "4-4",
-              title: "今日报表",
+              id: '4-4',
+              title: '今日报表',
               items: [
                 {
-                  id: "4-4-1",
-                  menuid: "57",
-                  title: "今日报表列表",
-                  url: "Today"
+                  id: '4-4-1',
+                  menuid: '57',
+                  title: '今日报表列表',
+                  url: 'Today'
                 }
               ]
             },
             {
-              id: "4-5",
-              title: "盈亏报表",
+              id: '4-5',
+              title: '盈亏报表',
               items: [
                 {
-                  id: "4-5-1",
-                  menuid: "58",
-                  title: "盈亏报表列表",
-                  url: "ProfitLoss"
+                  id: '4-5-1',
+                  menuid: '58',
+                  title: '盈亏报表列表',
+                  url: 'ProfitLoss'
                 },
                 // {
                 //   id: '4-5-4',
@@ -478,22 +478,22 @@ export default {
                 //   url: 'ProfitLossDetail'
                 // },
                 {
-                  id: "4-5-2",
-                  menuid: "59",
-                  title: "帐变列表",
+                  id: '4-5-2',
+                  menuid: '59',
+                  title: '帐变列表',
                   position: {
-                    width: "12rem"
+                    width: '12rem'
                   },
-                  url: "Account"
+                  url: 'Account'
                 },
                 {
-                  id: "4-5-3",
-                  menuid: "89",
-                  title: "走势图",
+                  id: '4-5-3',
+                  menuid: '89',
+                  title: '走势图',
                   position: {
-                    width: "20rem"
+                    width: '20rem'
                   },
-                  url: "TrendChart"
+                  url: 'TrendChart'
                 }
                 // {
                 //   id: '4-5-5',
@@ -582,40 +582,35 @@ export default {
         //   url: 'chat'
         // }
       ],
-      menuids: ""
-    };
+      menuids: ''
+    }
   },
   computed: {
-    starTabs() {
-      return this.state.pages.filter(t => t.star);
+    starTabs () {
+      return this.state.pages.filter(t => t.star)
     },
-    ctabs() {
+    ctabs () {
       return this.state.pages.filter(t => {
-        return t.opened;
-      });
+        return t.opened
+      })
     },
-    currentab() {
+    currentab () {
       return this.ctabs.filter(t => {
-        return t.active;
-      });
+        return t.active
+      })
     },
     // 1: pre !== current 2: pre.size !== 'minus'
-    prev() {
-      let prev = { prev: 0, href: "/" };
+    prev () {
+      let prev = {prev: 0, href: '/'}
       this.tabs.find(t => {
-        if (
-          t.prev > prev.prev &&
-          t.id !== (this.currentab[0] || {}).id &&
-          t.size !== "minus"
-        )
-          prev = t;
-      });
-      return prev;
+        if (t.prev > prev.prev && t.id !== (this.currentab[0] || {}).id && t.size !== 'minus') prev = t
+      })
+      return prev
     }
   },
   watch: {
-    menus() {
-      this.setPages(this._getPages());
+    menus () {
+      this.setPages(this._getPages())
     },
     // tabs () {
     //   return this..filter(p => {
@@ -623,20 +618,20 @@ export default {
     //     return p.opened
     //   })
     // }
-    ctabs: {
+    'ctabs': {
       // deep: true,
       immediate: true,
-      handler() {
+      handler () {
         this.ctabs.forEach(tab => {
-          if (!this.tabs.find(t => t.id === tab.id)) this.tabs.push(tab);
-        });
-        this.tabs = this.tabs.filter(t => t.opened);
+          if (!this.tabs.find(t => t.id === tab.id)) this.tabs.push(tab)
+        })
+        this.tabs = this.tabs.filter(t => t.opened)
       }
     }
     // // 如果路由有变化，会再次执行该方法
     // '$route': 'openRoute'
   },
-  mounted() {
+  mounted () {
     // let ndsapi = 'http://192.168.169.46:9901/cagamesclient'
     // let env = 'dev'
     // // 外网生产地址
@@ -651,108 +646,85 @@ export default {
     // window.env = env
     // ndsapi = window.localStorage.getItem('tapi') || window.localStorage.getItem('api') || ndsapi
     // api.api = ndsapi
-    window.NProgress.done();
-    api.suffix = "&isTop=1";
-    this.setUser({ model: "night", platform: "dsm" });
-    document.body.className = this.state.user.css;
-    this.setPages(this._getPages());
-    if (
-      (
-        this.$router.options.routes.find(
-          r =>
-            r.path.split("/")[1] ===
-            window.location.hash.split("/")[1].split("?")[0]
-        ) || { meta: { login: false } }
-      ).meta.login
-    )
-      this.tryLogin();
+    window.NProgress.done()
+    api.suffix = '&isTop=1'
+    this.setUser({model: 'night', platform: 'dsm'})
+    document.body.className = this.state.user.css
+    this.setPages(this._getPages())
+    if ((this.$router.options.routes.find(r => r.path.split('/')[1] === window.location.hash.split('/')[1].split('?')[0]) || {meta: {login: false}}).meta.login) this.tryLogin()
   },
   methods: {
-    __print(data) {
-      this.printData = data;
-      this.showPrint = true;
+    __print (data) {
+      this.printData = data
+      this.showPrint = true
     },
-    __unprint() {
-      this.printData = {};
-      this.showPrint = false;
+    __unprint () {
+      this.printData = {}
+      this.showPrint = false
     },
-    tryLogin() {
+    tryLogin () {
       let M = this.$modal.warn({
-        content: "授权登录中...",
+        content: '授权登录中...',
         btn: [],
-        close() {
-          M = null;
+        close () {
+          M = null
         },
         O: this
-      });
-      this.$http
-        .get(api.validate, { timeout: 2000 })
-        .then(
-          ({ data }) => {
-            // success
-            if (data.success === 1) {
-              setTimeout(() => {
-                this.loginSuccess(data);
-                M.type = "success";
-              }, 500);
-              setTimeout(M._close, 1000);
-            } else {
-              this.setUser({ login: false });
-              M._close();
-            }
-          },
-          rep => {
-            this.setUser({ login: false });
-            M._close();
-          }
-        )
-        .finally(() => {});
+      })
+      this.$http.get(api.validate, {timeout: 2000}).then(({data}) => {
+        // success
+        if (data.success === 1) {
+          setTimeout(() => {
+            this.loginSuccess(data)
+            M.type = 'success'
+          }, 500)
+          setTimeout(M._close, 1000)
+        } else {
+          this.setUser({login: false})
+          M._close()
+        }
+      }, (rep) => {
+        this.setUser({login: false})
+        M._close()
+      }).finally(() => {
+      })
     },
-    __loginSuccess(data) {
-      this.loginSuccess(data);
+    __loginSuccess (data) {
+      this.loginSuccess(data)
     },
-    loginSuccess(data) {
+    loginSuccess (data) {
       // this.__setCall({fn: '__getUserFund', callId: undefined})
       // setTimeout(this.getUserPrefence, 1000)
       this.getUserPrefence(() => {
         // this.getUserPrefence()
-        this.__getUserFund();
-        this.setUser({
-          login: true,
+        this.__getUserFund()
+        this.setUser({login: true,
           name: data.nickName,
-          pwd: data.hasLogPwd === "1",
-          cashPwd: data.hasSecurityPwd === "1",
+          pwd: data.hasLogPwd === '1',
+          cashPwd: data.hasSecurityPwd === '1',
           type: data.identity,
           account: data.userName,
           shareCycle: data.shareCycle,
           role: data.roleId,
-          hasBankCard: data.hasBankCard === "1",
-          isTry: data.isTry === "1",
-          guide:
-            data.isTry === "1"
-              ? false
-              : !data.nickName ||
-                data.hasLogPwd !== "1" ||
-                data.hasSecurityPwd !== "1",
+          hasBankCard: data.hasBankCard === '1',
+          isTry: data.isTry === '1',
+          guide: data.isTry === '1' ? false : (!data.nickName || data.hasLogPwd !== '1' || data.hasSecurityPwd !== '1'),
           cbsafe: !!data.isOpenKey,
           safeCheck: data.verifyType
-        });
+        })
         // this.$router.push('/')
-        this.$router.push("/help/6-2-1");
+        this.$router.push('/help/6-2-1')
         window.accessAngular.setUser({
           id: data.userId,
           key: data.token,
           pltCd: data.platId,
           socketUrl: data.platUrl
-        });
-        window.accessAngular.isStranger(false);
+        })
+        window.accessAngular.isStranger(false)
         // window.accessAngular.connect()
-        setTimeout(
-          window.accessAngular.connect,
-          api.preApi && api.preApi !== api.api ? 1000 : 0
-        );
-        window.localStorage.setItem("api", api.api);
-      });
+        setTimeout(window.accessAngular.connect, api.preApi && api.preApi !== api.api ? 1000 : 0)
+        window.localStorage.setItem('api', api.api)
+      })
     },
     // openRoute ({path}) {
     //   // 如果出现在登录页面并且用户是登录状态
@@ -760,96 +732,77 @@ export default {
     //     this.logout(true)
     //   }
     // },
-    _getPages() {
+    _getPages () {
       // console.log('menus changed!!! or Menu need reauthority1111111111111111111111111111111111111111')
       return this.menus.reduce((p, m, mi) => {
         // delete un authority
         if (this.menuids && m.menuid && this.menuids.indexOf(m.menuid) === -1) {
           // this.menus.splice(mi, 1)
-          this.$set(m, "removed", true);
-          return p;
+          this.$set(m, 'removed', true)
+          return p
         } else {
-          this.$set(m, "removed", false);
+          this.$set(m, 'removed', false)
         }
-        m.groups = m.groups || [];
+        m.groups = m.groups || []
         return m.groups.reduce((p, g, gi) => {
           // delete un authority
-          if (
-            this.menuids &&
-            g.menuid &&
-            this.menuids.indexOf(g.menuid) === -1
-          ) {
+          if (this.menuids && g.menuid && this.menuids.indexOf(g.menuid) === -1) {
             // m.groups.splice(gi, 1)
-            this.$set(g, "removed", true);
-            return p;
+            this.$set(g, 'removed', true)
+            return p
           } else {
-            this.$set(g, "removed", false);
+            this.$set(g, 'removed', false)
           }
-          g.items = g.items || [];
+          g.items = g.items || []
           // if (g.items.length >= 8) g.items = util.groupArray(g.items, 4)
           return g.items.reduce((p, i, ii) => {
             // delete un authority
-            if (
-              this.menuids &&
-              i.menuid &&
-              this.menuids.indexOf(i.menuid) === -1
-            ) {
+            if (this.menuids && i.menuid && this.menuids.indexOf(i.menuid) === -1) {
               // g.items.splice(ii, 1)
-              this.$set(i, "removed", true);
-              return p;
+              this.$set(i, 'removed', true)
+              return p
             } else {
-              this.$set(i, "removed", false);
+              this.$set(i, 'removed', false)
             }
-            i.menuClass = g.class || m.class;
-            i = Object.assign(
-              {},
-              {
-                opened: false,
-                active: false,
-                // pre activated
-                prev: 0,
-                star: false,
-                defaultSize: i.nosize ? "" : "static",
-                size: i.nosize ? "" : "static",
-                url: g.url || "",
-                href: i.href || "/" + m.url + "/" + i.id,
-                // class: g.class || '',
-                menuClass: g.class || m.class
-                // can't be star
-                // noStar: m.hide
-              },
-              i
-            );
-            if (g.position) i.position = g.position;
-            p.push(i);
-            return p;
-          }, p);
-        }, p);
-      }, []);
+            i.menuClass = g.class || m.class
+            i = Object.assign({}, {
+              opened: false,
+              active: false,
+              // pre activated
+              prev: 0,
+              star: false,
+              defaultSize: i.nosize ? '' : 'static',
+              size: i.nosize ? '' : 'static',
+              url: g.url || '',
+              href: i.href || ('/' + m.url + '/' + i.id),
+              // class: g.class || '',
+              menuClass: g.class || m.class
+              // can't be star
+              // noStar: m.hide
+            }, i)
+            if (g.position) i.position = g.position
+            p.push(i)
+            return p
+          }, p)
+        }, p)
+      }, [])
     },
-    openTab(url) {
+    openTab (url) {
       // console.log('?????....', url)
-      if (!this.state.user.cashPwd && url !== "2-2-1") {
-        url = "2-2-1";
+      if (!this.state.user.cashPwd && url !== '2-2-1') {
+        url = '2-2-1'
         this.$modal.warn({
-          content: "为了您的账户安全，请您务必先设置好您的资金密码！",
+          content: '为了您的账户安全，请您务必先设置好您的资金密码！',
           target: this.$el,
-          btn: ["好的"]
-        });
+          btn: ['好的']
+        })
       }
-      if (this.$route.params.url === url)
-        !this.openPage(url) && this.$router.push("/");
-      else this.openAnotherPage(url);
+      if (this.$route.params.url === url) !this.openPage(url) && this.$router.push('/')
+      else this.openAnotherPage(url)
     },
-    openAnotherPage(url) {
+    openAnotherPage (url) {
       // console.log('....', url)
-      if (
-        (this.tabs.length < this.maxPages ||
-          this.loop ||
-          this.tabs.find(t => t.id === url)) &&
-        this.state.pages.find(p => p.id === url)
-      )
-        this.$router.push(this.state.pages.find(p => p.id === url).href);
+      if ((this.tabs.length < this.maxPages || this.loop || this.tabs.find(t => t.id === url)) && this.state.pages.find(p => p.id === url)) this.$router.push(this.state.pages.find(p => p.id === url).href)
       // else {
       //   this.$modal.warn({
       //     content: '最大窗口打开数：' + this.maxPages,
@@ -857,120 +810,101 @@ export default {
       //   })
       // }
     },
-    closeTab(url, nurl) {
-      this.updatePage(url, { opened: false, position: null });
+    closeTab (url, nurl) {
+      this.updatePage(url, {opened: false, position: null})
       this.$nextTick(() => {
         // after close open the pre one
         if (this.tabs.length === 0) {
           setTimeout(() => {
-            this.$router.push("/");
-          }, 100);
+            this.$router.push('/')
+          }, 100)
         } else if (nurl) {
-          this.openTab(nurl);
-        } else this.$router.push(this.prev.href);
-      });
+          this.openTab(nurl)
+        } else this.$router.push(this.prev.href)
+      })
     },
     // setMenus (menus) {
     //   this.menus = menus
     // },
-    logout(args) {
-      this.$http.get(api.logout);
-      this.setUser();
-      this.setUser({ model: "night", platform: "dsm" });
-      cookie.remove("JSESSIONID");
-      if (!args) this.$router.push("/login");
-      if (args && args.fn) args.fn();
-      this.__logoutChat();
+    logout (args) {
+      this.$http.get(api.logout)
+      this.setUser()
+      this.setUser({model: 'night', platform: 'dsm'})
+      cookie.remove('JSESSIONID')
+      if (!args) this.$router.push('/login')
+      if (args && args.fn) args.fn()
+      this.__logoutChat()
     },
-    __logout(args) {
-      this.logout(args);
+    __logout (args) {
+      this.logout(args)
     },
-    __logoutChat() {
-      window.accessAngular.close("您已退出聊天系统！");
+    __logoutChat () {
+      window.accessAngular.close('您已退出聊天系统！')
     },
     // 5、查询菜单、桌面、收藏夹 PC接口
-    getUserPrefence(fn) {
+    getUserPrefence (fn) {
       let M = this.$modal.warn({
-        content: "获取权限信息中...",
+        content: '获取权限信息中...',
         btn: [],
-        close() {
-          M = null;
+        close () {
+          M = null
         },
         O: this
-      });
-      this.$http.get(api.getUserPrefence).then(
-        ({ data }) => {
-          // success
-          if (data.success === 1) {
-            this.menuids = data.menuList;
-            this.setUser({
-              canTopUp: data.menuList.indexOf("30") !== -1,
-              canWithDraw: data.menuList.indexOf("32") !== -1
-            });
-            // this.setPages(
-            let pages = this._getPages();
-            let x = [];
-            this.tabs.forEach((t, i) => {
-              if (!pages.find(x => x.id === t.id)) {
-                // this.tabs.splice(i, 1)
-              } else {
-                // console.log(t.id)
-                // this.tabs.splice(i, 1, Object.assign(pages.find(x => x.id === t.id), {opened: true, size: 'minus'}))
-                x.push[
-                  Object.assign(pages.find(x => x.id === t.id), {
-                    opened: true,
-                    size: "minus"
-                  })
-                ];
-              }
-            });
-            this.tabs = x;
-            this.setPages(pages);
-            // this.setPages(this._getPages())
-            // this.tabs.forEach((t, i) => {
-            //   if (!this.state.pages.find(x => x.id === t.id)) {
-            //     this.tabs.splice(i, 1)
-            //   } else {
-            //     console.log(t.id)
-            //     this.tabs.splice(i, 1, Object.assign(this.state.pages.find(x => x.id === t.id), {opened: true, size: 'minus'}))
-            //   }
+      })
+      this.$http.get(api.getUserPrefence).then(({data}) => {
+        // success
+        if (data.success === 1) {
+          this.menuids = data.menuList
+          this.setUser({canTopUp: data.menuList.indexOf('30') !== -1, canWithDraw: data.menuList.indexOf('32') !== -1})
+           // this.setPages(
+          let pages = this._getPages()
+          let x = []
+          this.tabs.forEach((t, i) => {
+            if (!pages.find(x => x.id === t.id)) {
+              // this.tabs.splice(i, 1)
+            } else {
+              // console.log(t.id)
+              // this.tabs.splice(i, 1, Object.assign(pages.find(x => x.id === t.id), {opened: true, size: 'minus'}))
+              x.push[Object.assign(pages.find(x => x.id === t.id), {opened: true, size: 'minus'})]
+            }
+          })
+          this.tabs = x
+          this.setPages(pages)
+          // this.setPages(this._getPages())
+          // this.tabs.forEach((t, i) => {
+          //   if (!this.state.pages.find(x => x.id === t.id)) {
+          //     this.tabs.splice(i, 1)
+          //   } else {
+          //     console.log(t.id)
+          //     this.tabs.splice(i, 1, Object.assign(this.state.pages.find(x => x.id === t.id), {opened: true, size: 'minus'}))
+          //   }
+          // })
+          this.$nextTick(() => {
+            data.favoriteList.forEach((d, i) => {
+              store.actions.updatePage(d.menuId + '', {star: true})
+            })
+            // data.deskList.forEach((d, i) => {
+            //   store.actions.updatePage(d.menuId + '', {desk: true})
             // })
-            this.$nextTick(() => {
-              data.favoriteList.forEach((d, i) => {
-                store.actions.updatePage(d.menuId + "", { star: true });
-              });
-              // data.deskList.forEach((d, i) => {
-              //   store.actions.updatePage(d.menuId + '', {desk: true})
-              // })
-            });
-            typeof fn === "function" && fn();
-            M._close();
-          }
-        },
-        rep => {
-          // error
-          M._close();
+          })
+          typeof fn === 'function' && fn()
+          M._close()
         }
-      );
+      }, (rep) => {
+        // error
+        M._close()
+      })
     },
     // 6、用户资金信息  ALL
-    __getUserFund() {
-      this.$http.get(api.getUserFund).then(
-        ({ data }) => {
-          // success
-          if (data.success) {
-            this.setUser({
-              amoney: data.availableBalance,
-              money: data.channelBalance,
-              free: data.freeBalance,
-              smoney: data.specialBalance
-            });
-          }
-        },
-        rep => {
-          // error
+    __getUserFund () {
+      this.$http.get(api.getUserFund).then(({data}) => {
+        // success
+        if (data.success) {
+          this.setUser({amoney: data.availableBalance, money: data.channelBalance, free: data.freeBalance, smoney: data.specialBalance})
         }
-      );
+      }, (rep) => {
+        // error
+      })
     }
   },
   components: {
@@ -980,7 +914,7 @@ export default {
     Print
     // Chat
   }
-};
+}
 </script>
 <style lang="stylus">
   // @import '../../src/var.stylus'
@@ -992,7 +926,7 @@ export default {
     min-height 600px
     min-width 800px
     font-family Arial, Helvetica, sans-serif, "Microsoft YaHei"
-
+  
   body
     height 100%
     font-size .14rem
@@ -1002,7 +936,7 @@ export default {
     background-size cover
     &.login
       background url(/static/skins/bg.jpg) center center no-repeat
-
+  
   body:fullscreen #app > * {
     background url(/static/skins/bg.jpg) center center no-repeat
   }
@@ -1019,11 +953,11 @@ export default {
   @import './var.stylus'
   // @import '../../src/main.stylus'
   @import './main.stylus'
-
+  
   // @import './chat.night.stylus'
-
-
-
+  
+  
+    
   header
     position absolute
     top 0
@@ -1040,12 +974,12 @@ export default {
     right 0
     min-width 8.5rem
     
-
+     
   // .lefter
   //   right auto
   //   width LW
   //   z-index 1
-
+  
     // z-index 1
   .scroll-content
     position absolute
@@ -1063,11 +997,11 @@ export default {
       left LW
       padding-bottom .5rem
       // bottom FH
-
+      
     &.has-footer + footer
       left LW
-
-
+    
+      
 
 // define transition common timming function and time
 [class*=-enter]
@@ -1080,11 +1014,11 @@ export default {
     // transform perspective(500px) translateZ(-5000px)
     opacity .2
     transform perspective(500px) translateZ(-1000px)
-
+    
 .slide-enter, .slide-leave-active
   opacity 0
   transform translateX(100%)
-
+  
 .slide-up-enter, .slide-up-leave-active
   opacity 0
   transform translateY(-100%)
@@ -1097,20 +1031,20 @@ export default {
 .fade-enter, .fade-leave-active
   opacity 0
 
-
-
+  
+  
 
 // define for main page
 .page
   &[class*=-leave]
     // transition-delay .5s
-
+  
   // &[adjusting]
   //   top 0
   //   bottom 0
-
+    
 .back
-  // define for main page when back
+  // define for main page when back 
   &>.page
     &[class*=-leave]
       transition-delay 0s
@@ -1118,5 +1052,5 @@ export default {
     &[class*=-enter]
       transform none
 
-
+  
 </style>

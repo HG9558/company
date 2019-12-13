@@ -436,10 +436,7 @@ let Me = {
   // http://192.168.169.161:8080/cagamesclient/person/recharge.do?method=queryPayError&startDate=20170607192528&endDate=20170609192528&idDone=0
   queryPayError: '/person/recharge.do?method=queryPayError',
   // 查询用户上级
-  getUserBread: '/report/profit.do?method=getUserBread',
-  // 获取聊天系统未读消息数
-  // https://192.168.169.50/docs/xygame/api-51575429357
-  getChatUnread: '/person/accountSecur.do?method=getUnreadMessage'
+  getUserBread: '/report/profit.do?method=getUserBread'
 }
 
 let Group = {
