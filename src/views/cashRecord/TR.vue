@@ -49,7 +49,7 @@
         .ds-button.primary.large.bold(@click="getData" style="margin-left: .15rem;") 搜索
         //- .buttons(style="margin-left: .6rem; margin-top: .1rem")
 
-      .table-list(style="padding: .15rem .2rem " stripe)
+      .table-list(style="padding: .15rem" stripe)
 
         el-table.header-bold.nopadding(:data="data"  style=""   ref="table" stripe v-bind:max-height=" MH ")
 

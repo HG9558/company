@@ -1,3 +1,4 @@
+转账
 <template lang="jade">
   .my-wallet-page
     slot(name="cover")
@@ -5,50 +6,63 @@
     slot(name="resize-x")
     slot(name="resize-y")
     slot(name="toolbar")
-    .scroll-content.bg-w.transfer(v-show="tabIdx === 0")
-      .info
-        i.ds-icon-me-avatar
-        p.txt-c.mt15 主账户
-        p.txt-c.fc-oriange.ft24.mt15.amount {{ numberWithCommas(ME.amoney) }}
-          i.ft12.yuan 元
-        .cc
-          p.title.text-black 账户互转
-          label.item 转出账户
-            el-select(v-model="ToutKey" @change="changeTouKey" style="width: 2.5rem" placeholder="无" )
-              //- el-option(label="主账户" value="amoney")
-              el-option(v-for="v in ToutList" v-bind:label="v.n+'账户' " v-bind:value="v.key")
-          p 可用余额：
-            span.text-blue {{ numberWithCommas(ME[ToutKey]) }}
-            | 元
-            span.switch-box
-              span.switch(v-if="showSwap" @click=" ClickSwap ")
-
-          label.item 转入账户
-            el-select(v-model="TinKey" style="width: 2.5rem" placeholder="无")
-              el-option(v-for="v in TinList" v-bind:label="v.n+'账户' " v-bind:value="v.key")
-
-          p 可用余额：
-            span.text-blue {{ numberWithCommas(ME[TinKey]) }}
-            | 元
-
-          label.item 交易金额
-            input.ds-input(v-model="m" style="width: 2.5rem" maxlength="12")
-
-          p &nbsp;&nbsp;
-            span {{ cm }}
-
-          .quick-amounts
-            button.ml10.c_b.ds-button.btn-amout(@click="quickAmountHandler(amount)" v-for="(amount, i) in quickAmounts") {{amount}}
-
-
-
-          .buttons(style="margin-left: .6rem; margin-top: .2rem")
-            button.ds-button.danger(style="float: left" @click="refund") 一键转回
-            button.ds-button.primary(style="" @click="ok" v-bind:disabled="btn" v-bind:class="{ cancel: btn }") 确认
-
-      .wallet-ls
-
+    .scroll-content.transfers(v-show="tabIdx === 0")
+      ._row.bg-w
+        .infos._col-
+          i.ds-icon-me-avatar
+          p.txt-c.mt10 主账户
+          p.txt-c.ft24.mt10.amount {{ numberWithCommas(ME.amoney) }}
+            i.ft12.yuan 元
+          p.txt-c.refresh(@click="refreshBalance({key:'amoney'})") 
+        .toolselect._col-
+          el-form(label-width="5em")
+            el-form-item(label="转出账户")
+              el-select(v-model="ToutKey" @change="changeTouKey" style="width: 2.5rem" placeholder="无" )
+                el-option(v-for="v in ToutList" v-bind:label="v.n+'账户' " v-bind:value="v.key")
+              .inlb.ml30.toutSwap 可用余额：
+                span.text-blue {{ numberWithCommas(ME[ToutKey]) }}
+                | 元
+                .switch(v-if="showSwap" @click=" ClickSwap ")
+            el-form-item(label="转入账户")
+              el-select(v-model="TinKey" style="width: 2.5rem" placeholder="无")
+                el-option(v-for="v in TinList" v-bind:label="v.n+'账户' " v-bind:value="v.key")
+              .inlb.ml30 可用余额：
+                span.text-blue {{ numberWithCommas(ME[TinKey]) }}
+                | 元
+            el-form-item(label="交易金额")
+              input.ds-input(v-model="m" style="width: 2.5rem" maxlength="12")
+              .quick-amounts.inlb.ml30
+                button.mr10.c_b.ds-button.btn-amout(@click="quickAmountHandler(amount)" v-for="(amount, i) in quickAmounts") {{amount}}
+            el-form-item.zhval
+              span {{ cm }}
+        .buttons._col-
+          button.ds-button.primary(@click="ok" v-bind:disabled="btn" v-bind:class="{ cancel: btn }") 确认
+          button.ds-button.danger(@click="refund") 一键转回
+      br
+      .wallet-ls.bg-w
         .s(style="padding: PWX 0")
+          //-
+          .classifys
+            .classifyTit.c(
+              v-if="RecentlyPlats.length"
+            ) 常用账户
+            div(
+              v-if="RecentlyPlats.length"
+              style="padding-left:1.5rem"
+            )
+              .c(v-for="r in RecentlyPlats")
+                p.acc-shot-name(v-bind:class="r.classname")
+                  span.txt-c {{ r.n }}
+                br
+                p(v-if="!r.alias") {{ r.n }}账户
+                p(v-if="r.alias") {{ r.alias }}
+                p.fz20.text-black.flex.flex-ai-c.flex-jt-c {{numberWithCommas(ME[r.key])}}
+                  i.ft12.yuan 元
+                  span.icon-refresh(v-on:click="refreshBalance(r)")
+                .mt10.quick-btns
+                  button.ds-button.btn-transfer(v-if="r.authority.includes(2)" @click="quickTransfer(r, 'o')") 转出
+                  button.ml10.ds-button.btn-transfer(v-if="r.authority.includes(1)" @click="quickTransfer(r, 'i')") 转入
+          //-
           .classifys(v-for="v in Tdata.classifyMap")
             .classifyTit.c(
               v-if="Tdata.list.filter(x=>{return x.classifys.includes(v.classifyID)}).length"
@@ -85,6 +99,7 @@ export default {
       Tdata: Tdata, // 列表数据
       ToutKey: 'amoney', //当前转出账户  amoney 默认 主账户
       TinKey: Tdata.list.find(x => { return x.authority.includes(1) && x.key !== 'amoney' }).key, //当前转入账户 默认 第一个 非 主账户的可以转入的账户
+      RecentlyPlats: [], // 常用账户列表
       m: '', // 交易金额
       ME: store.state.user,
       numberWithCommas: numberWithCommas,
@@ -162,12 +177,12 @@ export default {
     getRecentlyPlat () {
       this.$http.get(api.getRecentlyPlat).then(({data: {success, msg, platList}}) => {
         if (success === 1) {
-          this.Tdata.list.forEach(v => {
-            if (platList.includes(v.id)) {
-              // { n: '常用账户', classifyID: 99 },
-              v.classifys.push(99); //追加分类
-            }
+          let arr = [];
+          platList.forEach(v => {
+            let r = this.Tdata.list.find(x => { return x.id === v })
+            r && arr.push(r);
           });
+          this.RecentlyPlats = arr;
         }
       })
     },
@@ -212,6 +227,7 @@ export default {
         } else {
           // this.$message.error({target: this.$el, message: data.msg || (['', '', 'BG', '体育'][Math.max(this.f, this.t + 2)] + '余额转换失败！')})
         }
+        this.getRecentlyPlat(); // 常用账户
       }).catch(rep => {
         // this.$message.error({target: this.$el, message: (['', '', 'BG', '体育'][Math.max(this.f, this.t + 2)] + '余额转换失败！')})
       }).finally(() => {
@@ -234,6 +250,7 @@ export default {
         } else {
           this.$message.error({target: this.$el, message: data.msg || '金额转换失败！'})
         }
+        this.getRecentlyPlat(); // 常用账户
       }).catch(rep => {
         this.$message.error({target: this.$el, message: '金额转换失败！'})
       })
@@ -246,7 +263,7 @@ export default {
     },
     //刷新余额
     refreshBalance (row) {
-      if (row.key === 'smoney') { // 特殊账户
+      if (['smoney', 'amoney'].includes(row.key)) { // 特殊账户 主账户
         this.__setCall({fn: '__getUserFund', args: undefined})
       } else {
         this.getBalanceById(row.id, row.key)
@@ -327,23 +344,23 @@ export default {
       margin-left 0.02rem
     .fc-oriange
       color #f37e0c
-    .info
-      width 5.30rem
-      float left
-      position relative
-      &::after
-        content ''
-        display block
-        height 7.5rem
-        border-right solid 1px #f0f0f0
-        position absolute
-        right 0
-        top .7rem
-        clear both
+    // .info
+    //   width 5.30rem
+    //   float left
+    //   position relative
+    //   &::after
+    //     content ''
+    //     display block
+    //     height 7.5rem
+    //     border-right solid 1px #f0f0f0
+    //     position absolute
+    //     right 0
+    //     top .7rem
+    //     clear both
     .ds-icon-me-avatar
       display block
-      height 1.1rem
-      margin .3rem 0 .1rem 0
+      // height 1.1rem
+      // margin .3rem 0 .1rem 0
     .btn-amout
       width 0.54rem
       height 0.3rem
@@ -356,7 +373,7 @@ export default {
       background-blend-mode normal, normal
     .buttons
       .danger
-        width 1.2rem
+        // width 1.2rem
         background-color #444444
       .danger:hover
         background-color #666666
@@ -370,10 +387,10 @@ export default {
       margin-left 0.04rem
       &:hover
         border 1px solid BLUE
-    .primary
-      width 1.2rem
+    // .primary
+    //   width 1.2rem
     .wallet-ls
-      padding-left 5rem
+      // padding-left 5rem
       // width 10.34rem
       // float left
       .s
@@ -432,15 +449,15 @@ export default {
         margin-top .2rem
         span
           font-size .14rem
-      @media screen and (max-width: 2000px)
-        width 1.9rem
-      @media screen and (max-width: 1600px)
-        width 1.3rem
-      @media screen and (max-width: 1200px)
-        width .8rem
-        font-size .14rem
-        .amount
-          font-size .14rem
+      // @media screen and (max-width: 2000px)
+      //   width 1.9rem
+      // @media screen and (max-width: 1600px)
+      //   width 1.3rem
+      // @media screen and (max-width: 1200px)
+      //   width .8rem
+      //   font-size .14rem
+      //   .amount
+      //     font-size .14rem
 
 
       // &:nth-child(1)
@@ -487,49 +504,49 @@ export default {
       // &:nth-child(16)
       //   background url(../../assets/v2/qb_icon_03.png) center .25rem no-repeat
 
-    .cc
-      max-width 3.1rem
-      margin 0 auto
-      padding .3rem
-      text-align right
-      .title
-        font-size .24rem
-        text-align center
-        margin-bottom .3rem
-      .item
-        display block
-        line-height .3rem
-      p:not(.title)
-        line-height .3rem
-        position relative
-        margin-bottom .1rem
+    // .cc
+    //   max-width 3.1rem
+    //   margin 0 auto
+    //   padding .3rem
+    //   text-align right
+    //   .title
+    //     font-size .24rem
+    //     text-align center
+    //     margin-bottom .3rem
+    //   .item
+    //     display block
+    //     line-height .3rem
+    //   p:not(.title)
+    //     line-height .3rem
+    //     position relative
+    //     margin-bottom .1rem
 
-      .switch-box
-        position absolute
-        left 100%
-        top -.03rem
-        width 1rem
-        text-align left
-      .switch
-        display inline-block
-        width .4rem
-        height .4rem
-        background url(../../assets/v2/qb_icon_01.png) center center no-repeat #f3f3f3
-        border 1px solid rgba(0,0,0,0)
-        cursor pointer
-        margin-right .1rem
-        &:hover
-          border 1px solid BLUE
+    //   .switch-box
+    //     position absolute
+    //     left 100%
+    //     top -.03rem
+    //     width 1rem
+    //     text-align left
+    //   .switch
+    //     display inline-block
+    //     width .4rem
+    //     height .4rem
+    //     background url(../../assets/v2/qb_icon_01.png) center center no-repeat #f3f3f3
+    //     border 1px solid rgba(0,0,0,0)
+    //     cursor pointer
+    //     margin-right .1rem
+    //     &:hover
+    //       border 1px solid BLUE
 
-      .refresh
-        display inline-block
-        width .4rem
-        height .4rem
-        background url(../../assets/v2/refresh.png) center center no-repeat #f3f3f3
-        border 1px solid rgba(0,0,0,0)
-        cursor pointer
-        &:hover
-          border 1px solid BLUE
+    //   .refresh
+    //     display inline-block
+    //     width .4rem
+    //     height .4rem
+    //     background url(../../assets/v2/refresh.png) center center no-repeat #f3f3f3
+    //     border 1px solid rgba(0,0,0,0)
+    //     cursor pointer
+    //     &:hover
+    //       border 1px solid BLUE
 
 
   // .my-wallet-page
@@ -537,7 +554,7 @@ export default {
   //     min-width 16rem
 </style>
 <style lang="stylus">
-.transfer
+.transfers
   .classifys
     border-bottom dashed 1px #ccc
     .classifyTit
@@ -557,4 +574,108 @@ export default {
         height 12px
         border solid 2px #ff8713
         border-radius 50%
+        
+</style>
+<style lang="less">
+.transfers {
+  min-width: 1100px;
+  .refresh {
+    width: 20px;
+    height: 17px;
+    background: url(~@/assets/transfer/2.png) no-repeat 0 0;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .infos {
+    box-sizing: border-box;
+    height: 210px;
+    padding-top: 20px;
+    width: 244px;
+    background: url(~@/assets/transfer/1.png) no-repeat 0 0;
+    color: #fff;
+    .ds-icon-me-avatar {
+      height: 88px;
+      width: 88px;
+      background-size: 100%;
+      margin: 0 auto;
+    }
+    i.yuan {
+      color: #fac4b4;
+    }
+  }
+  .toolselect {
+    margin-left: 0.6rem;
+    margin-top: 25px;
+    width: 6.06rem;
+    .toutSwap {
+      position: relative;
+    }
+    .switch {
+      position: absolute;
+      left: -26px;
+      top: 36px;
+      width: 20px;
+      height: 20px;
+      background: url(~@/assets/transfer/3.png) no-repeat 0 0;
+      cursor: pointer;
+    }
+    .zhval {
+      margin: -18px 0 0 0;
+    }
+  }
+  .buttons {
+    margin-left: 0.55rem;
+    margin-top: 80px;
+    .ds-button {
+      width: 142px;
+      height: 42px;
+    }
+  }
+  .el-form-item {
+    margin-bottom: 18px;
+  }
+  .el-form-item__label {
+    color: inherit;
+  }
+  .ml30 {
+    margin-left: 0.3rem;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .transfers {
+    .el-form-item {
+      margin-bottom: 0;
+    }
+    .toolselect {
+      margin-top: 10px;
+      width: 4rem;
+      .quick-amounts{
+        margin-bottom: 10px;
+      }
+      .zhval {
+        margin: 0;
+      }
+      .ml30 {
+        margin-left: 0;
+      }
+      .switch {
+        left: 2.6rem;
+        top: -28px;
+      }
+    }
+    .buttons {
+      margin-left: 0;
+      .ds-button {
+        display: block;
+      }
+      .ds-button:not(:first-child) {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+  #app .scroll-content .wallet-ls .s {
+    padding: 0;
+  }
+}
 </style>

@@ -42,7 +42,7 @@
   .form-filters
   .form-contents
     background-color #fff
-    margin .1rem PWX
+    margin 0 PW
     margin-bottom 0
 
 .el-tooltip__popper
@@ -1959,4 +1959,15 @@ pre
   white-space nowrap
   vertical-align middle
   
-       
+// 分栏
+._row
+  position relative
+  box-sizing border-box
+._row:after, ._row:before, .clearboth:after, .clearboth::before
+  display table
+  content ''
+._row:after, .clearboth::after
+  clear both
+[class*=_col-]
+  float left
+  box-sizing border-box

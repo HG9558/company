@@ -169,7 +169,7 @@ export default {
       ***/
       currency: {
         value: 1,
-        title: '元',
+        title: '2元',
         model: 1
       },
       // 奖金
@@ -568,12 +568,17 @@ export default {
         this.menuItemArray.forEach(mi => {
           this.$set(mi, 'hide', !data.items[M[mi.id + this.idType].split(':')[0]])
         })
+        this.updateDefaultMenu()
         setTimeout(() => {
           window.localStorage.getItem('point') && Number(this.P.maxpoint) >= Number(window.localStorage.getItem('point')) && (this.point = window.localStorage.getItem('point'))
         }, 0)
       }, (rep) => {
         // error
       })
+    },
+    updateDefaultMenu () {
+      let menu = this.menuItemArray.find((item) => !item.hide)
+      if (menu) this.type = menu
     },
     __getTraceIssueList () {
       // if (!this.ME.login) return (this.issues = [])

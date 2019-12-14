@@ -129,7 +129,7 @@ export default {
   bg-hover = #ececec
   bg-active = #e2e2e2
   .tool-bar
-    padding-left .2rem
+    padding-left PW
     &.page-tool-bar
       background none
     radius(0)

@@ -1,5 +1,5 @@
 <template lang="jade">
-    el-row.row(:class="{pd25: isDice}" style="clear: both" v-bind:nrt=" row.title ")
+    el-row.row(:class="{pd25: isDice, 'has-bet-num': hasBetNum}" style="clear: both" v-bind:nrt=" row.title ")
       el-col.title(:span="2" v-if="titleSpan > 0" v-bind:class="'span-' + titleSpan" )
         span {{ row.title }}
         .inlb.yiloutitle(v-if=" CMCH ")
@@ -15,7 +15,7 @@
             el-row(:class=" 'len_' + numbers.length ")
               // el-col.circle(:span="2" v-for=" (n, index) in numbers " v-bind:class="[{ hover: n.hover, selected: n.selected, signal: n.signal, 'has-after': n.after }, row.class || 'default', n.class]" @mouseover.native=" row.hover && hover(index) " @mouseleave.native=" row.noClick && leaveSelect(index) " @click.native=" !row.noClick && toggle(n) "  @keyup.tab.native.stop=" row.noClick && leaveSelect(index === 0 ? 0 : index - 1) && hover(index) ") 
               
-              el-col.circle(:span="2"  v-for=" (n, index) in numbers "  v-bind:class="[{lengre: CMCH && user.showLR, re: Lengre[index] * 1 === Math.max.apply(null, Lengre), leng: Lengre[index] * 1 === Math.min.apply(null, Lengre), withyilou: CMCH && (user.showYL || user.showLR), yilouorlengre: !user.showYL || !user.showLR, hover: n.hover, selected: n.selected, signal: n.signal, 'has-after': n.after }, row.class || 'default', n.class, gameidClass]" @mouseover.native=" row.hover && hover(index) " @mouseleave.native=" row.hover && leave(index) " @click.native=" !row.noClick && toggle(n) "  @keyup.tab.native.stop=" row.hover && leave(index === 0 ? 0 : index - 1) && hover(index) " @keyup.enter.native.stop=" row.hover && leaveSelect(index)" v-bind:nrt_title="n.title") 
+              el-col.circle(:span="2"  v-for=" (n, index) in numbers "  v-bind:class="[{lengre: CMCH && user.showLR, re: Lengre[index] * 1 === Math.max.apply(null, Lengre), leng: Lengre[index] * 1 === Math.min.apply(null, Lengre), withyilou: CMCH && (user.showYL || user.showLR), yilouorlengre: !user.showYL || !user.showLR, hover: n.hover, selected: n.selected, signal: n.signal, 'has-after': n.after , 'col-bet-num': hasBetNum}, row.class || 'default', n.class, gameidClass]" @mouseover.native=" row.hover && hover(index) " @mouseleave.native=" row.hover && leave(index) " @click.native=" !row.noClick && toggle(n) "  @keyup.tab.native.stop=" row.hover && leave(index === 0 ? 0 : index - 1) && hover(index) " @keyup.enter.native.stop=" row.hover && leaveSelect(index)" v-bind:nrt_title="n.title") 
                 // 正常的显示
                 span.after(v-if=" n.after ") {{ n.after }}
                 span.the-number(v-if="showTitle" v-bind:class="[{ selected: n.selected, circle: row.class === 'ds-icon-PK10'}, 'len-' + n.title.length]" ) {{ n.title }}
@@ -36,7 +36,8 @@
                     .ds-checkbox( @click=" n.selected = !n.selected ")
                   // input
                   el-input-number.code-input.times.ds-icon-rmb-sign(v-bind:id=" index  "  v-model=" n.times "  v-if=" n.input " v-bind:max="10000" style="width: .7rem; margin: 0 0 0 .2rem; padding-left: .1rem" @click.native.stop=" !row.noClick && !n.selected && toggle(n) " @mouseleave.native="ntimeChange(n) ")
-
+                //- .inlb.bet-num-wp(v-if="row.bts && row.bts.length > 0")
+                //-   .bet-num {{row.bts[index]}}
                 .inlb.yiloucontent(v-if="CMCH")
                   div(v-show=" user.showYL " v-bind:class=" { c_e: Yilou[index] * 1 === Math.min.apply(null, Yilou), c_p: Yilou[index] * 1 === Math.max.apply(null, Yilou) } ") {{ Yilou[index] }}
                   div(v-show=" user.showLR " v-bind:class=" { c_e: Lengre[index] * 1 === Math.max.apply(null, Lengre), c_p: Lengre[index] * 1=== Math.min.apply(null, Lengre)  } ") {{ Lengre[index] }}
@@ -173,6 +174,9 @@
         // }).map(x => {
         //   return z[x]
         // })
+      },
+      hasBetNum () {
+        return this.row.bts && this.row.bts.length > 0
       }
     },
     watch: {
@@ -468,8 +472,24 @@
       background-image url(../assets/yllr/ballbg_cold.gif)
       background-size cover
       color #fff
-    
-  
+
+// .has-bet-num
+//   .withyilou
+//     margin-bottom .6rem !important
+//   .yiloucontent
+//     top 120%
+// .numbers .el-col.default.col-bet-num
+//   margin-bottom .2rem
+// .bet-num-wp
+//   color #999
+//   font-size .12rem
+//   position absolute
+//   top 100%
+//   left 0
+//   right 0
+//   text-align center
+//   line-height 1.5
+//   padding .05rem 0
 </style>
 
 <style lang="stylus" scoped>

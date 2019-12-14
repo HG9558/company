@@ -436,7 +436,10 @@ let Me = {
   // http://192.168.169.161:8080/cagamesclient/person/recharge.do?method=queryPayError&startDate=20170607192528&endDate=20170609192528&idDone=0
   queryPayError: '/person/recharge.do?method=queryPayError',
   // 查询用户上级
-  getUserBread: '/report/profit.do?method=getUserBread'
+  getUserBread: '/report/profit.do?method=getUserBread',
+  // 获取聊天系统未读消息数
+  // https://192.168.169.50/docs/xygame/api-51575429357
+  getChatUnread: '/person/accountSecur.do?method=getUnreadMessage'
 }
 
 let Group = {
@@ -731,7 +734,11 @@ let Activity = {
   // 判断刮刮乐是否中奖
   getScratchPrize: '/activity.do?method=getScratchPrize',
   // 刮刮乐奖金入库
-  finishScratchPrize: '/activity.do?method=finishScratchPrize'
+  finishScratchPrize: '/activity.do?method=finishScratchPrize',
+  // 签到信息
+  getCheckInfo: '/activity.do?method=getCheckInfo',
+  // 签到
+  checkIn: '/activity.do?method=checkin'
 }
 
 let Download = {

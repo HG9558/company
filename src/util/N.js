@@ -1516,12 +1516,10 @@ let PK10 = {
   },
   // title: '猜冠亚军单式
   '-1-1-8-PK10' ({value}) {
-    // return [N(value, 5).length, N(value, 5)]
     return [N(value, 4, 1, 2, 10, 1).length, N(value, 4, 1, 2, 10, 1)]
   },
   // title: '猜三四名单式'
   '-1-1-9-PK10' ({value}) {
-    // return [N(value, 5).length, N(value, 5)]
     return [N(value, 4, 1, 2, 10, 1).length, N(value, 4, 1, 2, 10, 1)]
   },
   // title: '猜前三名
@@ -1538,12 +1536,10 @@ let PK10 = {
   },
   // title: '猜前三名单式
   '-1-2-2-PK10' ({value}) {
-    // return [N(value, 5).length, N(value, 5)]
     return [N(value, 6, 1, 2, 10, 1).length, N(value, 6, 1, 2, 10, 1)]
   },
   // title: '猜前四名单式
   '-1-2-3-PK10' ({value}) {
-    // return [N(value, 5).length, N(value, 5)]
     return [N(value, 8, 1, 2, 10, 1).length, N(value, 8, 1, 2, 10, 1)]
   },
   // title: '猜三四名复式'
@@ -1604,7 +1600,233 @@ let PK10 = {
   // title: '定位胆
   '-1-1-7-PK10' ({nsl}) {
     return A(nsl)
-  }
+  },
+  /* 二星 */
+  // 前二直选复式
+  '-1-4-1-PK10' ({nsl, r}) {
+    return nsl[0] * nsl[1] - r
+  },
+  // 前二直选单式
+  '-1-4-2-PK10' ({value}) {
+    return [N(value, 4, 1, 2, 10, 1).length, N(value, 4, 1, 2, 10, 1)]
+  },
+  // 前二组选复式
+  '-1-4-3-PK10' ({nsl}) {
+    return C(nsl[0], 2)
+  },
+  // 前二组选单式
+  '-1-4-4-PK10' ({value}) {
+    return [N(value, 4, 1, 2, 10, 1).length, N(value, 4, 1, 2, 10, 1)]
+  },
+  // 后二直选复式
+  '-1-4-5-PK10' ({nsl, r}) {
+    return nsl[0] * nsl[1] - r
+  },
+  // 后二直选单式
+  '-1-4-6-PK10' ({value}) {
+    return [N(value, 4, 1, 2, 10, 1).length, N(value, 4, 1, 2, 10, 1)]
+  },
+  // 后二组选复式
+  '-1-4-7-PK10' ({nsl}) {
+    return C(nsl[0], 2)
+  },
+  // 后二组选单式
+  '-1-4-8-PK10' ({value}) {
+    return [N(value, 4, 1, 2, 10, 1).length, N(value, 4, 1, 2, 10, 1)]
+  },
+  // 三四名直选复式
+  '-1-4-9-PK10' ({nsl, r}) {
+    return nsl[0] * nsl[1] - r
+  },
+  // 三四名直选单式
+  '-1-4-10-PK10' ({value}) {
+    return [N(value, 4, 1, 2, 10, 1).length, N(value, 4, 1, 2, 10, 1)]
+  },
+  // 三四名组选复式
+  '-1-4-11-PK10' ({nsl}) {
+    return C(nsl[0], 2)
+  },
+  // 三四名组选单式
+  '-1-4-12-PK10' ({value}) {
+    return [N(value, 4, 1, 2, 10, 1).length, N(value, 4, 1, 2, 10, 1)]
+  },
+  /* 三星 */
+  // 前三直选复式
+  '-1-5-1-PK10' ({ns}) {
+    let n = 0
+    ns[0] && ns[0][0] && ns[0].forEach((f) => {
+      ns[1] && ns[1][0] && ns[1].forEach((s) => {
+        ns[2] && ns[2][0] && ns[2].forEach((t) => {
+          if (f !== s && f !== t && s !== t) n++
+        })
+      })
+    })
+    return n
+  },
+  // 前三直选单式
+  '-1-5-2-PK10' ({value}) {
+    return [N(value, 6, 1, 2, 10, 1).length, N(value, 6, 1, 2, 10, 1)]
+  },
+  // 前三组选复式
+  '-1-5-3-PK10' ({nsl}) {
+    return C(nsl[0], 3)
+  },
+  // 前三组选单式
+  '-1-5-4-PK10' ({value}) {
+    return [N(value, 6, 1, 2, 10, 1).length, N(value, 6, 1, 2, 10, 1)]
+  },
+  // 后三直选复式
+  '-1-5-5-PK10' ({ns}) {
+    return this['-1-5-1-PK10']({ns})
+  },
+  // 后三直选单式
+  '-1-5-6-PK10' ({value}) {
+    return [N(value, 6, 1, 2, 10, 1).length, N(value, 6, 1, 2, 10, 1)]
+  },
+  // 后三组选复式
+  '-1-5-7-PK10' ({nsl}) {
+    return C(nsl[0], 3)
+  },
+  // 后三组选单式
+  '-1-5-8-PK10' ({value}) {
+    return [N(value, 6, 1, 2, 10, 1).length, N(value, 6, 1, 2, 10, 1)]
+  },
+
+  // 四星
+  // 前四直选复式
+  '-1-6-1-PK10' ({ns}) {
+    let n = 0
+    ns[0] && ns[0][0] && ns[0].forEach((f) => {
+      ns[1] && ns[1][0] && ns[1].forEach((s) => {
+        ns[2] && ns[2][0] && ns[2].forEach((t) => {
+          ns[3] && ns[3][0] && ns[3].forEach((k) => {
+            if (f !== s && f !== t && f !== k && s !== t && s !== k && t !== k) n++
+          })
+        })
+      })
+    })
+    return n
+  },
+  // 前四直选单式
+  '-1-6-2-PK10' ({value}) {
+    return [N(value, 8, 1, 2, 10, 1).length, N(value, 8, 1, 2, 10, 1)]
+  },
+  // 前四组选复式
+  '-1-6-3-PK10' ({nsl}) {
+    return C(nsl[0], 4)
+  },
+  // 前四组选单式
+  '-1-6-4-PK10' ({value}) {
+    return [N(value, 8, 1, 2, 10, 1).length, N(value, 8, 1, 2, 10, 1)]
+  },
+  // 后四直选复式
+  '-1-6-5-PK10' ({ns}) {
+    return this['-1-6-1-PK10']({ns})
+  },
+  // 后四直选单式
+  '-1-6-6-PK10' ({value}) {
+    return [N(value, 8, 1, 2, 10, 1).length, N(value, 8, 1, 2, 10, 1)]
+  },
+  // 后四组选复式
+  '-1-6-7-PK10' ({nsl}) {
+    return C(nsl[0], 4)
+  },
+  // 后四组选单式
+  '-1-6-8-PK10' ({value}) {
+    return [N(value, 8, 1, 2, 10, 1).length, N(value, 8, 1, 2, 10, 1)]
+  },
+
+  // 五星
+  // 前五直选复式
+  '-1-7-1-PK10' ({ns}) {
+    let n = 0
+    ns[0] && ns[0][0] && ns[0].forEach((f) => {
+      ns[1] && ns[1][0] && ns[1].forEach((s) => {
+        ns[2] && ns[2][0] && ns[2].forEach((t) => {
+          ns[3] && ns[3][0] && ns[3].forEach((k) => {
+            ns[4] && ns[4][0] && ns[4].forEach((m) => {
+              if (f !== s && f !== t && f !== k && f !== m && s !== t && s !== k && s !== m && t !== k && t !== m && k !== m) n++
+            })  
+          })
+        })
+      })
+    })
+    return n
+  },
+  // 前五直选单式
+  '-1-7-2-PK10' ({value}) {
+    return [N(value, 10, 1, 2, 10, 1).length, N(value, 10, 1, 2, 10, 1)]
+  },
+  // 前五组选复式
+  '-1-7-3-PK10' ({nsl}) {
+    return C(nsl[0], 5)
+  },
+  // 前五组选单式
+  '-1-7-4-PK10' ({value}) {
+    return [N(value, 10, 1, 2, 10, 1).length, N(value, 10, 1, 2, 10, 1)]
+  },
+  // 后五直选复式
+  '-1-7-5-PK10' ({ns}) {
+    return this['-1-7-1-PK10']({ns})
+  },
+  // 后五直选单式
+  '-1-7-6-PK10' ({value}) {
+    return [N(value, 10, 1, 2, 10, 1).length, N(value, 10, 1, 2, 10, 1)]
+  },
+  // 后五组选复式
+  '-1-7-7-PK10' ({nsl}) {
+    return C(nsl[0], 5)
+  },
+  // 后五组选单式
+  '-1-7-8-PK10' ({value}) {
+    return [N(value, 10, 1, 2, 10, 1).length, N(value, 10, 1, 2, 10, 1)]
+  },
+
+  // 不定位
+  // 前三不定位
+  '-1-8-1-PK10' ({nsl}) {
+    return A(nsl)
+  },
+  // 后三不定位
+  '-1-8-2-PK10' ({nsl}) {
+    return A(nsl)
+  },
+  // 前四不定位
+  '-1-8-3-PK10' ({nsl}) {
+    return A(nsl)
+  },
+  // 后四不定位
+  '-1-8-4-PK10' ({nsl}) {
+    return A(nsl)
+  },
+  // 前五不定位
+  '-1-8-5-PK10' ({nsl}) {
+    return A(nsl)
+  },
+  // 后五不定位
+  '-1-8-6-PK10' ({nsl}) {
+    return A(nsl)
+  },
+
+  // 冠亚和值
+  /*
+  和值
+  分别对应各个和值数字，3:2, 4:2, 5:4, 6:4, 7:6, 8:6, 9:8, 10:8, 11:10, 12:8, 13:8, 14:6, 15:6, 16:4, 17:4, 18:2, 19:2
+  */
+ '-1-9-1-PK10' ({ns}) {
+    let NS = [0, 0, 0, 2, 2, 4, 4, 6, 6, 8, 8, 10, 8, 8, 6, 6, 4, 4, 2, 2]
+    return ns[0].reduce((p, n) => {
+      return (p += NS[n])
+    }, 0)
+  },
+  // 冠亚和值
+  '-1-9-2-PK10' ({nsl}) {
+    return C(nsl[0], 1)
+  },
+  // 大小单双
+  '-1-10-1-PK10' ({nsl}) {
+    return A(nsl)
+  },
 }
 let K3 = {
   // title: '二同复选'

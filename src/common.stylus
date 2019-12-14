@@ -217,7 +217,8 @@
   align-items center
 .flex-jt-c
   justify-content center
-
+.flex-wp-wp
+  flex-wrap wrap
 
 for x in 0..1000
   if x % 5 is 0
@@ -270,7 +271,8 @@ for x in 0..1000
       
     
       
-    
+.cursor-p
+  cursor pointer    
 
 .mg_0a
   margin 0 auto

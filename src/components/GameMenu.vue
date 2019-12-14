@@ -103,9 +103,12 @@
     computed: {
       history_list () {
         //过滤无效数据
+        let items = []
         return this.historyItems.filter(item => {
           return this.$props.menus.filter(v => {
-            return v.groups[0].items.find(x => { return !x.hide && x.id === item.id })
+            items = []
+            v.groups.forEach((gitem) => { items.push(...gitem.items) })
+            return items.find(x => !x.hide && x.id === item.id)
           }).length
         });
       },

@@ -11,8 +11,8 @@ const Forbidden = r => require.ensure([], () => r(require('../views/login/Forbid
 // const Register = r => require.ensure([], () => r(require('../views/login/Register')), 'login-part')
 const LoginTest = r => require.ensure([], () => r(require('../views/login/LoginTest')), 'login-part')
 // const LoginNow = r => require.ensure([], () => r(require('../views/login/Login')), 'login-part')
-// const Try = r => require.ensure([], () => r(require('../views/login/Try')), 'login-part')
-// const Forget = r => require.ensure([], () => r(require('../views/login/Forget')), 'login-part')
+const Try = r => require.ensure([], () => r(require('../views/login/Try')), 'login-part')
+const Forget = r => require.ensure([], () => r(require('../views/login/Forget')), 'login-part')
 
 const Pages = r => require.ensure([], () => r(require('../views/Pages')), 'pages-part')
 const Egame = r => require.ensure([], () => r(require('../views/outer/Egame')), 'pages-part')
@@ -111,17 +111,17 @@ let router = new VueRouter({
         { path: '503', component: C503 },
         { path: 'forbidden', component: Forbidden },
         // { path: 'register', component: Register },
-        { path: '', component: LoginTest }
+        { path: '', component: LoginTest },
         // { path: 'login',
         //   meta: {
         //   },
         //   component: LoginNow
         // },
-        // { path: 'try',
-        //   meta: {
-        //   },
-        //   component: Try },
-        // { path: 'forget', component: Forget }
+        { path: 'try',
+          meta: {
+          },
+          component: Try },
+        { path: 'forget', component: Forget }
       ]
     },
     {

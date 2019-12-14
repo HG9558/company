@@ -305,6 +305,7 @@ export default {
       })
     },
     openBanner () {
+      // TODO 每日签到
       this.$router.push('/activity/5-1-1')
     },
     scrollHander (evt) {
